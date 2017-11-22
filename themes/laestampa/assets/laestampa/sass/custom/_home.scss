@@ -1,0 +1,36 @@
+.header-top{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#febbbb+0,ffafaf+46,ffafaf+100&0.4+1,1+100 */
+	background: -moz-linear-gradient(top, rgba(254,187,187,0.4) 0%, rgba(254,187,187,0.4) 1%, rgba(255,175,175,0.67) 46%, rgba(255,175,175,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(254,187,187,0.4) 0%,rgba(254,187,187,0.4) 1%,rgba(255,175,175,0.67) 46%,rgba(255,175,175,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(254,187,187,0.4) 0%,rgba(254,187,187,0.4) 1%,rgba(255,175,175,0.67) 46%,rgba(255,175,175,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66febbbb', endColorstr='#ffafaf',GradientType=0 ); /* IE6-9 */
+}
+.header-fixed{
+	background-color: #ff7979;
+    padding: 10px 0;
+    color: $branco;
+    .top-telefone{
+    	text-align: center;
+    }
+    .top-menu{
+    	text-align: right
+    }
+}
+.header-primary{
+	margin-top: 30px;
+}
+.logo-principal{
+	display: grid;
+	.logo{
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+.menu-principal{
+	text-align: center;
+}
+.banner-home{
+	height: 600px;
+	width: 100%;
+	background-blend-mode: multiply;
+}

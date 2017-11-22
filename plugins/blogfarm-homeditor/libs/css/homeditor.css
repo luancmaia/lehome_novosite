@@ -1,0 +1,62 @@
+/*homeditor*/
+
+/*#frame-principal {
+    width:700px;
+    height:700px;
+    border:1px solid gray;
+}*/
+.escondido {
+    display:none;
+}
+.homeditor {
+	cursor: pointer;
+}
+/*.editor div {
+  display:block;
+  clear:both;
+  float:left;
+}*/
+.conteudo-box-homeditor form > div * {
+   float:left;
+}
+.conteudo-box-homeditor div {
+   width:450px;
+   clear:both;
+   height:30px; 
+   display:block;
+}
+.conteudo-box-homeditor input[type=text], .conteudo-box-homeditor select {
+   width:300px;
+   height:23px;
+}
+.conteudo-box-homeditor label {
+   width:120px;
+}
+.conteudo-box-homeditor .destaque strong {
+   clear:both;
+   float:none;
+   display:block;
+   width:450px;
+}
+.conteudo-box-homeditor .destaque {
+   margin:0;
+   color:black;
+   padding: 10px;
+   margin-top:25px;
+}
+.ui-autocomplete-input ui-autocomplete-loading {
+  background-color:white;
+}
+.editando {
+  font-weight:bold;
+  color:darkblue;
+}
+.ui-dialog-titlebar-close {
+  display:none;
+}
+.campo_video {
+  display:none;
+}
+.button-primary {
+margin-right:20px;
+}
