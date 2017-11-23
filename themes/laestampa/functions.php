@@ -55,7 +55,7 @@ if ( is_admin() ) {
 function style_custom(){
 	wp_enqueue_style( 'bootstrap.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-grid.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-grid.min.css' );
-	wp_enqueue_style( 'bootstrap-grid.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-reboot.min.css' );
+	wp_enqueue_style( 'bootstrap-reboot.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-reboot.min.css' );
 
 	wp_enqueue_style( 'style-custom', get_template_directory_uri().'/assets/css/style.css' );
 	

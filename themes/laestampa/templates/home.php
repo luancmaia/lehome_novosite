@@ -18,15 +18,22 @@ $imagem_banner = get_template_directory_uri().'/assets/images/banner-home.jpg';
 		</div>
 	</div>	
 </div>
-<div class="col-full">
-<div id="primary" class="content-area">
-	<div class="banner-home">
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div class="chamada-home text-center">
+				<h2> Nisl viverra eros diam nulla elementum, fringilla fermentum donec cubilia a, libero habitasse interdum torquent.</h2>
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="container-fluid">
+	<div class="row row-bottom-separete">
+			teste
+	</div>
+</div>
 
-		Home Page
-
-	</main><!-- #main -->
-</div><!-- #primary -->
-
+<div class="container">
 <?php
 get_footer();
 
