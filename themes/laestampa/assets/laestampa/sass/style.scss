@@ -1,9 +1,11 @@
 /*STYLE.SCSS*/// ==========================================================================
 // Theme Style Main
 // ==========================================================================
-
+@import 'custom/jquery.bxslider';
 @import 'custom/variables'; 
+@import 'custom/layout';
 @import 'custom/home';
+
 
 html{
 	color: $cor-primaria;

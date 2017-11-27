@@ -7,15 +7,18 @@
 
 get_header();
 
-$imagem_banner = get_template_directory_uri().'/assets/images/banner-home.jpg';
+$imagem_banner1 = get_template_directory_uri().'/assets/images/banner-home.jpg';
+$imagem_banner2 = get_template_directory_uri().'/assets/images/banner2.jpg';
 
 ?>
 </div>
-<div class="container-fluid">
-	<div class="row">
-		<div class="banner-home" style="background: #ffafaf url('<?php echo $imagem_banner; ?>') no-repeat center center;background-size: cover;">
-			
+<div class="container-fluid console_slide">
+	<div class="row ">
+		<div class="bxsliderHome">
+		  <div><img src="<?php echo $imagem_banner1; ?>"></div>
+		  <div><img src="<?php echo $imagem_banner2; ?>"></div>
 		</div>
+
 	</div>	
 </div>
 <div class="container">
