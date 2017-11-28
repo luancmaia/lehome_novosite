@@ -8,7 +8,7 @@
 get_header();
 
 $imagem_banner1 = get_template_directory_uri().'/assets/images/banner-home.jpg';
-$imagem_banner2 = get_template_directory_uri().'/assets/images/banner2.jpg';
+$imagem_banner2 = get_template_directory_uri().'/assets/images/banner_1.jpg';
 
 ?>
 </div>
@@ -30,7 +30,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner2.jpg';
 		</div>
 	</div>
 </div>	
-<div class="container-fluid">
+<div class="container-fluid limit-width">
 	<div class="row rowBtn-compra-home">
 			<div class="col-12 col-md-6 noPadding-left">
 				<a href="#" class="box_bannerBtn" title="Compre Agora">
@@ -59,7 +59,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner2.jpg';
 	</div>
 </div>
 
-<div class="container-fluid primeira_linha">
+<div class="container-fluid primeira_linha limit-width">
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">
@@ -89,7 +89,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner2.jpg';
 	</div>
 </div>
 
-<div class="container-fluid segunda_linha">
+<div class="container-fluid segunda_linha limit-width">
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">

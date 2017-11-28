@@ -14,11 +14,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+		<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="container">
+			<div class="box_buscaModal">
+				<div class="fechar-modalBusca">
+					<span data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></span>
+				</div>
+				<div class="modal-conteudo">
+					<?php get_search_form(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <?php do_action( 'storefront_before_site' ); ?>
 
@@ -30,13 +46,35 @@
 			<div class="header-fixed">
 				<div class="container-fluid">
 				<div class="row">				
-						<div class="col-6 top-redessociais">
+						<div class="col-12 col-md-6 top-redessociais">
 							<ul class="nav justify-content-center">
 								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-						<div class="col-6 top-menu">menu</div>
+						<div class="col-12 col-md-6 box_topMenu">
+							<div class="top-menu menuLogin">
+								<div class="media itemMenu-topHeader">
+								  <i class="fa fa-user" aria-hidden="true"></i>
+								  <div class="media-body">
+								    Login / Cadastre-se
+								  </div>
+								</div>
+							</div>
+							<div class="top-menu menuWishilist">
+								<div class="media itemMenu-topHeader">
+								  <i class="fa fa-heart" aria-hidden="true"></i>
+								  <div class="media-body">
+								    Wishilist
+								  </div>
+								</div>
+							</div>
+							<div class="top-menu menuCart">
+								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
+								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -52,8 +90,13 @@
 						</div>
 					</div>
 					<div class="row menu-principal">
-						<div class="col-12">
+						<div class="col-11">
 							<?php storefront_primary_navigation(); ?>
+						</div>
+						<div class="col-1">
+							<div class="lupa-busca" data-toggle="modal" data-target=".modal-busca">
+								<span><i class="fa fa-search" aria-hidden="true"></i></span>
+							</div>
 						</div>
 					</div>
 
@@ -72,13 +115,6 @@
 						 * @hooked storefront_primary_navigation_wrapper_close - 68
 						 */
 						//do_action( 'storefront_header' ); ?>
-				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="line_menu">
-						<hr/>
-					</div>
 				</div>
 			</div>
 		</div>
