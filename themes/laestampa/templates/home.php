@@ -25,7 +25,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 </div>	
 <div class="container-fluid limit-width">
 	<div class="row rowBtn-compra-home">
-			<div class="col-12 col-md-6 noPadding-left">
+			<div class="col-12 col-md-6 noPadding-left col-boxCompraHome">
 				<a href="#" class="box_bannerBtn" title="Compre Agora">
 					<div class="col-estampados">						
 						<div class="title-banner">
@@ -37,7 +37,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 					</div>
 				</a>
 			</div>
-			<div class="col-12 col-md-6 noPadding-right">
+			<div class="col-12 col-md-6 noPadding-right col-boxCompraHome">
 				<a href="#" class="box_bannerBtn" title="Compre Agora">
 					<div class="col-papel">						
 							<div class="title-banner">

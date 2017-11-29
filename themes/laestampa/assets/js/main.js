@@ -8,8 +8,6 @@ jQuery( function( $ ) {
 	  adaptiveHeight: true,
 	});
 
-		$('.carousel').carousel();
-
 	$('.modal-busca').hide();
 
 	var acionaBusca = $('.lupa-busca');
@@ -25,6 +23,12 @@ jQuery( function( $ ) {
 	// 	$('body').css('overflow', 'auto');
 	// });
 
-	$('.modal-busca').modal('show');
+	$( ".col-boxCompraHome" ).hover(
+	  function() {
+	    $( this ).addClass( "hover" );
+	  }, function() {
+	    $( this ).removeClass( "hover" );
+	  }
+	);
 
 });
