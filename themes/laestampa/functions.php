@@ -34,6 +34,7 @@ require 'inc/storefront-template-functions.php';
 
 require 'hooks-custom/hooks.php';
 require 'hooks-custom/function.php';
+require 'hooks-custom/campos-acf.php';
 
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';
