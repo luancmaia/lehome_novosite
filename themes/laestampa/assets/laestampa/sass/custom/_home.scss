@@ -3,6 +3,12 @@
 
 /* MENU HEADER ( HOME )
 ___________________________*/
+
+.boxMenuGeral{
+  position: absolute;
+    width: 100%;
+    top: 0;
+}
 .header-top{
 	z-index: 99;
 	position: relative;
@@ -48,16 +54,16 @@ ___________________________*/
       justify-content: left;
       ul.nav{
         li.nav-item{
-          border: 1px solid $cor-primaria;
+          border: 1px solid #383535;
           border-radius: 5px;
           margin-left: 20px;
           a{
-            color: $cor-primaria;
+            color: #383535;
             font-size: 15.2px;
             padding: 0px 7px;
           }
           &:hover{
-            background-color: $cor-primaria;
+            background-color: #383535;
             a{
               color: $branco;
             }
@@ -96,10 +102,16 @@ ___________________________*/
 /* SLIDE HEADER ( HOME )
 ___________________________*/
 
+.tarja{
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  top: 0;
+}
+
 .console_slide{
 	position: relative;
 	top: 0;
-  margin-top: -358.75px;
   .bx-wrapper{
     box-shadow: none;
     border: 0;
@@ -139,7 +151,7 @@ ___________________________*/
       font-family: $dinLigh;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 27px;
+      font-size: 24px;
       a{
 
       }
@@ -209,7 +221,7 @@ a.box_bannerBtn{
   .col-estampados{
     background: url('../images/banner_estampados.jpg') no-repeat center center;
     background-size: cover;
-    height: auto;
+    height: 589px;
    transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -219,7 +231,7 @@ a.box_bannerBtn{
   .col-papel{
     background: url('../images/banner_papeis.jpg') no-repeat center center;
     background-size: cover;
-    height: auto;
+    height: 589px;
      transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
@@ -228,7 +240,7 @@ a.box_bannerBtn{
 
   }
   .title-banner{
-    padding: 77px 70px;
+    padding: 113px 70px;
     width: 100%;
     h3{
       font-family: $din;
@@ -240,7 +252,7 @@ a.box_bannerBtn{
       margin-bottom: 40px;
     }
     .btnBanner-comprar{
-      width: 60%;
+      width: 31%;
       font-family: $din;
       font-size: 26.55px;
       color: #90908c;
@@ -314,8 +326,18 @@ ___________________________*/
     text-transform: uppercase;
     text-align: center;
     background-color: #fbfbf8;
-    padding: 30px 70px;
+    padding: 5% 70px;
     letter-spacing: 4px;
+  }
+}
+.no-click{
+  height: 31.4%;
+  background-color: #fbfbf8;
+  align-items: center;
+  padding: 0 15px;
+  h4{
+    padding: 0;
+    background-color: transparent;
   }
 }
 .line_link{
@@ -330,22 +352,44 @@ ___________________________*/
 ___________________________*/
 
   @media (max-width: 1200px ){
-    
+    .no-click {
+      height: 29.2%;
+    }
   }
 
   @media (max-width: 1024px ){
-
+    .no-click {
+      height: 29.2%;
+      h4{
+        font-size: 28.4px;
+      }
+    }
   }
 
   @media (max-width: 991px ){
-    
+    .no-click {
+      height: 27.8%;
+      h4{
+        font-size: 28.4px;
+      }
+    }
   }
 
   @media (max-width: 768px ){
+   
     
   }
 
   @media (max-width: 600px ){
+
+     .no-click {
+      height: auto;
+      padding: 10px 15px;
+      h4{
+        font-size: 18.4px
+      }
+    }
+
     .header-fixed{
       padding: 20px 0;
       .top-redessociais{

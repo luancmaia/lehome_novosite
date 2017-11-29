@@ -5,22 +5,15 @@
 	Template Name: Página Home
 */
 
-get_header();
+get_header('banner');
 
-$imagem_banner1 = get_template_directory_uri().'/assets/images/banner-home.jpg';
-$imagem_banner2 = get_template_directory_uri().'/assets/images/banner_1.jpg';
+
+$imagem_banner1 = get_template_directory_uri().'/assets/images/banner_1.jpg';
+$imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 
 ?>
 </div>
-<div class="container-fluid console_slide">
-	<div class="row ">
-		<div class="bxsliderHome">
-		  <div><img src="<?php echo $imagem_banner1; ?>"></div>
-		  <div><img src="<?php echo $imagem_banner2; ?>"></div>
-		</div>
 
-	</div>	
-</div>
 <div class="container">
 	<div class="row">
 		<div class="col-12">
@@ -80,7 +73,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner_1.jpg';
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line1_colun2.jpg' ?>" alt="" />
 				</div>
-				<div class="item_categoriaHome">
+				<div class="item_categoriaHome no-click d-flex">
 					<h4>
 						Estimulamos novas formas de <strong>expressão e comportamento</strong> na decoração. <strong>Estimulamos</strong> novas formas <strong>de decoração</strong>.
 					</h4>

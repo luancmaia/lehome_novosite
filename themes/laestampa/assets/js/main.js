@@ -8,6 +8,8 @@ jQuery( function( $ ) {
 	  adaptiveHeight: true,
 	});
 
+		$('.carousel').carousel();
+
 	$('.modal-busca').hide();
 
 	var acionaBusca = $('.lupa-busca');

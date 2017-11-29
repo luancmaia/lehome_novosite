@@ -43,4 +43,4 @@ function storefront_site_title_or_logo( $echo = true ) {
 
 	echo $html;
 	}
-}	
+}
