@@ -3,10 +3,17 @@ jQuery( function( $ ) {
 	  auto: true,
 	  autoControls: false,
 	  stopAutoOnClick: true,
-	  pager: true,
+	  pager: false,
 	  responsive: true,
 	  adaptiveHeight: true,
 	});
+
+	// on orienation change we need to reload the bxslider when the new image is done loading
+    $(window).on("orientationchange",function(){
+      imagesLoaded( document.querySelector('.js-full-width-slideshow'), function( instance ) {
+        slider.reloadSlider();
+      });
+    });
 
 	$('.modal-busca').hide();
 
