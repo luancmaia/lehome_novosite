@@ -23,4 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="price"><?php echo $product->get_price_html(); ?></p>
+<div class="price-sigle">
+<p class="price"><?php echo $product->get_price_html().'*'; ?></p>
+<p class="price-metro">*preço por metro</p>
+</div>

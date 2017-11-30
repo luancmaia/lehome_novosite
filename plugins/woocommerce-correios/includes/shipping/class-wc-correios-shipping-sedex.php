@@ -18,19 +18,19 @@ class WC_Correios_Shipping_SEDEX extends WC_Correios_Shipping {
 
 	/**
 	 * Service code.
-	 * 40010 - SEDEX without contract.
+	 * 04014 - SEDEX without contract.
 	 *
 	 * @var string
 	 */
-	protected $code = '40010';
+	protected $code = '04014';
 
 	/**
 	 * Corporate code.
-	 * 40096 - SEDEX with contract.
+	 * 04162 - SEDEX with contract.
 	 *
 	 * @var string
 	 */
-	protected $corporate_code = '40096';
+	protected $corporate_code = '04162';
 
 	/**
 	 * Initialize SEDEX.
@@ -43,5 +43,19 @@ class WC_Correios_Shipping_SEDEX extends WC_Correios_Shipping {
 		$this->more_link    = 'http://www.correios.com.br/para-voce/correios-de-a-a-z/sedex';
 
 		parent::__construct( $instance_id );
+	}
+
+	/**
+	 * Get the declared value from the package.
+	 *
+	 * @param  array $package Cart package.
+	 * @return float
+	 */
+	protected function get_declared_value( $package ) {
+		if ( 18 >= $package['contents_cost'] ) {
+			return 0;
+		}
+
+		return $package['contents_cost'];
 	}
 }

@@ -4,7 +4,7 @@
  *
  * @package WooCommerce_Correios/Abstracts
  * @since   3.1.0
- * @version 3.1.0
+ * @version 3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,13 +33,15 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 		$this->init_form_fields();
 
 		// Define user set variables.
-		$this->enabled        = $this->get_option( 'enabled' );
-		$this->title          = $this->get_option( 'title' );
-		$this->shipping_class = $this->get_option( 'shipping_class' );
-		$this->fee            = $this->get_option( 'fee' );
-		$this->receipt_notice = $this->get_option( 'receipt_notice' );
-		$this->own_hands      = $this->get_option( 'own_hands' );
-		$this->debug          = $this->get_option( 'debug' );
+		$this->enabled            = $this->get_option( 'enabled' );
+		$this->title              = $this->get_option( 'title' );
+		$this->shipping_class     = $this->get_option( 'shipping_class' );
+		$this->show_delivery_time = $this->get_option( 'show_delivery_time' );
+		$this->additional_time    = $this->get_option( 'additional_time' );
+		$this->fee                = $this->get_option( 'fee' );
+		$this->receipt_notice     = $this->get_option( 'receipt_notice' );
+		$this->own_hands          = $this->get_option( 'own_hands' );
+		$this->debug              = $this->get_option( 'debug' );
 
 		// Active logs.
 		if ( 'yes' === $this->debug ) {
@@ -99,6 +101,22 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 				'default'     => '',
 				'class'       => 'wc-enhanced-select',
 				'options'     => $this->get_shipping_classes_options(),
+			),
+			'show_delivery_time' => array(
+				'title'       => __( 'Delivery Time', 'woocommerce-correios' ),
+				'type'        => 'checkbox',
+				'label'       => __( 'Show estimated delivery time', 'woocommerce-correios' ),
+				'description' => __( 'Display the estimated delivery time in working days.', 'woocommerce-correios' ),
+				'desc_tip'    => true,
+				'default'     => 'no',
+			),
+			'additional_time' => array(
+				'title'       => __( 'Delivery Days', 'woocommerce-correios' ),
+				'type'        => 'text',
+				'description' => __( 'Working days to the estimated delivery.', 'woocommerce-correios' ),
+				'desc_tip'    => true,
+				'default'     => '0',
+				'placeholder' => '0',
 			),
 			'fee' => array(
 				'title'       => __( 'Handling Fee', 'woocommerce-correios' ),
@@ -165,6 +183,16 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 	}
 
 	/**
+	 * Get shpping time.
+	 *
+	 * @param  array $package Shipping package.
+	 * @return int
+	 */
+	protected function get_shipping_time( $package ) {
+		return 0;
+	}
+
+	/**
 	 * Get package weight.
 	 *
 	 * @param  array $package Shipping package.
@@ -189,7 +217,7 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 			}
 
 			if ( $qty > 0 && $product->needs_shipping() ) {
-				$product_weight = wc_get_weight( str_replace( ',', '.', $product->weight ), 'g' );
+				$product_weight = wc_get_weight( (float) $product->get_weight(), 'g' );
 
 				if ( $qty > 1 ) {
 					$product_weight *= $qty;
@@ -226,9 +254,9 @@ abstract class WC_Correios_Shipping_Carta extends WC_Correios_Shipping {
 		// Create the rate and apply filters.
 		$rate = apply_filters( 'woocommerce_correios_' . $this->id . '_rate', array(
 			'id'    => $this->id . $this->instance_id,
-			'label' => $this->title,
-			'cost'  => $cost + $fee,
-		), $this->instance_id );
+			'label' => $this->get_shipping_method_label( (int) $this->get_shipping_time( $package ), $package ),
+			'cost'  => (float) $cost + (float) $fee,
+		), $this->instance_id, $package );
 
 		// Add rate to WooCommerce.
 		$this->add_rate( $rate );

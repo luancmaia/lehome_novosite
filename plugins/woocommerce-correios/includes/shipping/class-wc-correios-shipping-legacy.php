@@ -100,7 +100,7 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 				'default'          => 'none',
 				'options'          => array(
 					'declare'      => __( 'Declare', 'woocommerce-correios' ),
-					'none'         => __( 'None', 'woocommerce-correios' ),
+					'none'         => __( 'No', 'woocommerce-correios' ),
 				),
 			),
 			'display_date' => array(
@@ -268,31 +268,18 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 	protected function correios_services() {
 		$services = array();
 
-		$services['PAC'] = ( 'yes' == $this->service_pac ) ? '41106' : '';
-		$services['SEDEX'] = ( 'yes' == $this->service_sedex ) ? '40010' : '';
+		$services['PAC'] = ( 'yes' == $this->service_pac ) ? '04510' : '';
+		$services['SEDEX'] = ( 'yes' == $this->service_sedex ) ? '04014' : '';
 		$services['SEDEX 10'] = ( 'yes' == $this->service_sedex_10 ) ? '40215' : '';
 		$services['SEDEX Hoje'] = ( 'yes' == $this->service_sedex_hoje ) ? '40290' : '';
 
 		if ( 'corporate' == $this->corporate_service ) {
-			$services['PAC'] = ( 'yes' == $this->service_pac ) ? '41068' : '';
-			$services['SEDEX'] = ( 'yes' == $this->service_sedex ) ? '40096' : '';
+			$services['PAC'] = ( 'yes' == $this->service_pac ) ? '04669' : '';
+			$services['SEDEX'] = ( 'yes' == $this->service_sedex ) ? '04162' : '';
 			$services['e-SEDEX'] = ( 'yes' == $this->service_esedex ) ? '81019' : '';
 		}
 
 		return array_filter( $services );
-	}
-
-	/**
-	 * Get cart total.
-	 *
-	 * @return float
-	 */
-	protected function get_cart_total() {
-		if ( ! WC()->cart->prices_include_tax ) {
-			return WC()->cart->cart_contents_total;
-		}
-
-		return WC()->cart->cart_contents_total + WC()->cart->tax_total;
 	}
 
 	/**
@@ -312,7 +299,7 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 		$connect->set_destination_postcode( $package['destination']['postcode'] );
 
 		if ( 'declare' == $this->declare_value ) {
-			$connect->set_declared_value( $this->get_cart_total() );
+			$connect->set_declared_value( $package['contents_cost'] );
 		}
 
 		if ( 'corporate' == $this->corporate_service ) {
@@ -347,12 +334,12 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 	 */
 	protected function get_service_name( $code ) {
 		$name = array(
-			'41106' => 'PAC',
-			'40010' => 'SEDEX',
+			'04510' => 'PAC',
+			'04014' => 'SEDEX',
 			'40215' => 'SEDEX 10',
 			'40290' => 'SEDEX Hoje',
-			'41068' => 'PAC',
-			'40096' => 'SEDEX',
+			'04669' => 'PAC',
+			'04162' => 'SEDEX',
 			'81019' => 'e-SEDEX',
 		);
 
@@ -376,7 +363,7 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 	 * @return array
 	 */
 	protected function get_accepted_error_codes() {
-		$codes   = apply_filters( 'woocommerce_correios_accepted_error_codes', array( '-33', '-3', '010' ) );
+		$codes   = apply_filters( 'woocommerce_correios_accepted_error_codes', array( '-33', '-3', '010', '011' ) );
 		$codes[] = '0';
 
 		return $codes;
@@ -432,7 +419,7 @@ class WC_Correios_Shipping_Legacy extends WC_Shipping_Method {
 			}
 
 			// Display correios errors.
-			if ( ! empty( $errors ) ) {
+			if ( ! empty( $errors ) && is_cart() ) {
 				foreach ( $errors as $error ) {
 					if ( '' != $error['error'] ) {
 						$type = ( '010' == $error['number'] ) ? 'notice' : 'error';

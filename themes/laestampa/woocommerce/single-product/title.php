@@ -21,3 +21,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
+echo '<snap class="skuLaestampa">KIMBOPRINT L15460 DGZ1</span>';
