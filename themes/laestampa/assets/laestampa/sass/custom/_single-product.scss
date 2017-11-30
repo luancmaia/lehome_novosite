@@ -1,0 +1,22 @@
+/*woocomerce single product*/
+.price-sigle{
+	display: flex;
+	justify-content: end;
+	.price{
+	  width: 70%;
+	}
+	.price-metro{
+	  align-self: center;
+	}
+}
+.ask-calculator{
+	font-size: 14px;
+	font-family: $din;
+}
+.calculo-metro{
+	margin-top: 10px;
+  margin-bottom: 20px;
+	input.calculo-metros{
+		width: 40%;
+	}
+}
