@@ -59,10 +59,16 @@ function get_variable_price( $product, $tipo ) {
 
 function current_user(){
 	$current_user = wp_get_current_user();
+	if ( !is_user_logged_in() ) {
+		$role = 'PF';
+		return $role;
+	}
 	$id_user = $current_user->ID;
 
 	$user_info = get_userdata($id_user);
 	$role = implode(', ', $user_info->roles);
+
+
 
 	if( $role == 'administrator' ){
 		$role = 'PF';
