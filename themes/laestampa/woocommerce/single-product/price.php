@@ -22,8 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
+add_filter( 'wc_rbp_product_get_price', 'nome_da_sua_funcao' );
+function nome_da_sua_funcao( $wcrbp_price, $product ) {
+	$wcrbp_price = 10;
+	return $wcrbp_price;
+}
+
+
 ?>
 <div class="price-sigle">
-<p class="price"><?php echo $product->get_price_html().'*'; ?></p>
+<p class="price"><?php echo price_type_user($product).'*'; ?></p>
 <p class="price-metro">*preço por metro</p>
 </div>

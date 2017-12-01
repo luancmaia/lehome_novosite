@@ -10,3 +10,9 @@
 .limit-width{
 	max-width: 1920px;
 }
+table.variations{
+	display: none;
+}
+.woocommerce-variation-price, .woocommerce-variation-availability{
+	display: none;
+}

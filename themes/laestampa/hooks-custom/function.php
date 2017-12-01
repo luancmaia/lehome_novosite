@@ -44,3 +44,110 @@ function storefront_site_title_or_logo( $echo = true ) {
 	echo $html;
 	}
 }
+//funcao para pegar o preco do produto variavel
+function get_variable_price( $product, $tipo ) {
+	$variations = $product->get_available_variations();
+	foreach($variations as $v) {
+		$type = $v['attributes']['attribute_tipo-de-usuario'];
+		if ( $type == $tipo ) {
+			$variation = wc_get_product( $v['variation_id'] );
+			return $variation->get_price_html();
+		}
+	}
+}
+
+
+function current_user(){
+	$current_user = wp_get_current_user();
+	$id_user = $current_user->ID;
+
+	$user_info = get_userdata($id_user);
+	$role = implode(', ', $user_info->roles);
+
+	if( $role == 'administrator' ){
+		$role = 'PF';
+	}elseif( $role == 'revenda' ){
+		$role = 'PJ';
+	}elseif( $role == 'customer' ){
+		$role = 'PF';
+	}
+	return $role;
+}
+
+//funcao para pegar o preco do produto variavel
+function get_variable_stock( $product, $tipo ) {
+	$variations = $product->get_available_variations();
+	foreach($variations as $v) {
+		$type = $v['attributes']['attribute_tipo-de-usuario'];
+		if ( $type == $tipo ) {
+			$stock = get_post_meta( $v['variation_id'], '_stock', true );
+			return $stock;
+		}
+	}
+}
+
+//funcao para criar user revenda
+	add_role('revenda', 'Revenda', array(
+		'read' => true, 
+		'edit_posts' => false,
+		'delete_posts' => false, 
+	));
+
+	function tipo_user( $type ){
+		$current_user = wp_get_current_user();
+
+		$caps = $current_user->caps;
+		return array_key_exists( $type, $caps );
+	}
+
+
+	//funcao para exibir o preco do produto de acordo com o usuário logado
+function price_type_user($product){
+	$tipo = 'PF';
+	if ( tipo_user( 'administrator') ) {
+		$price = $product->get_price_html();
+	} elseif( tipo_user( 'revenda')) {
+		$tipo = 'PJ';
+		$price = get_variable_price( $product, $tipo );
+	}else{
+		$price = get_variable_price( $product, $tipo );
+	}
+	return $price;
+}	
+
+//pegar o estoque do produto variavel
+function stock_type_user($product){
+	$tipo = 'PF';
+	if ( tipo_user( 'administrator') ) {
+		$stock = $product->get_available_variations();
+	} elseif( tipo_user( 'revenda')) {
+		$tipo = 'PJ';
+		$stock = get_available_variations($product, $tipo);
+	}else{
+		$stock = get_available_variations($product, $tipo);
+	}
+	return $stock;
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
