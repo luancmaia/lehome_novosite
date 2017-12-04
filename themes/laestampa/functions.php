@@ -59,9 +59,13 @@ function style_custom(){
 	wp_enqueue_style( 'bootstrap-reboot.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-reboot.min.css' );
 
 
+	wp_enqueue_style( 'jqueryui-custom', get_template_directory_uri().'/assets/css/custom/jquery-ui.css' );
 	wp_enqueue_style( 'style-custom', get_template_directory_uri().'/assets/css/style.css' );
 
 	wp_enqueue_script( 'bxslider-js', get_template_directory_uri().'/assets/js/jquery.bxslider.js' );
+	wp_enqueue_script( 'popover-js', get_template_directory_uri().'/assets/js/popper.min.js' );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js' );
+	wp_enqueue_script( 'jqueryui-js', get_template_directory_uri().'/assets/js/jquery_ui.js' );
 	wp_enqueue_script( 'main-js', get_template_directory_uri().'/assets/js/main.js' );
 	
 }

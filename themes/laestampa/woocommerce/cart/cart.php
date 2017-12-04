@@ -110,6 +110,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 										'max_value'   => $_product->get_max_purchase_quantity(),
 										'min_value'   => '0',
 									), $_product, false );
+
+									//var_dump($cart_item_key);
 								}
 
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );

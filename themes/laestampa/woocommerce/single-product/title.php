@@ -19,6 +19,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+global $product;
+$product_id = $product->get_id();
+$sku = get_post_meta($product_id, 'sku', true);
 
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
-echo '<snap class="skuLaestampa">KIMBOPRINT L15460 DGZ1</span>';
+echo '<snap class="skuLaestampa">'.$sku.' </span>';
+echo '<p class="composicao_title">Composição: <strong>'.get_post_meta($product->get_id(), 'composicao_descricao', true).'</strong></p>';

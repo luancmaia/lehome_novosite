@@ -67,9 +67,6 @@ function current_user(){
 
 	$user_info = get_userdata($id_user);
 	$role = implode(', ', $user_info->roles);
-
-
-
 	if( $role == 'administrator' ){
 		$role = 'PF';
 	}elseif( $role == 'revenda' ){
@@ -111,7 +108,8 @@ function get_variable_stock( $product, $tipo ) {
 function price_type_user($product){
 	$tipo = 'PF';
 	if ( tipo_user( 'administrator') ) {
-		$price = $product->get_price_html();
+		$tipo = 'PF';
+		$price = get_variable_price( $product, $tipo );
 	} elseif( tipo_user( 'revenda')) {
 		$tipo = 'PJ';
 		$price = get_variable_price( $product, $tipo );
@@ -119,6 +117,8 @@ function price_type_user($product){
 		$price = get_variable_price( $product, $tipo );
 	}
 	return $price;
+
+
 }	
 
 //pegar o estoque do produto variavel
@@ -135,8 +135,44 @@ function stock_type_user($product){
 	return $stock;
 }	
 
+function is_papel(){
+	global $product;
+		$product_id = $product->get_id();
+		$sku = get_post_meta($product_id, 'sku', true);
+		$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
+		if( $is_papel == 1 ){
+			$is_papel = 1;
+		}else{
+			$is_papel = 0;
+		}
+	return $is_papel;
+}
 
 
+//add_action( 'woocommerce_after_single_product_summary', 'calculator_papel', 10 );
+function calculator_papel(){
+
+	$html = '<div class="calculadora_largura">
+							<p class="title_calculator">Calcule quantos metros você irá precisar <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+					</div>
+							<div class="box_selec">
+								<div class="box_input">
+									<label>Altura <span>*em metros</span></label>
+									<input id="altura" type="number" step=1 name="altura" value=""/>
+								</div>
+								<div class="box_input">
+									<label>Largura<span>*em metros</span></label>
+									<input id="largura" type="number" name="largura" value=""/>
+								</div>
+								<div class="msgAltura">
+									O nosso rolo de papel de parede tem a altura de 3m, caso sua parede tenha uma altura maior que 3m, seu pedido será tratado de forma especial, por favor entre em contato com a gente, <strong><a href="/contato" title="Contato">Clicando aqui</strong></a>.
+									Ficaremos felizes em atende-lo.
+								</div>
+								<div class="recebe_valRolo"> Voce vai precisar de: <p class="quant_rolo"> </p></div>
+							</div>';
+
+	return $html;
+}
 
 
 

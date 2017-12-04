@@ -36,6 +36,19 @@
 		</div>
 	</div>
 
+		<!-- MODAL LOGIN -->
+<div id="modal_login" class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-superlg">
+    <div class="modal-content">
+      <div class="form-login_menu">
+					<?php 
+						echo do_shortcode('[woo-login-popup]');
+					?>
+				</div>
+    </div>
+  </div>
+</div>
+
 <?php do_action( 'storefront_before_site' ); ?>
 
 <div id="page" class="hfeed site">
@@ -56,7 +69,7 @@
 							<div class="top-menu menuLogin">
 								<div class="media itemMenu-topHeader">
 								  <i class="fa fa-user" aria-hidden="true"></i>
-								  <div class="media-body">
+								  <div id="modalLogin" class="media-body" data-toggle="modal" data-target="#modal_login">
 								    Login / Cadastre-se
 								  </div>
 								</div>

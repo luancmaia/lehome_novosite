@@ -1,4 +1,7 @@
 /*woocomerce single product*/
+.composicao_title{
+	font-size: 0.7rem;
+}
 .price-sigle{
 	display: flex;
 	justify-content: end;
@@ -18,5 +21,94 @@
   margin-bottom: 20px;
 	input.calculo-metros{
 		width: 40%;
+	}
+}
+.single_variation_wrap{
+	.quantity{
+		input.qty{
+			display: none;
+		}
+	}
+}
+
+.box_calculator{
+	width: 70%;
+  margin: 20px 0;
+}
+.calculadora_largura{	
+	.title_calculator{
+		background-color: #c0c0c0;
+		padding: 5px 15px;
+		text-transform: uppercase;
+		cursor: pointer;
+		font-size: 0.9rem;
+		margin: 0;
+		i.fa{
+	    margin-left: 6px;
+		}
+	}
+}
+.box_selec{
+	border: 1px solid #c0c0c0;
+  padding: 15px;
+  text-align: center;
+  .box_input{
+  	margin-bottom: 25px;
+  	label{
+  		width: 100%;
+  	}
+  }
+}
+.single_customButtom{
+	width: 54%;
+}
+.favorito_prod{
+	position: relative;
+	width: 70%;
+	.yith-wcwl-add-to-wishlist{
+		margin: 0;
+	}
+	.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse{
+		a{
+			color: #FFFFFF;
+			background-color: #000000;
+			padding: 10px 15px;
+			display: inline-block;
+			position: absolute;
+			bottom: 24px;
+			right: 0;
+			border-radius: 0!important;
+		}
+	}
+	.yith-wcwl-wishlistaddedbrowse{
+		a{
+			color: #FFFFFF;
+			background-color: #000000;
+			padding: 10px 15px;
+			display: inline-block;
+			position: absolute;
+			bottom: 24px;
+			right: 0;
+			border-radius: 0!important;
+		}
+	}
+	.yith-wcwl-add-button a{
+		color: #FFFFFF;
+    background-color: #000000;
+    padding: 10px 15px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    border-radius: 0!important;
+		i{
+	    margin: 0;
+		}
+	}
+	.yith-wcwl-add-to-wishlist .ajax-loading{
+		display: none!important;
+		.yith-wcwl-wishlistaddedbrowse{
+			color: $branco;
+		}
 	}
 }

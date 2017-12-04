@@ -47,9 +47,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<td class="label"><label for="<?php echo sanitize_title( $attribute_name ); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label></td>
 						<td class="value">
 							<?php
-								$selected = $option;
-
-									
+								$selected = $option;						
 
 								wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
 

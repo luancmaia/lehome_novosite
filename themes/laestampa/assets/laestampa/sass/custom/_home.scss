@@ -33,6 +33,30 @@ ___________________________*/
   padding-top: 0;
  }
 }
+//MENU LOGIN MODAL
+#modalLogin{
+  cursor: pointer;
+}
+.modal-superlg{
+  max-width: 1024px;
+  margin-top: -250px;
+  top: 50%;
+  .form-login_menu{
+    .woo-login-popup-sc-modal{
+      margin: 0;
+      border: none;
+      max-width: -webkit-fill-available;
+      .woo-login-popup-sc-close{
+        display: block;
+      }
+      .woo-login-popup-sc-left{
+        nav.woocommerce-MyAccount-navigation{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 .header-1{
   background-color: #eff0d7d9;
 }
