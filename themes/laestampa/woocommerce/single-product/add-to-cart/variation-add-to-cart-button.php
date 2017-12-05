@@ -33,9 +33,9 @@ global $product;
 	?>
 	<?php
 	 if ( is_product() && is_single() ){
-	 	echo '<button type="submit" class="single_add_to_cart_button single_customButtom button alt"> ADICIONAR AO CARRINHO </button>';
+	 	echo '<button type="submit" class="single_add_to_cart_button single_customButtom button alt"> <i class="fa fa-shopping-bag" aria-hidden="true"></i> ADICIONAR AO CARRINHO </button>';
 	 }else{
-	 	echo '<button type="submit" class="single_add_to_cart_button single_customButtom button alt">'.esc_html( $product->single_add_to_cart_text() ).'</button>';
+	 	echo '<button type="submit" class="single_add_to_cart_button single_customButtom button alt"><i class="fa fa-shopping-bag" aria-hidden="true"></i>'.esc_html( $product->single_add_to_cart_text() ).'</button>';
 	 }
 	?>
 	

@@ -25,4 +25,4 @@ $sku = get_post_meta($product_id, 'sku', true);
 
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
 echo '<snap class="skuLaestampa">'.$sku.' </span>';
-echo '<p class="composicao_title">Composição: <strong>'.get_post_meta($product->get_id(), 'composicao_descricao', true).'</strong></p>';
+echo '<p class="composicao_title"><strong>'.get_post_meta($product->get_id(), 'composicao_descricao', true).'</strong></p>';

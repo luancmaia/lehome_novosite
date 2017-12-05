@@ -1,12 +1,22 @@
 /*woocomerce single product*/
+h1.product_title{
+		font-size: 46px;
+		font-family: $dinLigh;
+		color: $cor-primaria;
+}
+.skuLaestampa{
+	font-size: 15px;
+}
 .composicao_title{
 	font-size: 0.7rem;
+	margin: 20px 0;
 }
 .price-sigle{
 	display: flex;
 	justify-content: end;
 	.price{
 	  width: 70%;
+	  margin: 0.2em 0!important;
 	}
 	.price-metro{
 	  align-self: center;
@@ -59,8 +69,22 @@
   	}
   }
 }
+.metragem-disponivel{
+	span{
+		display: block;
+		margin-bottom: 10px;
+	}
+}
 .single_customButtom{
 	width: 54%;
+}
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout{
+	background-color: $cor-botao;
+	color: #9a9ea0;
+	&:hover{
+		background-color: #9a9ea0;
+		color: $cor-botao;
+	}
 }
 .favorito_prod{
 	position: relative;
@@ -71,7 +95,7 @@
 	.yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse{
 		a{
 			color: #FFFFFF;
-			background-color: #000000;
+			background-color: $cor-botao;
 			padding: 10px 15px;
 			display: inline-block;
 			position: absolute;
@@ -94,7 +118,7 @@
 	}
 	.yith-wcwl-add-button a{
 		color: #FFFFFF;
-    background-color: #000000;
+    background-color: $cor-botao;
     padding: 10px 15px;
     display: inline-block;
     position: absolute;
@@ -104,6 +128,9 @@
 		i{
 	    margin: 0;
 		}
+		&:hover{
+			color: $preto;
+		}
 	}
 	.yith-wcwl-add-to-wishlist .ajax-loading{
 		display: none!important;
@@ -111,4 +138,14 @@
 			color: $branco;
 		}
 	}
+	.yith-wcwl-add-to-wishlist{
+		display: block;
+	}
 }
+.yith-wcwl-add-to-wishlist{
+	display: none;
+}
+
+
+
+

@@ -9,6 +9,11 @@ function remove_searchHeader(){
 
 add_action('init', 'remove_searchHeader');
 
+function remove_meta_product(){
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+}
+add_action('init', 'remove_meta_product');
+
 
 //funcao calculo do tecido
 
