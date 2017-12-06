@@ -1,15 +1,23 @@
 /*woocomerce single product*/
+.box_sumary{
+	padding-left: 59px;
+}
 h1.product_title{
-		font-size: 46px;
-		font-family: $dinLigh;
+		font-size: 36px;
+		font-family: $dinLighCond;
 		color: $cor-primaria;
+		font-weight: 700;
+		letter-spacing: 2px;
 }
 .skuLaestampa{
 	font-size: 15px;
+	font-family: $dinLigh;
+	font-weight: 700;
 }
 .composicao_title{
-	font-size: 0.7rem;
+	font-size: 15px;
 	margin: 20px 0;
+	font-family: $dinLighCond;
 }
 .price-sigle{
 	display: flex;
@@ -146,6 +154,29 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
 	display: none;
 }
 
-
+//tabs
+.tabsSingle_product{
+	margin: 0;
+	background-color: #f8f8f8;
+	border: 0;	
+  margin-bottom: 50px;
+  li{
+  	a.nav-link{
+    border-radius: 0;
+    padding: 20px 20px;
+    text-transform: uppercase;
+    color: #9a9ea0;
+    font-family: $din;
+    font-size: 15.17px;
+  	}
+  	.nav-link.active{
+  		background-color: #efdcd1;
+  		border-radius: 0;
+  	}
+  }
+}
+.woocommerce-info, .woocommerce-noreviews, p.no-comments{
+	background-color: #efdcd1!important;
+}
 
 

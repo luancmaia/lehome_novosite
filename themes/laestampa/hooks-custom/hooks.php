@@ -14,6 +14,11 @@ function remove_meta_product(){
 }
 add_action('init', 'remove_meta_product');
 
+function remove_experct_product(){
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+}
+add_action('init', 'remove_experct_product');
+
 
 //funcao calculo do tecido
 
@@ -61,7 +66,18 @@ add_action( 'woocommerce_single_product_summary', 'calc_tecido', 10 );
 
 
 
-
+/* TAB ADICIONAL PARA PRODUTOS */
+function cwp_register_woocommerce_product_tab_adicional( $tabs ) {
+             
+      $tabs['visao_geral'] = array(
+            'title'    => __( 'Visao Geral', 'laestampa' ),
+            'priority' => 10,
+            'callback' => 'cwp_woocommerce_custom_tab_view_visao_geral'
+      );
+       
+      return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'cwp_register_woocommerce_product_tab_adicional' );
 
 
 

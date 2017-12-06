@@ -28,12 +28,13 @@ $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, $thumbnail
 $placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
-	'woocommerce-product-gallery--' . $placeholder,
-	'woocommerce-product-gallery--columns-' . absint( $columns ),
+	'col-12',
+	'col-md-7',
 	'images',
 ) );
+
 ?>
-<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
+<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" style="width:650px;margin-right: 0;opacity: 0; transition: opacity .25s ease-in-out;">
 	<figure class="woocommerce-product-gallery__wrapper">
 		<?php
 		$attributes = array(

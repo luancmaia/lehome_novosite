@@ -131,6 +131,10 @@ jQuery( function( $ ) {
 	var favorito = $('.favorito_prod .yith-wcwl-add-to-wishlist a');
 
 	favorito.html('<i class="fa fa-heart" aria-hidden="true"></i>');
+
+	//add a aba que ira aparecer na single de podutos
+	$('.tabsSingle_product li:nth-child(1) a').addClass('active');
+	$('.tab-content .tab-pane:nth-child(1)').addClass('show');
 	
 
 });

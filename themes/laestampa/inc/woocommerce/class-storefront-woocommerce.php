@@ -154,7 +154,7 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 			$columns = 4;
 
 			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-				$columns = 5;
+				$columns = 6;
 			}
 
 			return intval( apply_filters( 'storefront_product_thumbnail_columns', $columns ) );

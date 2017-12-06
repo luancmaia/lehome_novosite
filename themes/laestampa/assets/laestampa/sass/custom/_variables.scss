@@ -7,8 +7,8 @@
     src: url(../../assets/fonts/DINPro.otf);
 }
 @font-face {
-    font-family: dinProLight;
-    src: url(../../assets/fonts/DINPro-CondLight.otf);
+    font-family: dinProLightCon;
+    src: url(../../assets/fonts/DINPro-Cond.otf);
 }
 @font-face {
     font-family: dinPro-Light;
@@ -18,7 +18,8 @@
 $openSans: 'Open Sans', sans-serif;
 
 $din: 'dinPro', sans-serif;
-$dinLigh: 'dinProLight', sans-serif;
+$dinLigh: 'dinPro-Light', sans-serif;
+$dinLighCond: 'dinProLightCon', sans-serif;
 
 $cor-primaria: #9a9ea0;
 $preto: #000000;

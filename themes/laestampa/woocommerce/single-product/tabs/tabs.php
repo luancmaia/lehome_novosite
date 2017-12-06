@@ -28,10 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
+
 if ( ! empty( $tabs ) ) : ?>
 
 	<div class="woocommerce-tabs wc-tabs-wrapper">
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<ul class="nav nav-tabs tabsSingle_product" id="myTab" role="tablist">
 			<?php foreach ( $tabs as $key => $tab ) : ?>
 				<li class="nav-item">
 					<a class="nav-link" href="#<?php echo esc_attr( $key ); ?>" id="<?php echo esc_attr( $key ); ?>-tab" data-toggle="tab" role="tab" aria-controls="<?php echo esc_attr( $key ); ?>" aria-selected="true"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?></a>

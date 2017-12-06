@@ -35,6 +35,7 @@ require 'inc/storefront-template-functions.php';
 require 'hooks-custom/hooks.php';
 require 'hooks-custom/function.php';
 require 'hooks-custom/campos-acf.php';
+require 'hooks-custom/cpts.php';
 
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';
@@ -66,6 +67,7 @@ function style_custom(){
 	wp_enqueue_script( 'popover-js', get_template_directory_uri().'/assets/js/popper.min.js' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js' );
 	wp_enqueue_script( 'jqueryui-js', get_template_directory_uri().'/assets/js/jquery_ui.js' );
+	wp_enqueue_script( 'filtro-js', get_template_directory_uri().'/assets/js/filtro.js' );
 	wp_enqueue_script( 'main-js', get_template_directory_uri().'/assets/js/main.js' );
 	
 }

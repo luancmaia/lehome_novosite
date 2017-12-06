@@ -10,6 +10,8 @@
 ?>
 
 		</div><!-- .col-full -->
+				</div> <!-- .row -->
+		</div> <!-- .container -->
 	</div><!-- #content -->
 
 	<?php do_action( 'storefront_before_footer' ); ?>
@@ -27,6 +29,7 @@
 			do_action( 'storefront_footer' ); ?>
 
 		</div><!-- .col-full -->
+
 	</footer><!-- #colophon -->
 
 	<?php do_action( 'storefront_after_footer' ); ?>
