@@ -7,9 +7,16 @@
  * @package storefront
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div id="primary" class="content-area">
+if( is_shop() || is_product_category() ){
+	get_sidebar('petit');
+
+	echo '<div id="primary" class="content-areaArchive col-12 col-md-9">';
+}else{
+	'<div id="primary" class="content-area_Single content-areaSingle">';
+}
+?>	
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -33,5 +40,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-do_action( 'storefront_sidebar' );
 get_footer();

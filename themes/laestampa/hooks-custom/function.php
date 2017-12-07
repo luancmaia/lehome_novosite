@@ -330,7 +330,7 @@ function cwp_woocommerce_custom_tab_view_visao_geral() {
 				</div>';
 
 }
-//filtro archive produtos
+
 
 
 

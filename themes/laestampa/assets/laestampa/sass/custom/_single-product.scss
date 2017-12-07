@@ -1,13 +1,35 @@
 /*woocomerce single product*/
 .box_sumary{
-	padding-left: 59px;
+	padding-left: 44px;
+}
+.single-product{
+	div.product{
+		.woocommerce-product-gallery{
+	    padding-left: 0;
+	    img{
+  	    width: 100%;
+	    }
+			.woocommerce-product-gallery__trigger{
+		    right: 2.875em!important;
+			}
+			.flex-control-thumbs li{
+				display: inline-block;
+				margin-right: 30px;
+			}
+		}
+		p.price{
+			font-size: 18px!important;
+			font-family: $dinLigh;
+	    margin-bottom: 48px!important;
+		}
+	}
 }
 h1.product_title{
-		font-size: 36px;
-		font-family: $dinLighCond;
+		font-size: 24px;
+		font-family: $dinLigh;
 		color: $cor-primaria;
-		font-weight: 700;
-		letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 .skuLaestampa{
 	font-size: 15px;
@@ -16,29 +38,43 @@ h1.product_title{
 }
 .composicao_title{
 	font-size: 15px;
-	margin: 20px 0;
-	font-family: $dinLighCond;
+	margin: 10px 0 45px 0;
+	font-family: $dinLigh;
+  text-transform: lowercase;
 }
 .price-sigle{
 	display: flex;
 	justify-content: end;
 	.price{
-	  width: 70%;
+	  width: 55%;
 	  margin: 0.2em 0!important;
 	}
 	.price-metro{
 	  align-self: center;
+	  font-family: $dinLigh;
+	  font-size: 12px;
+    margin-top: -33px;
 	}
 }
 .ask-calculator{
-	font-size: 14px;
-	font-family: $din;
+	font-size: 16px;
+	font-family: $dinLigh;
 }
 .calculo-metro{
 	margin-top: 10px;
   margin-bottom: 20px;
 	input.calculo-metros{
-		width: 40%;
+		width: 46%;
+	}
+	span{
+		font-size: 18px;
+		font-family: $dinLigh;
+	}
+}
+.metragem-disponivel{
+	span{
+		font-family: $dinLigh;
+		font-size: 16px;
 	}
 }
 .single_variation_wrap{
@@ -84,11 +120,14 @@ h1.product_title{
 	}
 }
 .single_customButtom{
-	width: 54%;
+  width: 83.3%;
+  padding: 16px 20px;
 }
 button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout{
 	background-color: $cor-botao;
 	color: #9a9ea0;
+	font-size: 15px;
+	font-family: $din;
 	&:hover{
 		background-color: #9a9ea0;
 		color: $cor-botao;
@@ -96,7 +135,7 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
 }
 .favorito_prod{
 	position: relative;
-	width: 70%;
+	width: 100%;
 	.yith-wcwl-add-to-wishlist{
 		margin: 0;
 	}
@@ -108,7 +147,7 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
 			display: inline-block;
 			position: absolute;
 			bottom: 24px;
-			right: 0;
+			right: -2px;
 			border-radius: 0!important;
 		}
 	}
@@ -127,7 +166,7 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
 	.yith-wcwl-add-button a{
 		color: #FFFFFF;
     background-color: $cor-botao;
-    padding: 10px 15px;
+    padding: 11px 12px;
     display: inline-block;
     position: absolute;
     bottom: 0px;
@@ -135,6 +174,7 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
     border-radius: 0!important;
 		i{
 	    margin: 0;
+	    font-size: 30px;
 		}
 		&:hover{
 			color: $preto;

@@ -1,31 +1,22 @@
-<form class="searchform" >
-
-	<input type="text" name="s" placeholder="Pesquisa...">
-
-	<button><i class="fa fa-search" aria-hidden="true"></i></button>
-
-</form>
-
-
-
-<?php $current_cat = get_queried_object(); ?>
-
-<?php //$current_cat = $current_cat instanceof WP_Term ? $current_cat : false ?>
-
+<h3 class="filtros">Filtrar</h3>
 <?php 
 
+//$current_cat = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false]); 
 
-//$children = get_terms( 'taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => $current_cat->term_id ); 
+	
+$children = get_terms( ['taxonomy' => 'product_cat', 'hide_empty' => false] ); 
 
-//echo '<pre>' . print_r($current_cat->term_id,true) . '</pre>';exit();
 
-/* if ( empty( $children ) ) {
 
-	$children = get_terms( [ 'taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => $current_cat->parent ] ); 
+//echo '<pre>' . print_r($children) . '</pre>';exit();
+
+if ( empty( $children ) ) {
+
+	$children = get_terms( [ 'taxonomy' => 'product_cat', 'hide_empty' => false] ); 
 
 }
 
-*/
+
 
 ?>
 	<?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>

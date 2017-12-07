@@ -16,7 +16,16 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
 	function storefront_before_content() {
 		do_action( 'storefront_sidebar' );
 		?>
-		<div id="primary" class="content-area">
+
+		<?php
+			if( is_shop() || is_product_category() ){
+				echo '<div id="primary" class="content-area">';
+			}else{
+				echo '<div id="primary" class="content-area content-area_Single">';
+			}
+		?>
+
+		
 			<main id="main" class="site-main" role="main">
 		<?php
 	}

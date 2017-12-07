@@ -1,0 +1,68 @@
+/* Archive Products */
+#secondary.widget-areaSidebar{
+  float: inherit!important;
+  margin-right: 0;
+  display: inline-block;
+}
+#primary.content-areaArchive{
+  float: right;
+  margin-right: 0;
+}
+#primary.content-area_Single{
+	float: left;
+	width: 100%;
+}
+
+h3.filtros{
+	font-size: 20px;
+	font-family: $din;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 45px;
+}
+.headerProduct{
+	width: 100%;
+	padding: 15px 0;
+	border-top: 1px solid $cor-primaria;
+	border-bottom: 1px solid $cor-primaria;
+	margin-bottom: 94px;
+	font-size: 17.66px;
+	font-family: $dinLigh;
+	.storefront-sorting{
+    display: inline-block;
+    float: right;
+    margin-bottom: 0!important;
+	}
+}
+.woocommerce-result-count{
+		float: inherit!important;
+    display: inline-block;
+	}
+.products{
+	li{
+		a{
+			.woocommerce-loop-product__title{
+				font-family: $din;
+				font-size: 18px!important;
+				color: $cor-primaria;
+				margin-bottom: 12px;
+			}
+			p.composicao_loopTitle{
+				margin-bottom: 14px;
+				text-transform: lowercase;
+				color: $cor-primaria;
+			}
+			.price{
+				font-size: 16.15px;
+				font-family: $din;
+				color: $cor-primaria!important;
+			}&:hover{
+				text-decoration: none;
+			}
+		}
+		a.add_to_cart_button, .product_type_variable{
+			display: none;
+		}
+	}
+}
+
