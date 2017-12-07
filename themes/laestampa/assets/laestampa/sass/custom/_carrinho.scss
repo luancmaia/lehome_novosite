@@ -1,0 +1,129 @@
+/* CARRINHO Products */
+.cart-collaterals{
+	.cart_totals, .cart-collaterals{
+    float: left!important;
+    margin-left: 0!important;
+    margin: 0!important;
+    clear: left!important;
+	}
+}
+.titleCarrinho{
+	font-size: 20px;
+	font-family: $din;
+	text-transform: uppercase;
+	border-bottom: 1px solid $cor-primaria;
+	padding-bottom: 15px;
+	span{
+		text-transform: lowercase;
+	}
+}
+.shop_table{
+	th{
+		text-transform: uppercase;
+    background-color: transparent;
+	}
+}
+.product-name{
+	.sku_cart{
+		margin-bottom: 5px;
+	}
+	a{
+		font-family: $dinLigh;
+		color: $cor-primaria;		
+	}
+	a.remove{
+		width: 100%;
+		&:before{
+			content: 'x Remover produto';
+	    text-align: left;
+	    color: $cor-primaria;
+	    font-size: 14px;
+	    font-family: $dinLigh;
+		}
+	}
+}
+table.cart{
+	td.product-quantity{
+		.quantity{
+			.qty{
+			background: transparent;
+			box-shadow: none;
+			border: 1px solid $cor-primaria;
+			height: 65px;
+			width: 119px!important;
+			max-width: 119px!important;
+			}
+			&:after{
+	    	content: '/mt';
+	    	position: absolute;
+	    	width: 100px;
+	    	height: 30px;
+	    	right: -30px;
+	    	color: $cor-primaria;
+		    right: 8.9em;
+    		margin-top: 19px;
+	    }
+		}
+		label{
+		}
+	}
+	.product-thumbnail{
+    padding-left: 0;
+    padding-top: 5px;
+		img{
+	    max-width: 6.706326em!important;
+	    border-radius: 50%;
+		}
+	}
+}
+.woocommerce-cart-form__cart-item.cart_item{
+	td{
+		background-color: transparent;
+	}
+}
+//total do carrinho
+.cart_totalsNovo{
+	h2{
+		text-transform: uppercase;
+		font-size: 22px;
+		font-family: $din;
+		text-align: center;
+	}
+	.shop_table{
+		border: 1.87px solid #bbbeb9;
+		tr{
+			td{
+				background-color: transparent;
+			}
+		}
+	}
+	.wc-proceed-to-checkout{
+		text-transform: uppercase;
+		font-family: $din;
+		a{
+			font-size: 15.17px;
+			&:after{
+				content: '';
+			}
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

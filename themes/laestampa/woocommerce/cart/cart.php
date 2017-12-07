@@ -24,16 +24,33 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
+<div class="row">
+	<div class="col-12 col-md-8">
+		<?php
+			global $woocommerce;
+				$count = $woocommerce->cart->cart_contents_count;
+				if ($count > 0) {
+				echo '';
+				if( $count <=1 ){
+					$item = 'item';
+				}else{
+					$item = 'itens';
+				}
+				echo '<h1 class="titleCarrinho">Carrinho <span>('.$count.' '.$item.')</span></h1>';
+				echo '';
+				}
+		?>
+		
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
-				<th class="product-remove">&nbsp;</th>
-				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
+				<!-- <th class="product-remove" ></th> -->
+				 <th class="product-thumbnail">Item</th>
+				<th class="product-name" colspan="2"><?php _e( 'Description', 'woocommerce' ); ?></th>
+				<!--<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th> -->
 				<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
 				<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
 			</tr>
@@ -51,7 +68,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					?>
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<td class="product-remove">
+						<!-- <td class="product-remove">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 									'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
@@ -61,7 +78,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									esc_attr( $_product->get_sku() )
 								), $cart_item_key );
 							?>
-						</td>
+						</td> -->
 
 						<td class="product-thumbnail">
 							<?php
@@ -75,12 +92,23 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+						<td class="product-name" colspan="2" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 							<?php
+								$sku = get_post_meta($cart_item['product_id'], 'sku', true);
 								if ( ! $product_permalink ) {
 									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
 								} else {
+
+									
 									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
+									echo '<p class="sku_cart">'.$sku.'</p>';
+
+									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"> </a>',
+									esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+									__( 'Remove this item', 'woocommerce' ),
+									esc_attr( $product_id ),
+									esc_attr( $_product->get_sku() )
+								), $cart_item_key );
 								}
 
 								// Meta data
@@ -93,11 +121,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
-						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+						<!-- <td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 							?>
-						</td>
+						</td> -->
 
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 							<?php
@@ -154,17 +182,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * woocommerce_cart_collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-	 	do_action( 'woocommerce_cart_collaterals' );
-	?>
+</div>
+	<div class="col-12 col-md-4">
+	<div class="cart-collaterals">
+		<?php
+			/**
+			 * woocommerce_cart_collaterals hook.
+			 *
+			 * @hooked woocommerce_cross_sell_display
+			 * @hooked woocommerce_cart_totals - 10
+			 */
+		 	do_action( 'woocommerce_cart_collaterals' );
+		?>
+	</div>
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
