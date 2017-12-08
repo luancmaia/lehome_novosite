@@ -189,6 +189,8 @@ add_action('add_meta_boxes', 'cwp_add_meta_box_visaoGeral');
  
 /* Conteudo para Meta Box Modo de Uso  */
 function cwp_visao_geral_box($post){
+
+	if( is_product() ){
  
 // Define Meta Dado
 $txt_indicado = get_post_meta($post->ID, '_cwp_txt_indicado', true);
@@ -251,10 +253,13 @@ $is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
 </div>
  
 <?php
+}//fim if product
 }
 
 /* Função para Salvar Meta Dado Indicado Para */
 function cwp_metadado_visao_geral_save_post($post_id){
+
+	if( is_product() ){
  
 //Verifico o AutoSave
 if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
@@ -275,10 +280,11 @@ return $post_id;
 //Salva/Atualiza Meta Dados
 $indicado = explode(" ", $_POST['txt_indicado']);
 $lavagem = $_POST['txt_lavagem'];
-var_dump($lavagem[0]); //Este
 
 update_post_meta($post_id, '_cwp_txt_indicado', $indicado[0]);
 update_post_meta($post_id, '_cwp_txt_lavagem', $lavagem);
+
+}
 
 }
 add_action('save_post', 'cwp_metadado_visao_geral_save_post');
@@ -331,6 +337,41 @@ function cwp_woocommerce_custom_tab_view_visao_geral() {
 
 }
 
+add_action( 'add_attachment', 'verificar_imagens' );
+
+function verificar_imagens( $attach_id ) {
+	$post = get_post( $attach_id );
+	$explode = explode('_', $post->post_title);
+	$title = implode( ' ', $explode );
+	
+	if( in_array("GALLERY", $explode) ){
+		$gallery_search = array_search('GALLERY',$explode,true);
+		unset($explode[$gallery_search]);
+		$title = implode( ' ', $explode );
+			global $wpdb;	
+			$result = $wpdb->get_results( sprintf( "SELECT post_id FROM %spostmeta WHERE meta_key = 'sku' AND meta_value = '%s' ", $wpdb->prefix, $title ) );
+			$meta = '_product_image_gallery';
+			if( empty($result) ){
+				return;
+			}
+			$post_meta = get_post_meta($result[0]->post_id, $meta, true);
+
+				if(empty($post_meta) ){
+					$meta_id = $post_meta.','.$attach_id;
+				}else{
+					$meta_id = $attach_id;
+				}
+	}else{
+		global $wpdb;	
+		$result = $wpdb->get_results( sprintf( "SELECT post_id FROM %spostmeta WHERE meta_key = 'sku' AND meta_value = '%s' ", $wpdb->prefix, $title ) );
+		$meta = '_thumbnail_id';
+			if( empty($result) ){
+				return;
+			}
+		$meta_id = $attach_id;
+	}
+	$thumbnail = update_post_meta($result[0]->post_id, $meta, $meta_id);
+}
 
 
 

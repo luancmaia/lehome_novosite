@@ -11,6 +11,13 @@
 $theme              = wp_get_theme( 'storefront' );
 $storefront_version = $theme['Version'];
 
+
+add_action( 'after_setup_theme', 'remove_pgz_theme_support', 100 );
+function remove_pgz_theme_support() { 
+	remove_theme_support( 'wc-product-gallery-zoom' );
+	remove_theme_support( 'wc-product-gallery-lightbox' );
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -36,6 +43,7 @@ require 'hooks-custom/hooks.php';
 require 'hooks-custom/function.php';
 require 'hooks-custom/campos-acf.php';
 require 'hooks-custom/cpts.php';
+require 'hooks-custom/theme-functions.php';
 
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';

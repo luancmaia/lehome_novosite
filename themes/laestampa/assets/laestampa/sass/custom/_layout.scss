@@ -32,3 +32,10 @@ table.variations{
 		font-family: $dinLigh;
 	}
 }
+.banner-page{
+	width: 100%;
+	height: 445px;
+	max-height: 445px;
+	display: flex;
+  flex-direction: row-reverse;
+}

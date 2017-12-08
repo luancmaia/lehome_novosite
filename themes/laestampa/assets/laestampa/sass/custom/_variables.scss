@@ -14,12 +14,19 @@
     font-family: dinPro-Light;
     src: url(../../assets/fonts/DINPro-Light.otf);
 }
+@font-face {
+    font-family: dinPro-Bold;
+    src: url(../../assets/fonts/DINPro-Bold.otf);
+}
+
+
 
 $openSans: 'Open Sans', sans-serif;
 
 $din: 'dinPro', sans-serif;
 $dinLigh: 'dinPro-Light', sans-serif;
 $dinLighCond: 'dinProLightCon', sans-serif;
+$dinBold: 'dinPro-Bold', sans-serif;
 
 $cor-primaria: #9a9ea0;
 $preto: #000000;

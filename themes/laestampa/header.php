@@ -147,9 +147,14 @@
 		<div class="col-12">
 
 		<?php
+
+		if( !is_page_template() ){
+
 		/**
 		 * Functions hooked in to storefront_content_top
 		 *
 		 * @hooked woocommerce_breadcrumb - 10
 		 */
 		do_action( 'storefront_content_top' );
+
+		}
