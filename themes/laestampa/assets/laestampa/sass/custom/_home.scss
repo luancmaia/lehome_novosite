@@ -19,7 +19,7 @@ ___________________________*/
     text-align: left;
     padding-left: 10px;
     font-family: $dinLigh;
-    font-size: 16.2px;
+    font-size: 10.2px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -382,10 +382,29 @@ ___________________________*/
 
 /* RESPONSIVO
 ___________________________*/
+@media (max-width: 1440px ){
+    .no-click {
+      height: 29.2%;
+    }
+    .tarja{      
+      height: 29.1%;
+    }
+  }
+  @media (max-width: 1280px ){
+    .no-click {
+      height: 29.2%;
+    }
+    .tarja{      
+      height: 33%;
+    }
+  }
 
   @media (max-width: 1200px ){
     .no-click {
       height: 29.2%;
+    }
+    .tarja{      
+      height: 29.1%;
     }
   }
 
