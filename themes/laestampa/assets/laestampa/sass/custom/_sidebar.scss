@@ -1,0 +1,75 @@
+
+/** SIDEBAR **/
+
+.searchform button {
+	background: #eb8795;
+	color: #FFF;
+	border: 0;
+	padding: 6px 12px;
+	margin-left: -3px;
+}
+.searchform input {
+	border-radius: 0;
+}
+.woocommerce-ordering select[name="orderby"] {
+	border-radius: 0;
+}
+.woocommerce-ordering {
+	vertical-align: middle;
+	margin: 0 !important;
+}
+.ordering-wc {
+	margin-bottom: 40px;
+}
+.widget h4 {
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	margin-top: 20px;
+	color: #595a5a;
+	font-weight: bold;
+	font-family: Quicksand, sans-serif;
+}
+.widget .price_slider_amount button {
+	background: #b3dddd;
+	border-radius: 0;
+	text-transform: uppercase;
+	color: #FFF;
+}
+.widget {
+	.product-categories{
+		li{
+			padding: 0;
+			a{
+				color: #595a5a;
+				font-family: Raleway;
+				font-weight: 100;
+				margin-bottom: 10px;
+				font-size: 16px;
+				display: block;
+				img{
+					display: initial;
+				}
+			}
+			&:before{
+				content: '';
+			}
+		}
+	}
+	
+}
+.widget_price_filter {
+	margin-top: 40px;
+}
+#add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img {
+	width: initial !important;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
+	background-color: #859B99;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
+	background-color: #5C7272;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+	background-color: #000;
+}

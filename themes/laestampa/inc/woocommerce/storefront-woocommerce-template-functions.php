@@ -18,7 +18,7 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
 		?>
 
 		<?php
-			if( is_shop() || is_product_category() ){
+			if( is_shop() || is_product_category() || is_product_taxonomy() ){
 				echo '<div id="primary" class="content-area">';
 			}else{
 				echo '<div id="primary" class="content-area content-area_Single">';

@@ -92,3 +92,51 @@
 		register_taxonomy( 'tema', 'product', $args );
 		register_taxonomy_for_object_type( 'tema', 'product' );
 	}
+
+
+			add_action( 'init', 'ct_cor' );
+	function ct_cor()  {
+		$labels = array(
+			'name'                       => 'Cor',
+			'singular_name'              => 'Cor',
+			'menu_name'                  => 'Cor',
+			'all_items'                  => 'Todas as Cores',
+			'parent_item'                => 'Parent Cor',
+			'parent_item_colon'          => 'Parent Cor:',
+			'new_item_name'              => 'Nova Cor',
+			'add_new_item'               => 'Adicionar Nova Cor',
+			'edit_item'                  => 'Editar Cor',
+			'update_item'                => 'Atualizar Cor',
+			'search_items'               => 'Procurar Cores',
+			'add_or_remove_items'        => 'Adicionar ou remover Cor',
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => true,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_tagcloud'              => true,
+		);
+		register_taxonomy( 'cor', 'product', $args );
+		register_taxonomy_for_object_type( 'cor', 'product' );
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

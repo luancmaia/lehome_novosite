@@ -272,8 +272,10 @@ a.box_bannerBtn{
 
   }
   .title-banner{
-    padding: 113px 70px;
-    width: 100%;
+    padding: 0 70px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     h3{
       font-family: $din;
       font-size: 65.49px;
@@ -417,14 +419,14 @@ ___________________________*/
      .tarja{      
       height: 41.1%;
     }
-       a.box_bannerBtn{
+    a.box_bannerBtn{
       .title-banner{
         h3{
-          font-size: 4em;
+          font-size: 3em;
         }
         .btnBanner-comprar{
           font-size: 2em;
-          width: 55%;
+          width: 85%;
         }
       }
     }

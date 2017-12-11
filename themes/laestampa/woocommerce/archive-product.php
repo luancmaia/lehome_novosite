@@ -23,7 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header( 'shop' ); ?>
 
 <?php echo add_result_product(); ?>
-
 	<?php
 		/**
 		 * woocommerce_sidebar hook.

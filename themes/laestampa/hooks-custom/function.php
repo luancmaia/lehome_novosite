@@ -374,7 +374,29 @@ function verificar_imagens( $attach_id ) {
 }
 
 
-
+add_action( 'pre_get_posts', 'query_filter_category' );
+function query_filter_category( $query ) {
+	if ( $_GET && isset( $_GET['tid'] ) && $query->is_main_query() ) {
+		$tid = $_GET['tid'];
+		$tids = [];
+		$tax_query = ['relation' => 'OR'];
+		global $wpdb;
+		foreach($tid as $t):
+			$result = $wpdb->get_results( 'SELECT object_id FROM ' . $wpdb->prefix . 'term_relationships WHERE term_taxonomy_id = ' . $t );
+			if ( $result ) {
+				
+				foreach($result as $r):
+					$tids[] = $r->object_id;
+				endforeach;
+			}else{
+				$tids = $tid;
+			}
+			//$tax_query[] = [ 'taxonomy' => 'product_cat', 'field' => 'term_id', 'terms' => $t ];
+		endforeach;
+		$query->set('post__in', $tids);
+	}
+	return $query;
+}
 
 
 

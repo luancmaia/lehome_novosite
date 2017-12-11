@@ -79,7 +79,7 @@ add_action('init', 'remove_experct_product');
 function sidebar_petit() {
   get_sidebar();
 
-    if( is_shop() || is_product_category() ){
+    if( is_shop() || is_product_category() || is_product_taxonomy() ){
       echo '<div id="primary" class="content-areaArchive col-12 col-md-9">';
     }else{
       echo '<div id="primary" class="content-area_Single">';
@@ -89,6 +89,7 @@ function sidebar_petit() {
   <?php
 }
 add_action( 'woocommerce_before_main_content','sidebar_petit',10 );
+
 
 function sidebar_petit_after() {
     ?>

@@ -142,6 +142,26 @@
 	do_action( 'storefront_before_content' ); ?>
 
 	<div id="content" class="site-content" tabindex="-1">
+	<?php 
+		if( is_product_category() ) :
+
+			if( is_product_category('tecido') ){
+				$banner_cat = get_template_directory_uri().'/assets/images/tecidos.jpg';
+			}else{
+				$banner_cat = get_template_directory_uri().'/assets/images/papelparede.jpg';
+			}
+
+			
+			
+
+		?>
+		<div class="banner-page" style="background: url('<?php echo $banner_cat; ?>') no-repeat top center;background-size: 100% auto;">
+			<div class="title_page sr-only">
+				<h1><?php echo get_the_title(); ?></h1>			
+			</div>	
+		</div>
+
+	<?php	 endif; ?>
 	<div class="container">
 	<div class="row">
 		<div class="col-12">

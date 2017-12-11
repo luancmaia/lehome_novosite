@@ -6,9 +6,13 @@
 	
 $children = get_terms( array('taxonomy' => 'product_cat', 'hide_empty' => false) ); 
 
+$tema = get_terms( array('taxonomy' => 'tema', 'hide_empty' => false) ); 
+
+$composicao = get_terms( array('taxonomy' => 'composicao', 'hide_empty' => false) ); 
+
 $colecao = get_terms( array('taxonomy' => 'colecao', 'hide_empty' => false) ); 
 
-$tema = get_terms( array('taxonomy' => 'colecao', 'hide_empty' => false) ); 
+$cor = get_terms( array('taxonomy' => 'cor', 'hide_empty' => false) ); 
 
 //echo '<pre>' . print_r($children) . '</pre>';exit();
 
@@ -40,8 +44,71 @@ if ( empty( $children ) ) {
 
 <?php endforeach; echo '</ul></div>'; endif; ?>
 
+
 <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
-	<h4>Produto</h4>
+	<h4>TEMA</h4>
+	<ul class="product-categories">
+
+		<?php foreach($tema as $c): ?>
+
+		<li>
+			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } else { ?>
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } ?>
+			
+		</li>
+
+		<?php 
+			endforeach;
+			wp_reset_postdata(); ?>
+
+	</ul>
+</div>
+
+<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+	<h4>COMPOSIÇÃO</h4>
+	<ul class="product-categories">
+
+		<?php foreach($composicao as $c): ?>
+
+		<li>
+			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } else { ?>
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } ?>
+			
+		</li>
+
+		<?php 
+			endforeach;
+			wp_reset_postdata(); ?>
+
+	</ul>
+</div>
+
+
+
+<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+	<h4>PRODUTO</h4>
 	<ul class="product-categories">
 
 		<?php foreach($children as $c): ?>
@@ -72,11 +139,45 @@ if ( empty( $children ) ) {
 
 
 
+
+
+
 <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
-	<h4>Coleção</h4>
+	<h4>COLEÇÃO</h4>
 	<ul class="product-categories">
 
 		<?php foreach($colecao as $c): ?>
+
+		<li>
+			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } else { ?>
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
+					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
+					<?php echo $c->name; ?>
+				</a>
+			<?php } ?>
+			
+		</li>
+
+		<?php 
+			endforeach;
+			wp_reset_postdata(); ?>
+
+	</ul>
+</div>
+
+
+<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+	<h4>COR</h4>
+	<ul class="product-categories">
+
+		<?php foreach($cor as $c): ?>
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
