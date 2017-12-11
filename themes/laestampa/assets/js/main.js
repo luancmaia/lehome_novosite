@@ -70,8 +70,6 @@ jQuery( function( $ ) {
 	});
 
 
-	console.log(stock);
-
 	$('.single_customButtom').on('click', function(){
 		
 		
@@ -135,6 +133,11 @@ jQuery( function( $ ) {
 	//add a aba que ira aparecer na single de podutos
 	$('.tabsSingle_product li:nth-child(1) a').addClass('active');
 	$('.tab-content .tab-pane:nth-child(1)').addClass('show');
+
+
+
+
+	
 	
 
 });

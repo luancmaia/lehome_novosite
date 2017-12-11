@@ -98,7 +98,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 				<div class="item_categoriaHome">
 					<a href="#" class="line_linkBox" title="Categoria Estampados">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Papel de Parede <br/> Estampados </h3>
+							<h3 class="text-center"> Estampados </h3>
 						</div>
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line2_colun2.jpg' ?>" alt="" />

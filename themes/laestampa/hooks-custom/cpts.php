@@ -2,6 +2,10 @@
 
 //CPT
 
+
+
+//TAXONOMIA
+
 	add_action( 'init', 'ct_composicao' );
 	function ct_composicao()  {
 		$labels = array(
@@ -58,4 +62,33 @@
 		);
 		register_taxonomy( 'colecao', 'product', $args );
 		register_taxonomy_for_object_type( 'colecao', 'product' );
+	}
+
+			add_action( 'init', 'ct_tema' );
+	function ct_tema()  {
+		$labels = array(
+			'name'                       => 'Tema',
+			'singular_name'              => 'Tema',
+			'menu_name'                  => 'Tema',
+			'all_items'                  => 'Todas as Temas',
+			'parent_item'                => 'Parent Tema',
+			'parent_item_colon'          => 'Parent Tema:',
+			'new_item_name'              => 'Nova Tema',
+			'add_new_item'               => 'Adicionar Nova Tema',
+			'edit_item'                  => 'Editar Tema',
+			'update_item'                => 'Atualizar Tema',
+			'search_items'               => 'Procurar Temas',
+			'add_or_remove_items'        => 'Adicionar ou remover Tema',
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => true,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_tagcloud'              => true,
+		);
+		register_taxonomy( 'tema', 'product', $args );
+		register_taxonomy_for_object_type( 'tema', 'product' );
 	}
