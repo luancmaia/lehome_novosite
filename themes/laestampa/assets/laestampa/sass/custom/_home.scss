@@ -373,6 +373,9 @@ ___________________________*/
 /* RESPONSIVO
 ___________________________*/
 @media (max-width: 1440px ){
+  .banner-page{
+    max-height: 254px;
+  }
     .no-click {
       height: 29.2%;
     }
@@ -392,6 +395,9 @@ ___________________________*/
     }
   }
   @media (max-width: 1280px ){
+    .banner-page{
+      max-height: 225px;
+    }
     .no-click {
       height: 29.2%;
     }
@@ -401,6 +407,9 @@ ___________________________*/
   }
 
   @media (max-width: 1200px ){
+    .banner-page{
+      max-height: 254px;
+    }
     .no-click {
       height: 29.2%;
     }
@@ -410,6 +419,9 @@ ___________________________*/
   }
 
   @media (max-width: 1024px ){
+    .banner-page{
+      max-height: 179px;
+    }
     .no-click {
       height: 29.2%;
       h4{
