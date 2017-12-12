@@ -39,3 +39,46 @@ table.variations{
 	display: flex;
   flex-direction: row-reverse;
 }
+.subtitlePage{
+	margin-top: 125px;
+	margin-bottom: 30px;
+	h2{
+		font-family: $dinLigh;
+		font-size: 33.4px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		&:before{
+			content: '';
+			display: block;
+			border-top: solid 1px black;
+	    width: 15%;
+			height: 1px;
+			position: absolute;
+			top: 105%;
+			z-index: 1;
+			left: -50%;
+			margin-left: 1025px;
+		}
+	}
+}
+.row-instagramHome{
+	margin-bottom: 30px;
+}
+.box_buscaModal{
+	.modal-conteudo{
+		padding-top: 40%;
+		.search-form{
+			label{
+				width: 80%;
+				input[type="search"]{
+					height: 90px;					
+    			width: 95%;
+				}
+			}
+			input[type="submit"]{
+				height: 90px;
+		    width: 19%;
+			}
+		}
+	}
+}

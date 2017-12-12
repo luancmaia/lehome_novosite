@@ -130,9 +130,37 @@ ___________________________*/
 
 .tarja{
   width: 100%;
-  height: 21.5%;
+  height: 16.3%;
   position: absolute;
   top: 0;
+}
+.textBanner{
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  h2{
+    font-size: 73.06px;
+    font-family: $dinLigh;
+    text-transform: uppercase;
+    color: #8e9699;
+    strong{
+      font-family: $dinCondBlack;
+      font-size: 104.37px;
+    }
+  }
+  .btnText_banner{
+    background-color: #ffffff47;
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 20px 30px;
+    text-align: center;
+    a{
+      font-family: $din;
+      font-size: 29.22px;
+      text-transform: uppercase;
+      color: #8e9699;
+    }
+  }
 }
 
 .console_slide{
@@ -204,6 +232,7 @@ ___________________________*/
     transform: translateY(-50%);
     position: absolute;
     font-size: 1.5em;
+    color: #9e9d9d;
   }
 }
 .modal-busca{
@@ -211,7 +240,7 @@ ___________________________*/
   background-color: #eff0d7d9;
   .fechar-modalBusca{
     font-size: 4em;
-    color: $preto;
+    color: $cor-primaria;
     cursor: pointer;
     span{
       float: right;
@@ -295,9 +324,9 @@ a.box_bannerBtn{
       -moz-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.56);
       box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.56);
       padding: 10px 25px;
-      background-color: #ffffffe6;
+      background-color: rgba(255, 255, 255, 0.60)!important;
       border-radius: 10px;
-      text-shadow: 0px 1px 5px #62616069;
+      text-shadow: 0px 1px 5px rgba(98, 97, 96, 0.56);
     }
   }
 }
@@ -382,7 +411,7 @@ ___________________________*/
     .tarja{      
       height: 29.1%;
     }
-       a.box_bannerBtn{
+    a.box_bannerBtn{
       .title-banner{
         h3{
           font-size: 4em;
@@ -393,6 +422,34 @@ ___________________________*/
         }
       }
     }
+    .textBanner{
+      position: absolute;
+      top: 40%;
+      right: 8%;
+      h2{
+        font-size: 53.06px;
+        font-family: $dinLigh;
+        text-transform: uppercase;
+        color: #8e9699;
+        strong{
+          font-family: $dinCondBlack;
+          font-size: 80.37px;
+        }
+      }
+      .btnText_banner{
+        background-color: #ffffff47;
+        margin: 20px 0;
+        border-radius: 5px;
+        padding: 20px 30px;
+        text-align: center;
+        a{
+          font-family: $din;
+          font-size: 29.22px;
+          text-transform: uppercase;
+          color: #8e9699;
+        }
+      }
+    }
   }
   @media (max-width: 1280px ){
     .banner-page{
@@ -400,6 +457,17 @@ ___________________________*/
     }
     .no-click {
       height: 29.2%;
+    }
+    a.box_bannerBtn{
+      .title-banner{
+        h3{
+          font-size: 4em;
+        }
+        .btnBanner-comprar{
+          font-size: 2em;
+          width: 65%;
+        }
+      }
     }
     .tarja{      
       height: 33%;
@@ -431,6 +499,39 @@ ___________________________*/
      .tarja{      
       height: 41.1%;
     }
+    .textBanner{
+      position: absolute;
+      top: 45%;
+      right: 10%;
+      h2{
+        font-size: 2.2em;
+        font-family: $dinLigh;
+        text-transform: uppercase;
+        color: #8e9699;
+        strong{
+          font-family: $dinCondBlack;
+          font-size: 2.2em;
+        }
+      }
+      .btnText_banner{
+        background-color: #ffffff47;
+        margin: 10px 0;
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        a{
+          font-family: $din;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          color: #8e9699;
+        }
+         &:hover{
+            a{
+              text-decoration: none;
+            }  
+          }
+      }
+    }
     a.box_bannerBtn{
       .title-banner{
         h3{
@@ -442,6 +543,7 @@ ___________________________*/
         }
       }
     }
+
   }
 
   @media (max-width: 991px ){
@@ -449,6 +551,34 @@ ___________________________*/
       height: 27.8%;
       h4{
         font-size: 28.4px;
+      }
+    }
+    .textBanner{
+      position: absolute;
+      top: 40%;
+      right: 15%;
+      h2{
+        font-size: 53.06px;
+        font-family: $dinLigh;
+        text-transform: uppercase;
+        color: #8e9699;
+        strong{
+          font-family: $dinCondBlack;
+          font-size: 80.37px;
+        }
+      }
+      .btnText_banner{
+        background-color: #ffffff47;
+        margin: 20px 0;
+        border-radius: 5px;
+        padding: 20px 30px;
+        text-align: center;
+        a{
+          font-family: $din;
+          font-size: 29.22px;
+          text-transform: uppercase;
+          color: #8e9699;
+        }
       }
     }
   }

@@ -93,14 +93,14 @@ if ( ! function_exists( 'storefront_footer_widgets' ) ) {
 			}
 
 			if ( isset( $columns ) ) : ?>
-				<div class=<?php echo '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"'; ?>><?php
+				<div class=<?php echo '"footer-widgets row-' . strval( $row ) . ' col-12  fix noPadding-left noPadding-right"'; ?>><?php
 
 					for ( $column = 1; $column <= $columns; $column++ ) :
 						$footer_n = $column + $regions * ( $row - 1 );
 
 						if ( is_active_sidebar( 'footer-' . strval( $footer_n ) ) ) : ?>
 
-							<div class="block footer-widget-<?php echo strval( $column ); ?>">
+							<div class="block footer-colum footer-widget-<?php echo strval( $column ); ?> col-3 noPadding-right">
 								<?php dynamic_sidebar( 'footer-' . strval( $footer_n ) ); ?>
 							</div><?php
 
@@ -125,11 +125,10 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 	function storefront_credit() {
 		?>
 		<div class="site-info">
-			<?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
-			<?php if ( apply_filters( 'storefront_credit_link', true ) ) { ?>
-			<br /> <?php printf( esc_attr__( '%1$s designed by %2$s.', 'storefront' ), 'Storefront', '<a href="http://www.woocommerce.com" title="WooCommerce - The Best eCommerce Platform for WordPress" rel="author">WooCommerce</a>' ); ?>
-			<?php } ?>
-		</div><!-- .site-info -->
+			<div class="container">
+				<p class="text-center"> © LA ESTAMPA COMÉRCIO DE TECIDOS LTDA. CNPJ: 01369568000732 / IE: 79799815. Rua Monsenhor Manuel Gomes nº 3 - São Cristóvão, RJ. Telefone: (21) 3613-0500 </p>
+			</div><!-- .site-info -->
+		</div>
 		<?php
 	}
 }

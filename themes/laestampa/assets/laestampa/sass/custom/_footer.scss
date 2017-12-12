@@ -1,0 +1,132 @@
+/* FOOTER */
+.site-footer{
+	background-color: #faf8f0;
+  padding-top: 0;
+  padding-bottom: 0;
+	.newsletter-footer{
+		background-color: #efdcd1;
+		.mc4wp-form{
+			margin: 0;
+		}
+		.title_newsletterFooter{
+			h3{
+				text-transform: uppercase;
+				font-family: $din;
+				font-size: 24px;
+				color: #8e9197;
+				padding: 30px 0;
+			}
+		}
+		.redesSociaisFooter{
+	    padding-bottom: 10px;
+			ul{
+				li{
+					a{
+						font-size: 32px;
+						color: #faf8f0;
+					}
+					:not(:last-child){
+    				margin-right: 10px;
+    			}
+				}
+			}
+		}
+	}
+	a:not(.button){
+		color: $cor-primaria;
+	}
+}
+.footer-widgets{
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 0;
+  .footer-colum{
+  	display: flex;
+    justify-content: space-between;
+    text-align: center;
+    .widget_nav_menu{
+    	ul{
+    		li{
+    			font-size: 18.49px;
+    			padding: 0;
+    			&:before{
+    				content: '';
+    			}
+    			a{
+    				&:hover{
+    					text-decoration: none;
+    				}
+    			}
+    		}
+    	}
+    }
+  	.widget-title{
+  		font-family: $dinMedium;
+  		font-size: 22.18px;
+  		color: #8e9197;
+	    text-transform: uppercase;
+      padding-bottom: 5px;
+    	border-bottom: 0;
+  	}
+  	.custom-html-widget{
+  		line-height: 35px;
+			padding: 0 20px;
+			font-size: 18.49px;
+  	}
+  }
+}
+//newsletter
+.newsletterFooterForm{
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 10px;
+	.colum_input{
+		width: 30%;
+		display: flex;
+    justify-content: space-between;
+    text-align: center;
+    input{
+    	border-radius: 10px;
+    	height: 45px;
+    	background-color: #faf8f0;
+    }
+    .inputNome{
+    	width: 90%;    	
+    }
+    .inputEmail{
+    	width: 90%;
+    }
+	}
+	.colum_btnEnvio{
+		input[type="submit"]{
+			background-color: #d3d3d3;
+			color: #faf8f0;
+			font-size: 18.13px;
+			font-family: $din;
+			text-transform: uppercase;
+			&:hover{
+				background-color: #faf8f0;
+				color: #d3d3d3;
+			}
+		}
+	}
+}
+.securitySelo{
+	margin-bottom: 80px;
+	h4{
+		font-size: 17.18px;
+		font-family: $din;
+		text-transform: uppercase;
+	}
+
+}
+.site-info{
+	background-color: #d3d3d3;
+	p{
+    font-size: 12px;
+    margin: 0;
+    color: #4f4f50;
+	}
+}

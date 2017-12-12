@@ -106,6 +106,21 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 	</div>
 </div>
+<div class="container-fluid">
+	<div class="container">
+		<div class="col-12">
+			<div class="subtitlePage">
+				<h2 class="text-center"> Instagram </h2>
+			</div>
+		</div>
+	</div>
+	<div class="row row-instagramHome">
+			<!-- LightWidget WIDGET -->
+			<script src="//lightwidget.com/widgets/lightwidget.js"></script>
+			<iframe src="//lightwidget.com/widgets/7072ce46ac5551d9b401c38dfb5ef874.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+
+	</div>
+</div>
 
 <div class="container">
 <?php

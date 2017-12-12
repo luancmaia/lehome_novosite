@@ -18,6 +18,20 @@
     font-family: dinPro-Bold;
     src: url(../../assets/fonts/DINPro-Bold.otf);
 }
+@font-face {
+    font-family: dinPro-Black;
+    src: url(../../assets/fonts/DINPro-Black.otf);
+}
+@font-face {
+    font-family: dinPro-Medium;
+    src: url(../../assets/fonts/DINPro-Medium.otf);
+}
+
+@font-face {
+    font-family: dinPro-CondBlack;
+    src: url(../../assets/fonts/DINPro-CondBlack.otf);
+}
+
 
 
 
@@ -26,7 +40,10 @@ $openSans: 'Open Sans', sans-serif;
 $din: 'dinPro', sans-serif;
 $dinLigh: 'dinPro-Light', sans-serif;
 $dinLighCond: 'dinProLightCon', sans-serif;
+$dinMedium: 'dinPro-Medium', sans-serif;
 $dinBold: 'dinPro-Bold', sans-serif;
+$dinBlack: 'dinPro-Black', sans-serif;
+$dinCondBlack: 'dinPro-CondBlack', sans-serif;
 
 $cor-primaria: #9a9ea0;
 $preto: #000000;
