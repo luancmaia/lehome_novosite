@@ -35,5 +35,7 @@ get_header(); ?>
 
 <?php
 //do_action( 'storefront_sidebar' );
+if( is_shop() || is_product_category() ||  is_product_taxonomy() ){
 get_sidebar('petit');
+}
 get_footer();

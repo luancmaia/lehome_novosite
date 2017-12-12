@@ -30,8 +30,9 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
 		//do_action( 'woocommerce_sidebar' );
-
+if( is_shop() || is_product_category() ||  is_product_taxonomy() ){
 		get_sidebar();
+}		
 	?>
 	<?php
 		/**

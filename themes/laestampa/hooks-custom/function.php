@@ -190,99 +190,102 @@ add_action('add_meta_boxes', 'cwp_add_meta_box_visaoGeral');
 /* Conteudo para Meta Box Modo de Uso  */
 function cwp_visao_geral_box($post){
 
-	if( is_product() ){
+	$post_type = get_post_type();
+
+	if( $post_type == 'product' ){
+
  
-// Define Meta Dado
-$txt_indicado = get_post_meta($post->ID, '_cwp_txt_indicado', true);
-$txt_lavagem = get_post_meta($post->ID, '_cwp_txt_lavagem', true);
+		// Define Meta Dado
+		$txt_indicado = get_post_meta($post->ID, '_cwp_txt_indicado', true);
+		$txt_lavagem = get_post_meta($post->ID, '_cwp_txt_lavagem', true);
 
-$sku = get_post_meta($post->ID, 'sku', true);
+		$sku = get_post_meta($post->ID, 'sku', true);
 
-$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
-	
-	//verifica se e papel e distribui as imagens de acordo com o tipo
-	if($is_papel){
-		$tipo = 'PAPEL';
-		$imagem = get_template_directory_uri().'/assets/images/papel.png';
-	}else{
-		$tipo = 'TECIDO';
-		$imagem = get_template_directory_uri().'/assets/images/tecidos.png';
-	}
-
-
-	//verifica a base e distribui os métodos de lavagem.
-	$base = explode(" ", $sku); //pega a primeira palavra da frase ( Havana, Italyprint, Kimboprint, Milaoprint, Ninetyprint, Petitprint, Tweedprint, Vitaprint )
-	$base = $base[0];
-	
-	if( $base == 'HAVANA' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'ITALYPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'KIMBOPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'MILAOPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'NINETYPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'PETITPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'TWEEDPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}elseif ( $base == 'VITAPRINT' ){
-		$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
-	}else{
-		$lavagem = 'NÃO DEVE SER LAVADO';
-	}
+		$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
+			
+			//verifica se e papel e distribui as imagens de acordo com o tipo
+			if($is_papel){
+				$tipo = 'PAPEL';
+				$imagem = get_template_directory_uri().'/assets/images/papel.png';
+			}else{
+				$tipo = 'TECIDO';
+				$imagem = get_template_directory_uri().'/assets/images/tecidos.png';
+			}
 
 
+				//verifica a base e distribui os métodos de lavagem.
+				$base = explode(" ", $sku); //pega a primeira palavra da frase ( Havana, Italyprint, Kimboprint, Milaoprint, Ninetyprint, Petitprint, Tweedprint, Vitaprint )
+				$base = $base[0];
+			
+				if( $base == 'HAVANA' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'ITALYPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'KIMBOPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'MILAOPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'NINETYPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'PETITPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'TWEEDPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}elseif ( $base == 'VITAPRINT' ){
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+				}else{
+					$lavagem = 'NÃO DEVE SER LAVADO';
+				}
 
-?>
-<div class="row_visaoGeral" style="display: flex;"> 
-<div class="col-md-6" style="width:30%; display: inline-block;">
-  <label style="display: block;margin-bottom: 10px;text-align: center;"> Indicado Para: </label>
-  <img src="<?php echo $imagem; ?>" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">
-  <textarea name="txt_indicado" id="txt_indicado" style="width: 20%; display: none;"><?php echo esc_attr($tipo); ?></textarea>
-</div>
+		?>
+		<div class="row_visaoGeral" style="display: flex;"> 
+			<div class="col-md-6" style="width:30%; display: inline-block;">
+			  <label style="display: block;margin-bottom: 10px;text-align: center;"> Indicado Para: </label>
+			  <img src="<?php echo $imagem; ?>" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">
+			  <textarea name="txt_indicado" id="txt_indicado" style="width: 20%;display: none;"><?php echo esc_attr($tipo); ?></textarea>
+			</div>
 
-<div class="col-md-6" style="width:30%;display: inline-block;">
-	<label style="display: block;margin-bottom: 10px;text-align: center;"> Instruções de Lavagem: </label>
-	<?php echo $lavagem; ?>
-  <textarea name="txt_lavagem" id="txt_lavagem" style="width: 20%;display: none;"><?php echo esc_attr($base); ?></textarea>
-</div>
-</div>
-</div>
- 
-<?php
-}//fim if product
+			<div class="col-md-6" style="width:30%;display: inline-block;">
+				<label style="display: block;margin-bottom: 10px;text-align: center;"> Instruções de Lavagem: </label>
+				<?php echo $lavagem; ?>
+			  <textarea name="txt_lavagem" id="txt_lavagem" style="width: 20%;display: none;"><?php echo esc_attr($base); ?></textarea>
+			</div>
+		</div>
+		 
+		<?php
+	}//fim if product
 }
 
 /* Função para Salvar Meta Dado Indicado Para */
 function cwp_metadado_visao_geral_save_post($post_id){
 
-	if( is_product() ){
- 
-//Verifico o AutoSave
-if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
-return $post_id;
-}
- 
-// Verifico as permissões de usuário
-if( 'product' == $_POST['post_type'] ){
- 
-if( !current_user_can('edit_page', $post_id) )
-return $post_id;
-}
-else{
-if( !current_user_can('edit_post', $post_id) )
-return $post_id;
-}
- 
-//Salva/Atualiza Meta Dados
-$indicado = explode(" ", $_POST['txt_indicado']);
-$lavagem = $_POST['txt_lavagem'];
+	$post_type = get_post_type();
 
-update_post_meta($post_id, '_cwp_txt_indicado', $indicado[0]);
-update_post_meta($post_id, '_cwp_txt_lavagem', $lavagem);
+	if( $post_type == 'product' ){
+ 
+	//Verifico o AutoSave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
+		return $post_id;
+	}
+	 
+	// Verifico as permissões de usuário
+	if( 'product' == $_POST['post_type'] ){
+	 
+		if( !current_user_can('edit_page', $post_id) )
+		return $post_id;
+	}
+	else{
+		if( !current_user_can('edit_post', $post_id) )
+		return $post_id;
+	}
+
+
+	//Salva/Atualiza Meta Dados
+	$indicado = explode(" ", $_POST['txt_indicado']);
+	$lavagem = $_POST['txt_lavagem'];
+
+	update_post_meta($post_id, '_cwp_txt_indicado', $indicado[0]);
+	update_post_meta($post_id, '_cwp_txt_lavagem', $lavagem);
 
 }
 
@@ -397,7 +400,6 @@ function query_filter_category( $query ) {
 	}
 	return $query;
 }
-
 
 
 
