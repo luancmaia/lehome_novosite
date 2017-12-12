@@ -34,6 +34,23 @@ ___________________________*/
   padding-top: 0;
  }
 }
+.menuWishilist{
+  a{
+    display: inline-flex;
+    color: #383535;
+    i{
+      font-size: 1.3em;
+      padding-top: 0;
+    }
+    .media-body{
+      padding-top: 3px;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
 //MENU LOGIN MODAL
 #modalLogin{
   cursor: pointer;

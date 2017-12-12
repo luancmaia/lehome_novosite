@@ -125,10 +125,12 @@
 							</div>
 							<div class="top-menu menuWishilist">
 								<div class="media itemMenu-topHeader">
-								  <i class="fa fa-heart" aria-hidden="true"></i>
-								  <div class="media-body">
-								    Wishilist
-								  </div>
+									<a href="/wishlist" title="Wishilist">
+									  <i class="fa fa-heart" aria-hidden="true"></i>
+									  <div class="media-body">
+									    Wishilist
+									  </div>
+									 </a> 
 								</div>
 							</div>
 							<div class="top-menu menuCart">
