@@ -148,9 +148,9 @@
 		if( is_product_category() ) :
 
 			if( is_product_category('tecido') ){
-				$banner_cat = get_template_directory_uri().'/assets/images/tecidos.jpg';
+				$banner_cat = get_template_directory_uri().'/assets/images/tecido_banner.png';
 			}else{
-				$banner_cat = get_template_directory_uri().'/assets/images/papelparede.jpg';
+				$banner_cat = get_template_directory_uri().'/assets/images/papelparede.png';
 			}
 
 			
