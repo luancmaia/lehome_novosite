@@ -76,7 +76,13 @@ function style_custom(){
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js' );
 	wp_enqueue_script( 'jqueryui-js', get_template_directory_uri().'/assets/js/jquery_ui.js' );
 	wp_enqueue_script( 'filtro-js', get_template_directory_uri().'/assets/js/filtro.js' );
-	wp_enqueue_script( 'main-js', get_template_directory_uri().'/assets/js/main.js' );
+
+	$tmp = get_page_template_slug($post->ID);
+	if( 'templates/parceiros.php' == $tmp ){
+		wp_enqueue_script( 'masonry-js', get_template_directory_uri().'/assets/js/masonry.js' );
+	}
+
+	wp_enqueue_script( 'main-js', get_template_directory_uri().'/assets/js/main.js' ); 
 	
 }
 add_action( 'wp_enqueue_scripts', 'style_custom' );
