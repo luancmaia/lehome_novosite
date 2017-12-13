@@ -57,12 +57,13 @@ jQuery( function( $ ) {
 
 		//validacao compra de quantidade
 		if( valorDigitado > stock ){
+
 			calculo_metro.tooltip({disabled: false});
 			$('.single_customButtom').attr('disabled', '');
 			
 		}else{
 			calculo_metro.tooltip({disabled: true});
-			$('.single_customButtom').removeAttr('disabled', '');
+			$('.single_customButtom').removeAttr('disabled', 'disabled');
 			result_calculo_metros.data('price', total_valor);
 			result_calculo_metros.html(total_valor + ',00');
 		}
@@ -133,6 +134,8 @@ jQuery( function( $ ) {
 	//add a aba que ira aparecer na single de podutos
 	$('.tabsSingle_product li:nth-child(1) a').addClass('active');
 	$('.tab-content .tab-pane:nth-child(1)').addClass('show');
+	$('#myTabContent .tab-pane:first-child').addClass('active');
+
 
 
 //main imput number

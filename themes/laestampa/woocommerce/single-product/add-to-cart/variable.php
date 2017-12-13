@@ -35,13 +35,13 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<tbody>
 				<?php foreach ( $attributes as $attribute_name => $options ) :
 
-				$user = $user = current_user(); 
-
+				$user = current_user(); 
 				if( $user == $options[0] ){
-					$option = 'PJ';
+					$option = 'pf';
 				}else{
-					$option = 'PF';
+					$option = 'pj';
 				}
+				
 				?>
 					<tr>
 						<td class="label"><label for="<?php echo sanitize_title( $attribute_name ); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label></td>

@@ -3,8 +3,9 @@ Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 3.5.1
-Tested up to: 4.5
-Stable tag: 1.0.5
+Tested up to: 4.9
+Stable tag: 1.0.6
+Requires PHP: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,18 +15,75 @@ Do not miss a single sale! This plugin is very useful to catch every possible sa
 == Description ==
 If the customer can't pay with your payment gateways, give him the opportunity to submit the order and send to you a note on payment options he can pay you with. The plugin is very simple and effective. The more important is it's very easy to setup and use.
 
-= Pro Features =
-[Upgrade to Pro](https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/ "Upgrade to Pro")
 
-* Full Form Builder.
-* Custom Gateway Icon.
-* Select Order Status After Checkout.
-* API Request After Checkout.
-* Debugging Mode.
-* 30 Days Money Back Guarantee.
-* Regular Updates.
-* Priority Support.
 
+
+### Customer Message
+A gateway description appears to the customer at the Checkout page to provide him with additional information about your custom gateway.
+
+### Customer Note
+A note for the customer for further instructions displayed after the checkout process.
+
+
+= Pro Features = 
+
+### Full Form Builder
+A rich, dynamic and a drag-n-drop form builder to help you as much as possible to customize your gateway form. The form builder supports the following fields:
+
+    * Text
+    * Text Box
+    * Checkbox
+    * Radio Buttons
+    * Select Menu
+    * Email
+    * Date
+    * Time
+    * URL
+    * Currency
+    * Number
+    * Phone number
+    * Credit Card Form
+    * Instructions
+
+
+All fields are highly customizable as you can change the name, label, size, default value, CSS class/es, and more.
+
+### Unlimited Custom Gateways
+Not only you can use the already created gateway, you can create an unlimited number of custom payment gateways and have full control of them.
+### Custom Gateway Icon
+You can differentiate your gateway with a special icon which will be displayed on the Checkout page.
+### Order Status after Checkout
+You can configure the status of the orders that were paid using your custom payment gateway.
+### API Request after Checkout
+A very powerful tool for allowing the payment information to be sent to an external API in order to process or store the payment information.
+* You can redirect the customer to a custom URL after the checkout.
+* Set the type of the API request, either POST or GET.
+* Set the type of the data of the request, either FORM DATA or JSON.
+* Setting any Extra API parameters such as API keys .. etc
+* Setting API parameters and Key/Value combination of WooCommerce data such as:
+
+    * Order ID
+    * Order Total
+    * Customer First Name
+    * Customer Last Name
+    * Customer Postcode
+    * Customer City
+    * Customer State
+    * Customer Country
+    * Customer Email
+    * Customer Phone
+    * Customer IP Address>
+
+
+
+### Adding Payment information to the Order’s email
+An option is available to add the submitted payment information in the Order’s emails.
+
+### Debugging Mode
+The debug mode is an excellent tool to test out the plugin’s settings and the checkout page as the payment gateway will be only activated for you if the Debug Mode is enabled.
+
+
+ [Upgrade to Pro Now](https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/ "Upgrade to Pro")
 
 
 
@@ -70,7 +128,12 @@ If the customer can't pay with your payment gateways, give him the opportunity t
 
 == Changelog ==
 
-= 1.0.4 =
+= 1.0.6 =
+* ADDED: option to hide the payment form
+* FIXED: replace deprecated WC functions.
+
+
+= 1.0.5 =
 * FIXED: remove PHP warning.
 
 

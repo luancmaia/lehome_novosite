@@ -24,9 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 
-		<section class="woocommerce-columns woocommerce-columns--2 woocommerce-columns--addresses col2-set addresses">
+		<section class="row woocommerce-columns woocommerce-columns--2 woocommerce-columns--addresses col2-set addresses">
 
-			<div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-1">
+			<div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-6">
 
 				<?php endif; ?>
 
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			</div><!-- /.col-1 -->
 
-			<div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2">
+			<div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-6">
 
 				<h2 class="woocommerce-column__title"><?php _e( 'Shipping address', 'woocommerce' ); ?></h2>
 

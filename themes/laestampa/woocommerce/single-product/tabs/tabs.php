@@ -42,7 +42,7 @@ if ( ! empty( $tabs ) ) : ?>
 		<div class="tab-content" id="myTabContent">
 		<?php foreach ( $tabs as $key => $tab ) : ?>
 			<?php //echo '<pre>' . print_r($key,true) . '</pre>'; ?>			
-		  <div class="tab-pane fade active" id="<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr( $key ); ?>-tab">
+		  <div class="tab-pane fade" id="<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr( $key ); ?>-tab">
 		  	<?php if ( isset( $tab['callback'] ) ) { call_user_func( $tab['callback'], $key, $tab ); } ?>
 		  </div>
 		<?php endforeach; ?>

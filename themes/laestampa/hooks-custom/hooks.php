@@ -126,20 +126,27 @@ function calc_tecido(){
 <?php
     $user = current_user();
     $stock = get_variable_stock($product, $user);
+    $stock = is_papel() ? 100000 : $stock;
+
+    $preco_variable = get_variable_price2($product, $user);
+
+    
   ?>
 
 	<div class="calculo-metro">
     <input type="number" min="1" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
 
-    <input class="price_product" type="hidden" name="priceProd" value="<?php echo $product->get_price(); ?>">
+    <input class="price_product" type="hidden" name="priceProd" value="<?php echo $preco_variable; ?>">
     <span>  =  R$</span>
     <span class="result-calculo-metros" data-price="">000,00</span>
 	</div>
   
+  <?php if( is_papel() != 1 ){ ?>
   <div class="metragem-disponivel">
     <span>Metragem disponível:</span>
     <input type="text" min="1" name="metros" title="Metros" max="5" class="input-text qty_disponivel text input-metros" data-qty="" value="<?php echo $stock; ?>m" disabled>
   </div>
+  <?php } ?>
 </div>
 <?php
 }

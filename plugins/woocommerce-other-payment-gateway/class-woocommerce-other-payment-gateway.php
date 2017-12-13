@@ -12,6 +12,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		$this->enabled = $this->get_option('enabled');
 		$this->title = $this->get_option('title');
 		$this->description = $this->get_option('description');
+		$this->hide_text_box = $this->get_option('hide_text_box');
+
 		add_action('woocommerce_update_options_payment_gateways_'.$this->id, array($this, 'process_admin_options'));
 	}
 	public function init_form_fields(){
@@ -35,7 +37,15 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'css' => 'width:500px;',
 						'default' => 'None of the other payment options are suitable for you? please drop us a note about your favourable payment option and we will contact you as soon as possible.',
 						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce-other-payment-gateway' ),
-					)
+					),
+					'hide_text_box' => array(
+						'title' 		=> __( 'Hide The Payment Field', 'woocommerce-other-payment-gateway' ),
+						'type' 			=> 'checkbox',
+						'label' 		=> __( 'Hide', 'woocommerce-other-payment-gateway' ),
+						'default' 		=> 'no',
+						'description' 	=> __( 'If you do not need to show the text box for customers at all, enable this option.', 'woocommerce-other-payment-gateway' ),
+					),
+
 			 );
 	}
 	/**
@@ -140,7 +150,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		// Mark as on-hold (we're awaiting the cheque)
 		$order->update_status('on-hold', __( 'Awaiting payment', 'woocommerce-other-payment-gateway' ));
 		// Reduce stock levels
-		$order->reduce_order_stock();
+		wc_reduce_stock_levels( $order_id );
 		if(isset($_POST[ $this->id.'-admin-note']) && trim($_POST[ $this->id.'-admin-note'])!=''){
 			$order->add_order_note(esc_html($_POST[ $this->id.'-admin-note']),1);
 		}
@@ -154,7 +164,9 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	}
 
 	public function payment_fields(){
-		?>
+		if($this->hide_text_box !== 'yes'){
+	    ?>
+
 		<fieldset>
 			<p class="form-row form-row-wide">
 				<label for="<?php echo $this->id; ?>-admin-note"><?php echo esc_attr($this->description); ?> <span class="required">*</span></label>
@@ -163,5 +175,6 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 			<div class="clear"></div>
 		</fieldset>
 		<?php
+		}
 	}
 }

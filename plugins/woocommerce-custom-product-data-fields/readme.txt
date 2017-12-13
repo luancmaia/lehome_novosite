@@ -3,8 +3,8 @@ Contributors: kharisblank
 Tags: custom fields, product meta, product data, meta, framework
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACYNA5XNUGBUL
 Requires at least: 3.1
-Tested up to: 4.4.1
-Stable tag: 1.2.2
+Tested up to: 4.6.1
+Stable tag: 1.2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ WooCommerce Custom Product Data Fields is a simple framework which will help you
 
 You can use this plugin as a library of your ‘brand-new’ WooCommerce Extension.
 
-It works with WooCommerce 2.5.1
+It works with the latest version of WooCommerce (2.6.4).
 
 = Available Fields =
 
@@ -34,264 +34,23 @@ It works with WooCommerce 2.5.1
 * datepicker
 * devider
 
-You can add multiple product data tabs (updated feature since version 1.2).
+Since version 1.2, you can add multiple product data tabs.
 
-[Plugin documentation page](http://risbl.co/wp/woocommerce-custom-product-data-fields-plugin/)
-
-= Defining Your Fields =
-
-<code>
-/**
- * WooCommerce product data tab definition
- *
- * @return array
- */
-
-add_action('wc_cpdf_init', 'prefix_custom_product_data_tab_init', 10, 0);
-if(!function_exists('prefix_custom_product_data_tab_init')) :
-
-   function prefix_custom_product_data_tab_init(){
-
-
-     $custom_product_data_fields = array();
-
-
-     /** First product data tab starts **/
-     /** ===================================== */
-
-     $custom_product_data_fields['custom_data_1'] = array(
-
-       array(
-             'tab_name'    => __('Custom Data', 'wc_cpdf'),
-       ),
-
-       array(
-             'id'          => '_mytext',
-             'type'        => 'text',
-             'label'       => __('Text', 'wc_cpdf'),
-             'placeholder' => __('A placeholder text goes here.', 'wc_cpdf'),
-             'class'       => 'large',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_mynumber',
-             'type'        => 'number',
-             'label'       => __('Number', 'wc_cpdf'),
-             'placeholder' => __('Number.', 'wc_cpdf'),
-             'class'       => 'short',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_mytextarea',
-             'type'        => 'textarea',
-             'label'       => __('Textarea', 'wc_cpdf'),
-             'placeholder' => __('A placeholder text goes here.', 'wc_cpdf'),
-             'style'       => 'width:70%;height:140px;',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_mycheckbox',
-             'type'        => 'checkbox',
-             'label'       => __('Checkbox', 'wc_cpdf'),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_myselect',
-             'type'        => 'select',
-             'label'       => __('Select', 'wc_cpdf'),
-             'options'     => array(
-                 'option_1'  => 'Option 1',
-                 'option_2'  => 'Option 2',
-                 'option_3'  => 'Option 3'
-             ),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_myradio',
-             'type'        => 'radio',
-             'label'       => __('Radio', 'wc_cpdf'),
-             'options'     => array(
-                   'radio_1' => 'Radio 1',
-                   'radio_2' => 'Radio 2',
-                   'radio_3' => 'Radio 3'
-             ),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'         => '_myhidden',
-             'type'       => 'hidden',
-             'value'      => 'Hidden Value',
-       ),
-
-       array(
-             'id'         => '_mymultiselect',
-             'type'       => 'multiselect',
-             'label'      => __('Multiselect', 'wc_cpdf'),
-             'placeholder' => __('Multiselect maan!', 'wc_cpdf'),
-             'options'     => array(
-                   'option_1' => 'Option 1',
-                   'option_2' => 'Option 2',
-                   'option_3' => 'Option 3',
-                   'option_4' => 'Option 4',
-                   'option_5' => 'Option 5'
-             ),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-             'class'       => 'medium'
-       ),
-
-       array(
-             'id'         => '_myimage',
-             'type'       => 'image',
-             'label'      => __('Image 1', 'wc_cpdf'),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'         => '_mygallery',
-             'type'       => 'gallery',
-             'label'      => __('Gallery', 'wc_cpdf'),
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_mycolor',
-             'type'        => 'color',
-             'label'       => __('Select color', 'wc_cpdf'),
-             'placeholder' => __('A placeholder text goes here.', 'wc_cpdf'),
-             'class'       => 'large',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'id'          => '_mydatepicker',
-             'type'        => 'datepicker',
-             'label'       => __('Select date', 'wc_cpdf'),
-             'placeholder' => __('A placeholder text goes here.', 'wc_cpdf'),
-             'class'       => 'large',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       ),
-
-       array(
-             'type'        => 'divider'
-       )
-
-     );
-
-     /** First product data tab ends **/
-     /** ===================================== */
-
-
-     /** Second product data tab starts **/
-     /** ===================================== */
-
-     $custom_product_data_fields['custom_data_2'] = array(
-
-       array(
-             'tab_name'    => __('Custom Data 2', 'wc_cpdf'),
-       ),
-
-       array(
-             'id'          => '_mytext_2',
-             'type'        => 'text',
-             'label'       => __('Text ABCD', 'wc_cpdf'),
-             'placeholder' => __('A placeholder text goes here.', 'wc_cpdf'),
-             'class'       => 'large',
-             'description' => __('Field description.', 'wc_cpdf'),
-             'desc_tip'    => true,
-       )
-
-     );
-
-     return $custom_product_data_fields;
-
-   }
-
-endif;
-
-</code>
-
-
-= Getting The Field Value =
-
-<code>
-/**
-  *
-  * $wc_cpdf->get_value($post_id, $field_id);
-  * $post_id = (integer) post ID
-  * $field_id = (string) unique field ID
-  *
- */
-
-global $wc_cpdf;
-echo $wc_cpdf->get_value(get_the_ID(), '_mytext');
-</code>
-
-
-Retrieving multiselect value
-
-<pre>
-global $wc_cpdf;
-$multiselect = $wc_cpdf->get_value($post->ID, '_mymultiselect');
-foreach ($multiselect as $value) {
-  echo $value;
-}
-</pre>
-
-Retrieving image value
-
-<pre>
-global $wc_cpdf;
-$image_id = $wc_cpdf->get_value($post->ID, '_myimage');
-$size = 'thumbnail';
-$image_attachment = wp_get_attachment_image($image_id, $size);
-echo $image_attachment;
-</pre>
-
-Retrieving gallery value
-
-<pre>
-global $wc_cpdf;
-$gallery = $wc_cpdf->get_value($post->ID, '_mygallery');
-foreach ($gallery as $image_id) {
-
-  $image_id = $wc_cpdf->get_value($post->ID, '_mygallery');
-  $size = 'thumbnail';
-  $image_attachment = wp_get_attachment_image($image_id, $size);
-
-  echo $image_attachment;
-
-}
-</pre>
-
-[Plugin documentation page](http://risbl.co/wp/woocommerce-custom-product-data-fields-plugin/)
+= Tutorials =
+* [Documentation](http://risbl.co/wp/woocommerce-custom-product-data-fields-plugin/)
+* [How to Create Tabular Product Specs](http://risbl.co/wp/woocommerce-creating-tabular-product-specs/)
+* [How to Create Custom Recommended Products](http://risbl.co/wp/woocommerce-creating-custom-recommended-products/)
 
 This project is also available on [Github](https://github.com/kharissulistiyo/WooCommerce-Custom-Product-Data-Fields).
 
 = More info =
 
-Send me your question to my contacts below:
+Have some questions or suggestions? You can reach me at:
 
 Mail: [kharisulistiyo(at)gmail(dot)com](mailto:kharisulistiyo@gmail.com)
 Twitter:  [@kharissulistiyo](http://twitter.com/kharissulistiyo)
 
-P.S: Don't be worry, I always reply. :)
+P.S: Don't worry, I always reply. :)
 
 
 == Installation ==
@@ -305,6 +64,12 @@ P.S: Don't be worry, I always reply. :)
 1. WooCommerce Custom Product Data Fields
 
 == Changelog ==
+
+= 1.2.4 =
+* Fix undefined index: tab_name
+
+= 1.2.3 =
+* Fix missing minified JS and CSS files
 
 = 1.2.2 =
 * Fix code sample

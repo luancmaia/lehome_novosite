@@ -48,14 +48,35 @@ function storefront_site_title_or_logo( $echo = true ) {
 function get_variable_price( $product, $tipo ) {
 	$variations = $product->get_available_variations();
 	foreach($variations as $v) {
-		$type = $v['attributes']['attribute_tipo-de-usuario'];
+		
+		$type = $v['attributes']['attribute_pa_tipo-de-usuario'];
+		$tipo = strtolower($tipo);
 		if ( $type == $tipo ) {
 			$variation = wc_get_product( $v['variation_id'] );
+
+			//var_dump($variation);
+
 			return $variation->get_price_html();
 		}
 	}
 }
 
+//funcao para pegar o preco do produto variavel
+function get_variable_price2( $product, $tipo ) {
+	$variations = $product->get_available_variations();
+	foreach($variations as $v) {
+		
+		$type = $v['attributes']['attribute_pa_tipo-de-usuario'];
+		$tipo = strtolower($tipo);
+		if ( $type == $tipo ) {
+			$variation = wc_get_product( $v['variation_id'] );
+
+			//var_dump($variation);
+
+			return $variation->get_price();
+		}
+	}
+}
 
 function current_user(){
 	$current_user = wp_get_current_user();
@@ -67,12 +88,13 @@ function current_user(){
 
 	$user_info = get_userdata($id_user);
 	$role = implode(', ', $user_info->roles);
+
 	if( $role == 'administrator' ){
-		$role = 'PF';
+		$role = 'pf';
 	}elseif( $role == 'revenda' ){
-		$role = 'PJ';
+		$role = 'pj';
 	}elseif( $role == 'customer' ){
-		$role = 'PF';
+		$role = 'pf';
 	}
 	return $role;
 }
@@ -81,7 +103,7 @@ function current_user(){
 function get_variable_stock( $product, $tipo ) {
 	$variations = $product->get_available_variations();
 	foreach($variations as $v) {
-		$type = $v['attributes']['attribute_tipo-de-usuario'];
+		$type = $v['attributes']['attribute_pa_tipo-de-usuario'];
 		if ( $type == $tipo ) {
 			$stock = get_post_meta( $v['variation_id'], '_stock', true );
 			return $stock;

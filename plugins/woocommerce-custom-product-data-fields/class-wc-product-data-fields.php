@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * @class 		WC_Product_Data_Fields
- * @version		1.2.1
+ * @version		1.2.4
  * @category	Class
  * @author 		Kharis Sulistiyono
  */
@@ -149,7 +149,7 @@ if(!class_exists('WC_Product_Data_Fields')){
 
                 foreach ($fields_array as $field) {
 
-                  if(!$field['tab_name']){
+                  if(!isset($field['tab_name'])){
 
                     WC_Product_Data_Fields::wc_product_data_options_fields($field);
 
@@ -621,7 +621,6 @@ if(!class_exists('WC_Product_Data_Fields')){
           foreach ($fields as $key => $fields_array){
 
               foreach ($fields_array as $data) {
-                $name = $data['id'];
                 $data_args[$data['id']] = maybe_unserialize($_POST[$data['id']]);
               }
 
