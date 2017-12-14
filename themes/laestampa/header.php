@@ -170,7 +170,7 @@
 
 		<?php
 
-		if( !is_page_template() ){
+		if( !is_page_template() && !is_archive() ){
 
 		/**
 		 * Functions hooked in to storefront_content_top

@@ -297,9 +297,7 @@ a.box_bannerBtn{
   text-decoration: none;
   position: relative;
   .col-estampados{
-    background: url('../images/banner_estampados.jpg') no-repeat center center;
     background-size: cover;
-    height: 589px;
    transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -307,9 +305,7 @@ a.box_bannerBtn{
   -o-transition: all 1s ease;
   }
   .col-papel{
-    background: url('../images/banner_papeis.jpg') no-repeat center center;
     background-size: cover;
-    height: 589px;
      transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;

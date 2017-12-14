@@ -124,7 +124,61 @@
 	}
 
 
+// Register Custom Post Type
+function parceiros() {
 
+	$labels = array(
+		'name'                  => _x( 'Parceiros', 'Post Type General Name', 'laestampa' ),
+		'singular_name'         => _x( 'Parceiro', 'Post Type Singular Name', 'laestampa' ),
+		'menu_name'             => __( 'Parceiros', 'laestampa' ),
+		'name_admin_bar'        => __( 'Parceiros', 'laestampa' ),
+		'archives'              => __( 'Item Archives', 'laestampa' ),
+		'attributes'            => __( 'Item Attributes', 'laestampa' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'laestampa' ),
+		'all_items'             => __( 'All Items', 'laestampa' ),
+		'add_new_item'          => __( 'Add New Item', 'laestampa' ),
+		'add_new'               => __( 'Add Novo', 'laestampa' ),
+		'new_item'              => __( 'Add Parceiro', 'laestampa' ),
+		'edit_item'             => __( 'Editar Parceiro', 'laestampa' ),
+		'update_item'           => __( 'Atualizar Parceiro', 'laestampa' ),
+		'view_item'             => __( 'Ver Parceiro', 'laestampa' ),
+		'view_items'            => __( 'Ver Parceiros', 'laestampa' ),
+		'search_items'          => __( 'Buscar Parceiro', 'laestampa' ),
+		'not_found'             => __( 'Nada encontrado', 'laestampa' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'laestampa' ),
+		'featured_image'        => __( 'Imagem logo', 'laestampa' ),
+		'set_featured_image'    => __( 'Definir imagem de logo', 'laestampa' ),
+		'remove_featured_image' => __( 'Remover logo', 'laestampa' ),
+		'use_featured_image'    => __( 'Use esta imagem', 'laestampa' ),
+		'insert_into_item'      => __( 'Inserir ao item', 'laestampa' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'laestampa' ),
+		'items_list'            => __( 'Items list', 'laestampa' ),
+		'items_list_navigation' => __( 'Items list navigation', 'laestampa' ),
+		'filter_items_list'     => __( 'Filter items list', 'laestampa' ),
+	);
+	$args = array(
+		'label'                 => __( 'Parceiro', 'laestampa' ),
+		'description'           => __( 'Cadastro de Parceiros', 'laestampa' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-groups',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'parceiros', $args );
+
+}
+add_action( 'init', 'parceiros', 0 );
 
 
 

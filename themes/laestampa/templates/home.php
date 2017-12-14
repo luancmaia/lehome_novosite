@@ -26,26 +26,16 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 <div class="container-fluid limit-width">
 	<div class="row rowBtn-compra-home">
 			<div class="col-12 col-md-6 noPadding-left col-boxCompraHome">
-				<a href="#" class="box_bannerBtn" title="Compre Agora">
-					<div class="col-estampados">						
-						<div class="title-banner">
-							<h3>Tecidos <br> Estampados </h3>
-							<div class="btnBanner-comprar">
-								Compre agora
-							</div>
-						</div>							
+				<a href="/categoria/tecido" class="box_bannerBtn" title="Compre Agora">
+					<div class="col-estampados">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/home/compra_tecidos.jpg' ?>" alt="" />									
 					</div>
 				</a>
 			</div>
 			<div class="col-12 col-md-6 noPadding-right col-boxCompraHome">
-				<a href="#" class="box_bannerBtn" title="Compre Agora">
+				<a href="/categoria/papel-de-parede" class="box_bannerBtn" title="Compre Agora">
 					<div class="col-papel">						
-							<div class="title-banner">
-								<h3>Papel <br> de Parede </h3>
-								<div class="btnBanner-comprar">
-									Compre agora
-								</div>
-							</div>							
+						<img src="<?php echo get_template_directory_uri().'/assets/images/home/compra_papel.jpg' ?>" alt="" />
 					</div>
 				</a>
 			</div>
@@ -56,9 +46,9 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">
-				<a href="#" class="line_linkBox" title="Categoria Estampados">
+				<a href="/parceiros" class="line_linkBox" title="Tecido Estampados Parcerias">
 					<div class="mascara_banner">
-						<h3 class="text-center"> Tecidos <br/> Estampados </h3>
+						<h3 class="text-center"> Tecido Estampados <br/> Parcerias </h3>
 					</div>
 				</a>
 					<img src="<?php echo get_template_directory_uri().'/assets/images/home/line1_colun1.jpg' ?>" alt="" />
@@ -66,12 +56,12 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="#" class="line_linkBox" title="Categoria Estampados">
+					<a href="/tema/animal-print/" class="line_linkBox" title="Papel de Parede Animal Print">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Papel <br/> de Parede </h3>
+							<h3 class="text-center"> Papel de Parede <br/> Animal Print</h3>
 						</div>
 					</a>
-						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line1_colun2.jpg' ?>" alt="" />
+						<img src="<?php echo get_template_directory_uri().'/assets/images/home/linha2_lateral_direita.jpg' ?>" alt="" />
 				</div>
 				<div class="item_categoriaHome no-click d-flex">
 					<h4>
@@ -86,19 +76,19 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">
-				<a href="#" class="line_linkBox" title="Categoria Estampados">
+				<a href="/tema/tropical/" class="line_linkBox" title="Papel de Parede Tropical">
 					<div class="mascara_banner">
-						<h3 class="text-center"> Tecidos <br/> Geométricos </h3>
+						<h3 class="text-center"> Papel de Parede <br/> Tropical </h3>
 					</div>
 				</a>
-					<img src="<?php echo get_template_directory_uri().'/assets/images/home/line2_colun1.jpg' ?>" alt="" />
+					<img src="<?php echo get_template_directory_uri().'/assets/images/home/linha3_.jpg' ?>" alt="" />
 				</div>	
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="#" class="line_linkBox" title="Categoria Estampados">
+					<a href="#" class="line_linkBox" title="Papel de Parede Estampados">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Estampados </h3>
+							<h3 class="text-center"> Papel de Parede <br/> Estampados </h3>
 						</div>
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line2_colun2.jpg' ?>" alt="" />

@@ -70,11 +70,36 @@ jQuery( function( $ ) {
 
 	});
 
+	window.bxSlider = false;
 
-	$('.single_customButtom').on('click', function(){
+	$('.gridItem-parceiros').on('click', function(){
+
+		var content = $(this).data('content');
+		content = JSON.parse(content);
+
+		$('.contentParceiro').empty();
+		$('.contentParceiro').append(content);
 		
-		
+
+		if ( window.bxSlider ) {
+			window.bxSlider.destroySlider();
+			$('.bxslider').empty();
+			
+		}
+		var imagens = $(this).data('imagens');
+		if ( imagens.length == undefined ) return;
+		var html = '';
+		for (i in imagens) {
+			var image = new Image();
+				html += '<div><img src="'+ imagens[i].url +'" title="Funky roots"></div>';
+			}
+			$('.bxslider').append( html );
+
+			setTimeout(function(){
+				window.bxSlider = $('.bxslider').bxSlider();
+			}, 500)
 	});
+
 
 	$('.quantity').ready(function(){
 		$('input.qty').attr('oninvalid', 'this.setCustomValidity("A quantidade que você quer é maior do que temos disponível no momento!")');
@@ -172,7 +197,7 @@ jQuery( function( $ ) {
 
     });
 
-	
+
 	
 
 });
