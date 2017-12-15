@@ -125,10 +125,12 @@ function calc_tecido(){
   ?>
 <?php
     $user = current_user();
+
+
     $stock = get_variable_stock($product, $user);
     $stock = is_papel() ? 100000 : $stock;
 
-    $preco_variable = get_variable_price2($product, $user);
+     $preco_variable = get_variable_price2($product, $user);
 
     
   ?>

@@ -81,7 +81,7 @@ function get_variable_price2( $product, $tipo ) {
 function current_user(){
 	$current_user = wp_get_current_user();
 	if ( !is_user_logged_in() ) {
-		$role = 'PF';
+		$role = 'pf';
 		return $role;
 	}
 	$id_user = $current_user->ID;
