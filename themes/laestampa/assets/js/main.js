@@ -48,8 +48,20 @@ jQuery( function( $ ) {
 	var calculo_metro = $('.calculo-metro .calculo-metros');
 	var result_calculo_metros = $('.result-calculo-metros');
 	var stock = $('.quantidade_necessario').data('stockproduct');
+
+	var quantidade_digitada = $('.quantidade_necessario');
+
+
 	calculo_metro.on('keyup', function(){
 		var valorDigitado = $(this).val();
+
+		var resultOfMod = valorDigitado % 3;
+
+		if( resultOfMod != 0 ){
+			calculo_metro.val('');
+		}
+
+		console.log(resultOfMod);
 
 		$('input.qty').val(valorDigitado);
 
