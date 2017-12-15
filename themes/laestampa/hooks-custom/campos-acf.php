@@ -154,40 +154,5 @@ if(function_exists("register_field_group"))
 	));
 }
 
-if(function_exists("register_field_group"))
-{
-	register_field_group(array (
-		'id' => 'acf_parceiros',
-		'title' => 'Parceiros',
-		'fields' => array (
-			array (
-				'key' => 'field_5a32a84600c12',
-				'label' => 'Galeria Parceiros',
-				'name' => 'galeria_parceiros',
-				'type' => 'gallery',
-				'instructions' => 'Selecione as imagens para galeria.',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'parceiros',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-}
+
 
