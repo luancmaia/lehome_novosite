@@ -30,14 +30,15 @@ get_header();
 			if ( $parceiros ) {
 			    foreach ( $parceiros as $parceiro ) {
 			        setup_postdata( $parceiro ); 
-			        $thumb = get_the_post_thumbnail_url($parceiro->ID, 'full');
+			        $thumb = get_the_post_thumbnail_url($parceiro->ID, 'full', array( 'class' => 'aligncenter', 'title' => $parceiro->post_title ));
 			        $imagens = get_field('galeria_parceiros', $parceiro->ID);
 			        $content = $parceiro->post_content;
-		       
+
+			        		       
 		?>				        
 			        <div class="col-12 col-md-6">
 				        <div class="gridItem-parceiros" id="<? echo $parceiro->ID; ?>" data-content='<? echo json_encode( $content );?>' data-imagens='<? echo json_encode( $imagens ); ?>' data-toggle="modal" data-target=".bd-example-modal-lg">
-									<?php echo the_post_thumbnail( 'full', array( 'class' => 'aligncenter', 'title' => $parceiro->post_title ) ); ?>
+									<?php echo get_the_post_thumbnail( $parceiro->ID, 'full', array( 'class' => 'aligncenter', 'title' => $parceiro->post_title ) ); ?>
 								</div>
 							</div>				        
 			    <?php
