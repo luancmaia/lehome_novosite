@@ -73,6 +73,9 @@
   		line-height: 35px;
 			padding: 0 20px;
 			font-size: 18.49px;
+			p{
+				color: #9a9ea0;
+			}
   	}
   }
 }
@@ -124,6 +127,7 @@
 }
 .site-info{
 	background-color: #d3d3d3;
+  padding: 1.0em 0;
 	p{
     font-size: 12px;
     margin: 0;

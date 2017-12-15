@@ -50,7 +50,7 @@ get_header();
 	<div class="row">
 		<div class="col-12">
 			<div class="text-novidades">
-				<h2> CONFIRA MAIS ESTAMPAS QUE ACABARAM DE CHEGAR: </h2>
+				<h2> CONFIRA AS ESTAMPAS QUE ACABARAM DE CHEGAR: </h2>
 			</div>
 		</div>
 	</div>
