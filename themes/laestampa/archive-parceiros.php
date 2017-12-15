@@ -28,25 +28,21 @@ get_header();
 			); 
 			$parceiros = get_posts( $args );
 			if ( $parceiros ) {
-			    foreach ( $parceiros as $parceiro ) :
+			    foreach ( $parceiros as $parceiro ) {
 			        setup_postdata( $parceiro ); 
 			        $thumb = get_the_post_thumbnail_url($parceiro->ID, 'full');
-			        $numOrder = get_field('ordem_logo', $parceiro->ID);
 			        $imagens = get_field('galeria_parceiros', $parceiro->ID);
 			        $content = $parceiro->post_content;
 
-			        var_dump($parceiro->ID);
-
-
+			       
 		?>				        
 			        <div class="col-12 col-md-6">
-				        <div class="gridItem-parceiros" id="<?php echo $parceiro->ID; ?>" data-content='<?php echo json_encode( $content );?>' data-imagens='<?php echo json_encode( $imagens ); ?>' data-toggle="modal" data-target=".bd-example-modal-lg">
+				        <div class="gridItem-parceiros" id="<? echo $parceiro->ID; ?>" data-content='<? echo json_encode( $content );?>' data-imagens='<? echo json_encode( $imagens ); ?>' data-toggle="modal" data-target=".bd-example-modal-lg">
 									<?php echo the_post_thumbnail( 'full', array( 'class' => 'aligncenter', 'title' => $parceiro->post_title ) ); ?>
 								</div>
 							</div>				        
 			    <?php
-			    endforeach; 
-			    wp_reset_postdata();
+			    } wp_reset_postdata();
 			}
 		?>
 		</div>
