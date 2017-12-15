@@ -35,7 +35,9 @@ get_header();
 			        $imagens = get_field('galeria_parceiros', $parceiro->ID);
 			        $content = $parceiro->post_content;
 
-			        var_dump($parceiro);
+			        var_dump($parceiro->ID);
+
+
 		?>				        
 			        <div class="col-12 col-md-6">
 				        <div class="gridItem-parceiros" id="<?php echo $parceiro->ID; ?>" data-content='<?php echo json_encode( $content );?>' data-imagens='<?php echo json_encode( $imagens ); ?>' data-toggle="modal" data-target=".bd-example-modal-lg">
