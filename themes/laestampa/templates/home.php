@@ -58,7 +58,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 				<div class="item_categoriaHome">
 					<a href="/tema/animal-print/" class="line_linkBox" title="Papel de Parede Animal Print">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Papel de Parede <br/> Animal Print</h3>
+							<h3 class="text-center"> Tecidos <br/> Animal Print</h3>
 						</div>
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/linha2_lateral_direita.jpg' ?>" alt="" />
