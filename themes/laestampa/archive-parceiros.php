@@ -34,6 +34,7 @@ get_header();
 			        $imagens = get_field('galeria_parceiros', $parceiro->ID);
 			        $content = $parceiro->post_content;
 
+			        var_dump($imagens);
 			       
 		?>				        
 			        <div class="col-12 col-md-6">
