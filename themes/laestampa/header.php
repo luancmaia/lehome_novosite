@@ -95,9 +95,6 @@
 											<?php 
 												global $woocommerce;
 												$itens = $woocommerce->cart->get_cart();
-
-
-
 												foreach ($itens as $key => $value) {
 													$_product = wc_get_product( $value['data']->get_id() );
 													$price = get_post_meta($value['product_id'] , '_price', true);
@@ -124,7 +121,7 @@
 																	});
 																	</script>
 												<?php
-																
+
 												}
 											?>
 											

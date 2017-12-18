@@ -137,6 +137,54 @@
 								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
 								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</div>
+								<div class="listCart">
+									<div class="close_moldaCart"> X </div>
+									<div class="boxCarrinho">
+										<ul class="nav flex-column">
+											<?php 
+												global $woocommerce;
+												$itens = $woocommerce->cart->get_cart();
+												foreach ($itens as $key => $value) {
+													$_product = wc_get_product( $value['data']->get_id() );
+													$price = get_post_meta($value['product_id'] , '_price', true);
+													$image = $_product->get_image();
+
+													$removeUrl = $woocommerce->cart->get_remove_url($key);													
+													echo '<li class="nav-item">
+																	<a class="nav-link" href="">
+																		'.$image.'
+																		<div class="descriptionItemCar">
+																			<h4> '.$_product->get_title().'  </h4>
+																			<p class="unitario"> Preço unitário </p>
+																			<p class="valorItem"> R$ '.$price.' </p>
+																			<p class="quantidade"> Quantidade: '.$value['quantity'].' </p>
+																		</div>	
+																	</a>
+																	<p class="removeItemCart"><a href="'.$removeUrl.'"><i class="fa fa-times" aria-hidden="true"></i> Remover</a></p>
+																</li>';
+
+																?>
+																<script>
+																	jQuery(document).ready(function($) {
+																	    $.get( '<?php echo $removeUrl; ?>', function( data ) { /**/ });
+																	});
+																	</script>
+												<?php
+
+												}
+											?>
+											
+										</ul>
+										<div class="totalCart">
+											<p> Total: </p>
+											<p class="valorCartToal"><?php echo $woocommerce->cart->cart_contents_total; ?> </p>
+										</div>
+										<div class="btn_cartList">
+											<a class="verCarrinho" href="/carrinho"> Ver Carrinho </a>
+											<a class="checkOut" href="/finalizar-compra"> Checkout </a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
