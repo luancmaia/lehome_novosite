@@ -140,10 +140,11 @@
 								<div class="listCart">
 									<div class="close_moldaCart"> X </div>
 									<div class="boxCarrinho">
+										<?php 
+											if( $total ){	
+										?>
 										<ul class="nav flex-column">
-											<?php 
-												global $woocommerce;
-												$itens = $woocommerce->cart->get_cart();
+											<?php 												
 												foreach ($itens as $key => $value) {
 													$_product = wc_get_product( $value['data']->get_id() );
 													$price = get_post_meta($value['product_id'] , '_price', true);
@@ -172,6 +173,7 @@
 												<?php
 
 												}
+
 											?>
 											
 										</ul>
@@ -183,6 +185,11 @@
 											<a class="verCarrinho" href="/carrinho"> Ver Carrinho </a>
 											<a class="checkOut" href="/finalizar-compra"> Checkout </a>
 										</div>
+										<?php
+											}else{
+												echo '<div class="semItemCart"> Você ainda não adicionou nenhum produto </div>';
+											}
+										?>
 									</div>
 								</div>
 							</div>
