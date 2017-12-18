@@ -61,7 +61,7 @@ jQuery( function( $ ) {
 			calculo_metro.val('');
 		}
 
-		console.log(resultOfMod);
+
 
 		$('input.qty').val(valorDigitado);
 
@@ -209,8 +209,21 @@ jQuery( function( $ ) {
 
     });
 
+    //carregar lista do carrinho no menu
+    var url_cart = window.location.href;
+    if( url_cart.indexOf('add_to_cart') != -1 ){
+    	$('.listCart').slideDown(1000);
+    }
 
-	
+    var menuCart = $('.itemMenu-topHeaderCart');
+		menuCart.on('click', function(){
+			$('.listCart').slideToggle(500);
+		});
+
+		var fechar = $('.close_moldaCart');
+		fechar.on('click', function(){
+			$('.listCart').hide();
+		})
 
 });
 
