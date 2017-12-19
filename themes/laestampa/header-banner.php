@@ -119,7 +119,15 @@
 								<div class="media itemMenu-topHeader">
 								  <i class="fa fa-user" aria-hidden="true"></i>
 								  <div id="modalLogin" class="media-body" data-toggle="modal" data-target="#modal_login">
-								    Login / Cadastre-se
+								    <?php 
+								  		$user = wp_get_current_user();
+
+								  		if ( is_user_logged_in() ) {
+											    echo 'Olá, '.$user->user_firstname .'!';
+											} else {
+											    echo 'Login / Cadastre-se';
+											}
+								  	?>						
 								  </div>
 								</div>
 							</div>

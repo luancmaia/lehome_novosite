@@ -51,17 +51,18 @@ jQuery( function( $ ) {
 
 	var quantidade_digitada = $('.quantidade_necessario');
 
-
+	var is_tipo = calculo_metro.data('tipo');
+	console.log(is_tipo);
 	calculo_metro.on('keyup', function(){
 		var valorDigitado = $(this).val();
 
 		var resultOfMod = valorDigitado % 3;
 
-		if( resultOfMod != 0 ){
-			calculo_metro.val('');
+		if( is_tipo == 'papel' ){
+			if( resultOfMod != 0 ){
+				calculo_metro.val('');
+			}
 		}
-
-
 
 		$('input.qty').val(valorDigitado);
 
