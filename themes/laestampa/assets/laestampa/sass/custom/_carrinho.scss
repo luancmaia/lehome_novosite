@@ -131,11 +131,11 @@ table.cart{
 			}
 			&:after{
 	    	content: '/mt';
-				position: relative;
+				position: absolute;
 				width: 100px;
 				height: 100%;
 				color: $cor-primaria;
-				left: -81px;
+				left: 45px;
     		top: 20px;
 	    }
 	    input:focus {

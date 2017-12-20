@@ -52,8 +52,7 @@ jQuery( function( $ ) {
 	var quantidade_digitada = $('.quantidade_necessario');
 
 	var is_tipo = calculo_metro.data('tipo');
-	console.log(is_tipo);
-	calculo_metro.on('keyup', function(){
+		calculo_metro.on('keyup', function(){
 		var valorDigitado = $(this).val();
 
 		var resultOfMod = valorDigitado % 3;
@@ -174,10 +173,44 @@ jQuery( function( $ ) {
 	$('.tab-content .tab-pane:nth-child(1)').addClass('show');
 	$('#myTabContent .tab-pane:first-child').addClass('active');
 
+$(document).on( 'click', '.quantity-up', function(e){
+	var $that = $(this);
+	var parent = $that.parent().parent();
+	var input = parent.find('input[type="number"]');
+	var oldValue = parseInt(input.val());
+	var max = parseInt( input.attr('max') );
+	var step = parseInt(input.attr('step'))
+	if (oldValue >= max) {
+    var newVal = oldValue;
+  } else {
+  	console.log(oldValue, step)
+    var newVal = oldValue + step;
+  }
+  input.val(newVal);
+  input.trigger('change')
+} );
 
+$(document).on( 'click', '.quantity-down', function(e){
+	var $that = $(this);
+	var parent = $that.parent().parent();
+	var input = parent.find('input[type="number"]');
+	var oldValue = parseInt(input.val());
+	var max = parseInt( input.attr('max') );
+	var step = parseInt(input.attr('step'))
+	if (oldValue >= max) {
+    var newVal = oldValue;
+  } else {
+  	console.log(oldValue, step)
+    var newVal = oldValue - step;
+  }
+  input.val(newVal);
+  input.trigger('change')
+} );
 
+	$("#shipping_method li input").change(function(){
+    window.location = '/carrinho';
+	});
 //main imput number
- $('<div class="quantity-nav"><div class="quantity-button quantity-up"><div class="up"><</div></div><div class="quantity-button quantity-down"><div class="down"><</div></div></div>').insertAfter('.quantity input');
     $('.quantity').each(function() {
       var spinner = $(this),
         input = spinner.find('input[type="number"]'),
@@ -186,27 +219,35 @@ jQuery( function( $ ) {
         min = input.attr('min'),
         max = input.attr('max');
 
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
 
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
+
+      // btnUp.click(function() {
+      //   var oldValue = parseFloat(input.val());
+
+      //   var step = parseInt(input.attr('step'));
+
+      //   console.log(123213213);
+
+      //   if (oldValue >= max) {
+      //     var newVal = oldValue;
+      //   } else {
+      //     var newVal = oldValue + step;
+      //   }
+      //   spinner.find("input").val(newVal);
+      //   spinner.find("input").trigger("change");
+      // });
+
+      // btnDown.click(function() {
+      //   var oldValue = parseFloat(input.val());
+      //    var step = parseInt(input.attr('step'));
+      //   if (oldValue <= min) {
+      //     var newVal = oldValue;
+      //   } else {
+      //     var newVal = oldValue - step;
+      //   }
+      //   spinner.find("input").val(newVal);
+      //   spinner.find("input").trigger("change");
+      // });
 
     });
 
@@ -224,7 +265,14 @@ jQuery( function( $ ) {
 		var fechar = $('.close_moldaCart');
 		fechar.on('click', function(){
 			$('.listCart').hide();
-		})
+		});
+
+		//criando regra para que se for papel add sempre ultiplo de 3.
+
+	
+
+
+		
 
 });
 

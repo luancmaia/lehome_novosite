@@ -164,10 +164,18 @@ function is_papel(){
 		$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
 		if( $is_papel == 1 ){
 			return true;
-		}
-	
+		}	
 }
 
+function is_papel_ID($id_product){
+	global $product;
+		$product_id = $id_product;
+		$sku = get_post_meta($product_id, 'sku', true);
+		$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
+		if( $is_papel == 1 ){
+			return true;
+		}	
+}
 
 //add_action( 'woocommerce_after_single_product_summary', 'calculator_papel', 10 );
 function calculator_papel(){

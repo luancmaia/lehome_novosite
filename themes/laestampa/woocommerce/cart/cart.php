@@ -28,7 +28,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="col-12 col-md-8">
 		<?php
 			global $woocommerce;
-				$count = $woocommerce->cart->cart_contents_count;
+			$itens = $woocommerce->cart->get_cart();
+			$count = count($itens);
+				
 				if ($count > 0) {
 				echo '';
 				if( $count <=1 ){
@@ -41,7 +43,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				}
 		?>
 		
-<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+<form class="wc-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
@@ -129,15 +131,29 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 							<?php
+								 
+								 $is_papel = is_papel_ID($product_id);								 
+								 if( $is_papel == 1 ){
+								 	$tipo = 'papel';
+								 	$step = 3;
+								 }else{
+								 		$tipo = 'tecido';
+								 		$step = 1;
+								 }
+								 
 								if ( $_product->is_sold_individually() ) {
 									$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 								} else {
 									$product_quantity = woocommerce_quantity_input( array(
 										'input_name'  => "cart[{$cart_item_key}][qty]",
 										'input_value' => $cart_item['quantity'],
-										'max_value'   => $_product->get_max_purchase_quantity(),
+										'max_value'   => '100000',
 										'min_value'   => '0',
+										'data-tipo'		=> $tipo,
+										'step' => apply_filters( 'woocommerce_quantity_input_step', $step, $product ),
 									), $_product, false );
+
+
 
 									//var_dump($cart_item_key);
 								}
