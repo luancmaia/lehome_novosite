@@ -61,8 +61,6 @@ jQuery( function( $ ) {
 			calculo_metro.val('');
 		}
 
-		console.log(resultOfMod);
-
 		$('input.qty').val(valorDigitado);
 
 		var total_valor = valorDigitado * price_product;
@@ -76,8 +74,15 @@ jQuery( function( $ ) {
 		}else{
 			calculo_metro.tooltip({disabled: true});
 			$('.single_customButtom').removeAttr('disabled', 'disabled');
-			result_calculo_metros.data('price', total_valor);
-			result_calculo_metros.html(total_valor + ',00');
+
+			if( resultOfMod == 0 ){
+				result_calculo_metros.data('price', total_valor);
+				result_calculo_metros.html(total_valor + ',00');
+			}else{
+				result_calculo_metros.data('price', '00,00');
+				result_calculo_metros.html('00,00');
+			}
+			
 		}
 
 	});
