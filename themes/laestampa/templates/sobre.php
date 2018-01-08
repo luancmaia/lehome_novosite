@@ -134,10 +134,78 @@ get_header();
 		</div>
 		<div class="col-12 col-md-6">
 			<div class="box-imagesRightPapel">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/papelparedeSobre.jpg'; ?>" title="">
+				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/papeldeparede.jpg'; ?>" title="Papel de Parede">
 			</div>
 		</div>
 	</div>
+</div>
+<div class="container-fluid noPadding">
+	<div class="row originais servicos">
+		<div class="col-12 col-md-7">
+			<div class="somos-originais nossos-servicos">
+				<h2> Nossos Serviços </h2>
+					<h3> REVENDAS </h3>
+					<h4> COLEÇÕES LA ESTAMPA HOME PRONTA ENTREGA </h4>
+				<p>					
+					Papel de parede e tecidos para decoração em coleções 
+					com nosso dna impresso em estampas originais, em 
+					tecnologia digital.Disponível em pronta entrega através 
+					de revendas especializadas no atendimento a design de 
+					interiores inovadores e referenciais na arquitetura 
+					brasileira.
+				</p>
+			</div>
+		</div>
+		<div class="col-12 col-md-5">
+			<div class="box-imagesRightColunm1">
+				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/fotorevenda.jpg'; ?>" title="Revenda Serviço">
+			</div>
+		</div>
+	</div>
+
+	<div class="row originais atacado">
+		<div class="col-12 col-md-5">
+			<div class="box-imagesRightColunm1">
+				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/fotoatacado.jpg'; ?>" title="Atacado Serviço">
+			</div>
+		</div>
+		<div class="col-12 col-md-7">
+			<div class="somos-originais nossos-servicos">
+					<h3> ATACADO </h3>
+					<h4> COLEÇÕES EXCLUSIVAS ID HOME </h4>
+				<p>					
+					Acervo de estampas originais e desenvolvimento exclusivo 
+				em tecidos e papel de parede para criação de coleções 
+				inovadoras. Atendimento especializado e curadoria de 
+				estampas em sintonia com sua marca e com as tendências 
+				mundiais de arquitetura de interiores.
+				</p>
+			</div>
+		</div>	
+	</div>
+
+		<div class="row originais atacado">
+		
+		<div class="col-12 col-md-7">
+			<div class="somos-originais coorporativo">
+					<h3> COORPORATIVO </h3>
+					<h4> SOLUÇÕES CRIATIVAS PARA ARQUITETURA </h4>
+				<p>				
+					Soluções em tecidos e papéis de parede com estampas digitais 
+					para ambientes corporativos, hotéis, mobiliário, restaurantes e 
+					shoppings.Design autêntico e contemporâneo, traduzindo o 
+					espírito do projeto. Ideal para quem busca soluções criativas 
+					em projetos de arquitetura corporativos.
+				</p>
+			</div>
+		</div>
+		<div class="col-12 col-md-5">
+			<div class="box-imagesRightColunm1">
+				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/Foto_Corporativo.jpg'; ?>" title="Corporativo Serviço">
+			</div>
+		</div>
+	</div>
+
 </div>		
 <?php
 get_footer();

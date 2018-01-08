@@ -23,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div id="modal-busca" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="container">
 			<div class="box_buscaModal">
 				<div class="fechar-modalBusca">
@@ -184,7 +184,7 @@
 							<?php storefront_primary_navigation(); ?>
 						</div>
 						<div class="col-1">
-							<div class="lupa-busca" data-toggle="modal" data-target=".modal-busca">
+							<div class="lupa-busca" data-toggle="modal" data-target="#modal-busca">
 								<span><i class="fa fa-search" aria-hidden="true"></i></span>
 							</div>
 						</div>

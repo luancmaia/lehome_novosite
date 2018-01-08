@@ -23,19 +23,24 @@ jQuery( function( $ ) {
     });
 
 	$('.modal-busca').hide();
+	$('#modal-busca').hide();
 
 	var acionaBusca = $('.lupa-busca');
 	var fecharBusca = $('.fechar-modalBusca');
 
-	// acionaBusca.on('click', function(){
-	// 	$('.modal-busca').slideDown();
-	// 	$('body').css('overflow', 'hidden');
-	// });
 
-	// fecharBusca.on('click', function(){
-	// 	$('.modal-busca').slideUp();
-	// 	$('body').css('overflow', 'auto');
-	// });
+
+	acionaBusca.on('click', function(){
+		console.log('click');
+		$('.modal-busca').slideDown();
+		$('#modal-busca').slideDown();
+		
+	});
+
+	fecharBusca.on('click', function(){
+		$('.modal-busca').slideUp();
+		$('body').css('overflow', 'auto');
+	});
 
 	$( ".col-boxCompraHome" ).hover(
 	  function() {

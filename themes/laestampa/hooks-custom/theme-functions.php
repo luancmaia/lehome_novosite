@@ -26,3 +26,12 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'my_custom_add_to_cart_redirect'
 
 
 
+function nova_ordem_catalogo( $orderby ) {
+    unset($orderby["popularity"]);
+    unset($orderby["rating"]);
+    return $orderby;
+}
+add_filter( "woocommerce_catalog_orderby", "nova_ordem_catalogo", 20 );
+
+
+
