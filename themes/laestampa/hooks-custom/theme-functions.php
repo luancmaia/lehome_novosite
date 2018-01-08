@@ -15,3 +15,14 @@ $cor_title = get_field('cor_titulo_banner', $page_id);
 <?php
 	return;	
 }
+
+
+function my_custom_add_to_cart_redirect( $url ) {
+	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	$url .= '?add_to_cart=true';
+	return $url;
+}
+add_filter( 'woocommerce_add_to_cart_redirect', 'my_custom_add_to_cart_redirect' );
+
+
+

@@ -112,18 +112,20 @@ function calc_tecido(){
   <?php 
     if( is_papel() == 1 ){
 
+      $is_tipo = 'papel';
+
       echo '<span class="ask-calculator">
               <strong>De quantos metros você precisa?</strong> Use a calculadora e Faça o cálculo.
             </span>';
 
       echo '<div class="box_calculator">' .calculator_papel(). '</div>'; 
     }else{
+       $is_tipo = 'tecido';
       echo '<span class="ask-calculator">
               <strong>De quantos metros você precisa?</strong> Faça o cálculo do valor.
             </span>';
     }
-  ?>
-<?php
+ 
     $user = current_user();
 
 
@@ -136,7 +138,7 @@ function calc_tecido(){
   ?>
 
 	<div class="calculo-metro">
-    <input type="number" min="1" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
+    <input type="number" min="1" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" data-tipo="<?php echo $is_tipo; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
 
     <input class="price_product" type="hidden" name="priceProd" value="<?php echo $preco_variable; ?>">
     <span>  =  R$</span>

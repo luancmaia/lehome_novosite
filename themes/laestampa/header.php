@@ -23,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-		<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="container">
 			<div class="box_buscaModal">
 				<div class="fechar-modalBusca">
@@ -70,7 +70,15 @@
 								<div class="media itemMenu-topHeader">
 								  <i class="fa fa-user" aria-hidden="true"></i>
 								  <div id="modalLogin" class="media-body" data-toggle="modal" data-target="#modal_login">
-								    Login / Cadastre-se
+								  	<?php 
+								  		$user = wp_get_current_user();
+
+								  		if ( is_user_logged_in() ) {
+											    echo 'Olá, '.$user->user_firstname .'!';
+											} else {
+											    echo 'Login / Cadastre-se';
+											}
+								  	?>								    
 								  </div>
 								</div>
 							</div>
@@ -85,8 +93,75 @@
 								</div>
 							</div>
 							<div class="top-menu menuCart">
+								<?php
+									global $woocommerce;
+									$itens = $woocommerce->cart->get_cart();
+									$total = count($itens);
+
+									if( $total ){
+										echo '<div class="countProductItem">
+														<span> '.$total.' </span>
+													</div>';
+									}
+								?>
+
 								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
 								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</div>
+								<div class="listCart">
+									<div class="close_moldaCart"> X </div>
+									<div class="boxCarrinho">
+										<?php 
+											if( $total ){	
+										?>
+										<ul class="nav flex-column">
+											<?php 												
+												foreach ($itens as $key => $value) {
+													$_product = wc_get_product( $value['data']->get_id() );
+													$price = get_post_meta($value['product_id'] , '_price', true);
+													$image = $_product->get_image();
+
+													$removeUrl = $woocommerce->cart->get_remove_url($key);													
+													echo '<li class="nav-item">
+																	<a class="nav-link" href="">
+																		'.$image.'
+																		<div class="descriptionItemCar">
+																			<h4> '.$_product->get_title().'  </h4>
+																			<p class="unitario"> Preço unitário </p>
+																			<p class="valorItem"> R$ '.$price.' </p>
+																			<p class="quantidade"> Quantidade: '.$value['quantity'].' </p>
+																		</div>	
+																	</a>
+																	<p class="removeItemCart"><a href="'.$removeUrl.'"><i class="fa fa-times" aria-hidden="true"></i> Remover</a></p>
+																</li>';
+
+																?>
+																<script>
+																	jQuery(document).ready(function($) {
+																	    $.get( '<?php echo $removeUrl; ?>', function( data ) { /**/ });
+																	});
+																	</script>
+												<?php
+
+												}
+
+											?>
+											
+										</ul>
+										<div class="totalCart">
+											<p> Total: </p>
+											<p class="valorCartToal"><?php echo $woocommerce->cart->cart_contents_total; ?> </p>
+										</div>
+										<div class="btn_cartList">
+											<a class="verCarrinho" href="/carrinho"> Ver Carrinho </a>
+											<a class="checkOut" href="/finalizar-compra"> Checkout </a>
+										</div>
+										<?php
+											}else{
+												echo '<div class="semItemCart"> Você ainda não adicionou nenhum produto </div>';
+											}
+										?>
+									</div>
 								</div>
 							</div>
 						</div>

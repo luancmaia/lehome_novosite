@@ -31,7 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
+			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+				<?php wc_cart_totals_subtotal_html();  ?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
@@ -97,8 +98,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</table>
 
-	<div class="wc-proceed-to-checkout">
+	<div class="wc-proceed-to-checkout">		
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+		<a href="/loja" class="checkout-button button alt wc-forward continuarComprando"> Continuar Comprando </a>
 	</div>
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
