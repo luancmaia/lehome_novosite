@@ -30,13 +30,14 @@ get_header();
 					<strong> Filtrar por: </strong>
 					<?php
 						$bairros = array();
+						echo '<span class="filtrar-revenda all" data-filter="all">Todos</span>';
 							while(have_posts()){
 								the_post();
 								$bairros[] = get_field("bairro");
+								$bairros = array_unique($bairros);
 								//echo '<pre>' . print_r($bairro,true) . '</pre>';
 						}
 						foreach ($bairros as $bairro) {
-
 							$bairro_classe = str_replace(" ","_", $bairro);
 							echo '<span class="filtrar-revenda '.$bairro_classe.'" data-filter="'.$bairro_classe.'">'. $bairro .'</span>';
 						}
@@ -63,7 +64,7 @@ get_header();
 					
 				?>
 
-				<div class="col-12 col-md-4 item-loja <?php echo $bairro_classe; ?>">
+				<div class="col-12 col-md-4 item-loja all <?php echo $bairro_classe; ?>">
 					<div class="card" style="width: 21rem;">
 						<img lass="card-img-top" src="<?php echo $featured_img_url; ?>">
 					  <div class="card-body">
