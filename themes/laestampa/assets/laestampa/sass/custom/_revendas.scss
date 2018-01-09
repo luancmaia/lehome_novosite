@@ -1,0 +1,67 @@
+
+//REVENDAS
+.gridBox-revendas{
+	h1{
+		font-family: $dinLigh;
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-bottom: 65px;
+	}
+	h2{
+		font-family: $dinMedium;
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-bottom: 25px;
+	}
+}
+.row-lojas{
+	.card{
+		border-radius: 0;
+		border: 0;
+		margin-bottom: 90px;
+		img{
+			border-radius: 0;
+		}
+		.card-body{
+			h3{
+				font-family: $dinMedium;
+				font-size: 20px;
+				text-transform: uppercase;
+				margin: 25px 0;
+			}
+			h4{
+				font-family: $dinMedium;
+				font-size: 18px;
+				text-transform: uppercase;
+				margin-bottom: 25px;
+			}
+			p{
+				margin: 0;
+				padding-right: 30px;
+			}
+			p.card-textAdress{
+				font-family: $dinLigh;
+				font-size: 16px;
+				margin-bottom: 35px;
+			}
+		}
+	}
+}
+.row-faixaRevenda{
+	background-color: #d6ebd8;
+	padding: 50px 0;
+	h3{
+		font-size: 28px;
+		font-family: $dinMedium;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+	p{
+		font-size: 18px;
+		font-family: $dinLigh;
+		a{
+			text-decoration: none;
+			color: $cor-primaria;
+		}
+	}
+}

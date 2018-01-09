@@ -180,6 +180,63 @@ function parceiros() {
 }
 add_action( 'init', 'parceiros', 0 );
 
+// Register Custom Post Type
+function revendas() {
+
+	$labels = array(
+		'name'                  => _x( 'Revendas', 'Post Type General Name', 'laestampa' ),
+		'singular_name'         => _x( 'Revenda', 'Post Type Singular Name', 'laestampa' ),
+		'menu_name'             => __( 'Lojas Revendas', 'laestampa' ),
+		'name_admin_bar'        => __( 'Revendas', 'laestampa' ),
+		'archives'              => __( 'Item Archives', 'laestampa' ),
+		'attributes'            => __( 'Item Attributes', 'laestampa' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'laestampa' ),
+		'all_items'             => __( 'Todas as Revendas', 'laestampa' ),
+		'add_new_item'          => __( 'Add Nova Revenda', 'laestampa' ),
+		'add_new'               => __( 'Add Nova', 'laestampa' ),
+		'new_item'              => __( 'Add Revenda', 'laestampa' ),
+		'edit_item'             => __( 'Editar Revenda', 'laestampa' ),
+		'update_item'           => __( 'Atualizar Revenda', 'laestampa' ),
+		'view_item'             => __( 'Ver Revenda', 'laestampa' ),
+		'view_items'            => __( 'Ver Revendas', 'laestampa' ),
+		'search_items'          => __( 'Buscar Revenda', 'laestampa' ),
+		'not_found'             => __( 'Nada encontrado', 'laestampa' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'laestampa' ),
+		'featured_image'        => __( 'Imagem fachada', 'laestampa' ),
+		'set_featured_image'    => __( 'Definir imagem da fachada', 'laestampa' ),
+		'remove_featured_image' => __( 'Remover logo', 'laestampa' ),
+		'use_featured_image'    => __( 'Use esta imagem', 'laestampa' ),
+		'insert_into_item'      => __( 'Inserir ao item', 'laestampa' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'laestampa' ),
+		'items_list'            => __( 'Items list', 'laestampa' ),
+		'items_list_navigation' => __( 'Items list navigation', 'laestampa' ),
+		'filter_items_list'     => __( 'Filter items list', 'laestampa' ),
+	);
+	$args = array(
+		'label'                 => __( 'Revenda', 'laestampa' ),
+		'description'           => __( 'Cadastro de Revendas', 'laestampa' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-store',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
+	);
+	register_post_type( 'revendas', $args );
+
+}
+add_action( 'init', 'revendas', 0 );
+
+
 
 
 
