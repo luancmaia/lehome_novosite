@@ -77,6 +77,7 @@ function style_custom(){
 	wp_enqueue_script( 'jqueryui-js', get_template_directory_uri().'/assets/js/jquery_ui.js' );
 	wp_enqueue_script( 'filtro-js', get_template_directory_uri().'/assets/js/filtro.js' );
 		wp_enqueue_script( 'modal-js', get_template_directory_uri().'/assets/js/modal.min.js' );
+		wp_enqueue_script( 'isotopen-js', get_template_directory_uri().'/assets/js/isotopen.js' );
 
 	$tmp = get_page_template_slug($post->ID);
 	if( is_post_type_archive('parceiros') ){

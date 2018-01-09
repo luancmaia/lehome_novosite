@@ -281,10 +281,21 @@ $(document).on( 'click', '.quantity-down', function(e){
 
 		//criando regra para que se for papel add sempre ultiplo de 3.
 
-	
+		$('.row-lojas').isotope({
+		  // options
+		  itemSelector: '.item-loja',
+		  layoutMode: 'fitRows'
+		});
 
-
-		
+		$(document).on('ready', function(){
+			var $row = $('.row-lojas');
+			var $filter = $('.filtrar-revenda');
+			$filter.on('click', function(e){
+				e.preventDefault();
+				var filter = $(this).data('filter');
+				$row.isotope({ filter: '.' + filter.toString() });
+			})
+		})
 
 });
 
