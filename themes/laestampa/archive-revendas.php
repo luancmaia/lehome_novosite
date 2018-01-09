@@ -33,8 +33,11 @@ get_header();
 						echo '<span class="filtrar-revenda all" data-filter="all">Todos</span>';
 							while(have_posts()){
 								the_post();
-								$bairros[] = get_field("bairro");
+								$bairros[] = get_field("bairro");								
 								$bairros = array_unique($bairros);
+
+								asort($bairros);
+
 								//echo '<pre>' . print_r($bairro,true) . '</pre>';
 						}
 						foreach ($bairros as $bairro) {
