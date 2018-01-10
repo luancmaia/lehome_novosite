@@ -83,6 +83,16 @@ table.variations{
 		}
 	}
 }
+.mais-novidades{
+  text-align: center;
+  a{
+    padding: 10px 20px;
+    background-color: $cor-botao;
+    color: $branco;
+    font-size: 18px;
+    font-family: $dinBold;
+  }
+}
 
 .countProductItem{
   position: absolute;

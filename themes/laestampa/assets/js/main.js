@@ -295,6 +295,14 @@ $(document).on( 'click', '.quantity-down', function(e){
 				var filter = $(this).data('filter');
 				$row.isotope({ filter: '.' + filter.toString() });
 			})
+		});
+
+
+		$(document).on('ready', function(){
+			$('.accordion').accordion({
+			    "transitionSpeed": 400,
+			    "contentElement": '[data-contents]'
+			});
 		})
 
 });

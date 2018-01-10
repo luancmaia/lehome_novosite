@@ -46,6 +46,86 @@
 
 
 table.cart{
+	//pagina de carrinho botao de atualizar e inserir cupom
+	td.actions{
+		input.button{
+			display: block!important;
+			margin: auto !important;
+			background-color: $cor-botao;
+			text-transform: uppercase;
+		}
+		.box-freteCupom{
+			display: flex;
+			flex-direction: row;
+			margin-top: 78px;
+			.frete-calcuator{
+				width: 49.9%;
+				padding-right: 20px;
+				.labelfrete{
+					display: block;
+					text-align: left;
+					text-transform: uppercase;
+					font-size: 20px;
+				}
+				#calc_shipping_country_field{
+					margin-bottom: 10px;
+				}
+				#calc_shipping_state_field{
+					width: 50%;
+					display: inline-block;
+				}				
+				#calc_shipping_country_field, #calc_shipping_state_field{
+					text-align: left!important;
+				}
+				#calc_shipping_postcode_field{
+					display: inline-block;
+					width: 48%;
+					input{
+						width: 95%;
+					}
+				}
+				.select2-container--default{
+					.select2-selection--single{
+						border-radius: 0;
+						height: 43.767px;
+						background-color: #f5f5f5;
+						border: 0;				
+						.select2-selection__rendered{
+							line-height: 40px;
+						}
+						.select2-selection__arrow{
+							top: 10px;
+						}
+					}
+				}
+				p .button{
+					background-color: $cor-botao;
+					text-transform: uppercase;
+				}
+			}
+			.coupon{
+				//display: flex!important;
+				width: 49.9%;
+				.labelCupom{
+					display: block;
+					text-align: left;
+					text-transform: uppercase;
+					font-size: 20px;
+				}
+				#coupon_code{
+					display: block;
+					margin-bottom: 10px;
+					width: 100%;
+					box-shadow: none;
+				}
+				input.button{
+					display: block;
+					margin: 0!important;
+					width: 100%;
+				}
+			}
+		}
+	}
 	td.product-quantity{
 		.quantity{
 			position: relative;

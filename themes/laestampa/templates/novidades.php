@@ -61,7 +61,7 @@ get_header();
 					<?php
 						$args = array(
 							'post_type' => 'product',
-							'posts_per_page' => -1,
+							'posts_per_page' => 6,
 							'product_cat' => 'novidades'
 							);
 						$loop = new WP_Query( $args );
@@ -75,6 +75,9 @@ get_header();
 						wp_reset_postdata();
 					?>
 				</ul><!--/.products-->
+			</div>
+			<div class="mais-novidades">
+				<a href="" class="buttom-center"> Ver todas as novidades </a>
 			</div>
 		</div>
 	</div>
