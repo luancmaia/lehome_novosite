@@ -212,6 +212,12 @@ function revendas() {
 		'items_list_navigation' => __( 'Items list navigation', 'laestampa' ),
 		'filter_items_list'     => __( 'Filter items list', 'laestampa' ),
 	);
+	$rewrite = array(
+		'slug'                  => 'lojas-revenda',
+		'with_front'            => false,
+		'pages'                 => false,
+		'feeds'                 => true,
+	);
 	$args = array(
 		'label'                 => __( 'Revenda', 'laestampa' ),
 		'description'           => __( 'Cadastro de Revendas', 'laestampa' ),
@@ -229,6 +235,7 @@ function revendas() {
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
 		'capability_type'       => 'post',
 	);
 	register_post_type( 'revendas', $args );
