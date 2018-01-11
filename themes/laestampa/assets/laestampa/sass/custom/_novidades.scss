@@ -14,3 +14,11 @@
 .boxNovidade{
 	margin-bottom: 18px;
 }
+.mais-novidades{
+	a{
+		text-transform: uppercase;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

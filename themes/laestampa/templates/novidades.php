@@ -77,7 +77,7 @@ get_header();
 				</ul><!--/.products-->
 			</div>
 			<div class="mais-novidades">
-				<a href="" class="buttom-center"> Ver todas as novidades </a>
+				<a href="/categoria/novidades" class="buttom-center"> Ver todas as novidades </a>
 			</div>
 		</div>
 	</div>
