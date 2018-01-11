@@ -74,7 +74,7 @@
 								  		$user = wp_get_current_user();
 
 								  		if ( is_user_logged_in() ) {
-											    echo 'Olá, '.$user->user_firstname .'!';
+											    echo 'Olá, '.($user->user_firstname?$user->user_firstname:"Usuário").'!';
 											} else {
 											    echo 'Login / Cadastre-se';
 											}
