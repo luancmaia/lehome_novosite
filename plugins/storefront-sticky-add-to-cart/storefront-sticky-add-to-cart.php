@@ -293,10 +293,15 @@ final class Storefront_Sticky_Add_to_Cart {
 									$rating_html = wc_get_rating_html( $product->get_average_rating() );
 								}
 
+								$current_user = current_user();
+								$price_type_user = price_type_user($product);
+
+
+
 								$ssatc->ssatc_product_image();
 								echo '<div class="ssatc-content">';
 								echo esc_attr__( 'You\'re viewing:', 'storefront-sticky-add-to-cart' ) . ' <strong>' . get_the_title() . '</strong><br />';
-								echo '<span class="price">' . wp_kses_post( $product->get_price_html() ) . '</span> ' . wp_kses_post( $rating_html );
+								echo '<span class="price">' . $price_type_user . '</span> ' . wp_kses_post( $rating_html );
 								echo wp_kses_post( apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product ) );
 
 								ob_start();
