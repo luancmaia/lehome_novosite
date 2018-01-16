@@ -2,7 +2,7 @@
 
 
 /*
-	Template Name: Página Padrão
+	Template Name: Página Formularios
 */
 
 get_header();
@@ -11,13 +11,14 @@ get_header();
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<div class="faq">
+			<div class="cadastro_formularios">
 				<h1> <?php the_title(); ?> </h1>
 			</div>
 		</div>
 	</div>
-	<div class="row row-perguntas">
+	<div class="row row-form">
 		<div class="col-12">
+			<div id="responsive-form" class="clearfix">
 			<?php
 				if ( have_posts() ) {
 					// Start the Loop.
@@ -27,8 +28,8 @@ get_header();
 				}else{
 					echo 'Crie uma página';
 				}
-
 			?>
+			</div>
 		</div>
 	</div>
 </div>

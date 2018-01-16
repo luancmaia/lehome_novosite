@@ -45,6 +45,11 @@ h1.product_title{
 	font-family: $dinLigh;
   text-transform: lowercase;
 }
+.outrasCores{
+	h2{
+		border-bottom: 1px solid;
+	}
+}
 .price-sigle{
 	display: flex;
 	justify-content: end;
