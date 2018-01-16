@@ -129,7 +129,7 @@
 																			<h4> '.$_product->get_title().'  </h4>
 																			<p class="unitario"> Preço unitário </p>
 																			<p class="valorItem"> R$ '.$price.' </p>
-																			<p class="quantidade"> Quantidade: '.$value['quantity'].' </p>
+																			<p class="quantidade"> Quantidade: '.$value['quantity'].' mtr(s). </p>
 																		</div>	
 																	</a>
 																	<p class="removeItemCart"><a href="'.$removeUrl.'"><i class="fa fa-times" aria-hidden="true"></i> Remover</a></p>

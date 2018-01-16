@@ -16,6 +16,9 @@ body{
 .limit-width{
 	max-width: 1920px;
 }
+img{
+  border-radius: 0;
+}
 table.variations{
 	display: none;
 }
@@ -39,6 +42,15 @@ table.variations{
 	display: flex;
   flex-direction: row-reverse;
   margin-top: -1px;
+  .title_page{
+    width: 100%;
+    h1{
+      line-height: 444px;
+      margin: 0;
+      font-size: 80px;
+      font-family: $dinLigh;
+    }
+  }
 }
 .subtitlePage{
 	margin-top: 125px;
