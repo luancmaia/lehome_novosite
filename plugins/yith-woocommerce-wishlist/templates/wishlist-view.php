@@ -167,7 +167,10 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
                         <?php if( $show_price ) : ?>
                             <td class="product-price">
-                                <?php echo $product->get_price() ? $product->get_price_html() : apply_filters( 'yith_free_text', __( 'Free!', 'yith-woocommerce-wishlist' ) ); ?>
+                        <?php 
+                          $current_user = current_user();
+                          $price_user = price_type_user($product);                                   
+                            echo $price_user ? $price_user : apply_filters( 'yith_free_text', __( 'Free!', 'yith-woocommerce-wishlist' ) ); ?>
                             </td>
                         <?php endif ?>
 

@@ -38,5 +38,9 @@ function nova_ordem_catalogo( $orderby ) {
 }
 add_filter( "woocommerce_catalog_orderby", "nova_ordem_catalogo", 20 );
 
-
+/* Remove a Verificação de Força */
+function iconic_remove_password_strength() {
+    wp_dequeue_script( 'wc-password-strength-meter' );
+}
+add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
 
