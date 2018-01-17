@@ -1,15 +1,19 @@
 <?php
-
 //functions tema
 function banner_page($page_id){
 $imagem = get_field('imagem_banner', $page_id);
 $cor_fundo = get_field('cor_fundo_banner', $page_id);
 $cor_title = get_field('cor_titulo_banner', $page_id);
-
-?>
-	<div class="banner-page" style="background: url('<?php echo $imagem; ?>') no-repeat;background-size: 100% auto;">
-		<div class="title_page sr-only">
-			<h1><?php echo get_the_title(); ?></h1>			
+	
+	if( $imagem ){
+		echo '<div class="banner-page" style="background: url('.$imagem.') no-repeat;background-size: 100% auto;">';
+		echo '<div class="title_page sr-only">';
+	}else{
+		echo '<div class="banner-page" style="background-color: '.$cor_fundo.'">';
+		echo '<div class="title_page text-center">';	
+	}
+?>	
+	<h1 style="color:<?php echo $cor_title; ?>"><?php echo get_the_title(); ?></h1>		
 		</div>	
 	</div>
 <?php
@@ -38,4 +42,20 @@ function iconic_remove_password_strength() {
     wp_dequeue_script( 'wc-password-strength-meter' );
 }
 add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
+
+
+add_filter( 'woocommerce_shipping_local_pickup_is_available', 'is_local_pickup_available', 10, 2 );
+function is_local_pickup_available($available, $package){
+	//logica
+	$userCurrency = get_current_user_id();
+
+		
+  	$available = get_field('habilitar_retiradaLocal', 'user_'.$userCurrency);
+
+  	//var_dump($available);exit();
+
+  	$available = json_decode($available);
+
+	return $available;
+}
 

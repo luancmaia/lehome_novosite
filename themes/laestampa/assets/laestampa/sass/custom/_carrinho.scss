@@ -274,7 +274,20 @@ table.cart{
 		}
 	}
 }
-
+//checkout
+table.woocommerce-checkout-review-order-table .product-name{
+	width: 250px!important;
+}
+#shipping_method{
+	li{
+		label{
+			font-size: 13px;
+			width: 85%;
+			vertical-align: -moz-middle-with-baseline;
+			vertical-align: middle;
+		}
+	}
+}
 
 
 

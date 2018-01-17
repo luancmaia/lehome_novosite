@@ -101,8 +101,21 @@ function sidebar_petit_after() {
 add_action( 'woocommerce_after_main_content','sidebar_petit_after',10 );
 
 
-//funcao calculo do tecido
 
+
+//outras cores
+function outras_cores(){
+  global $product;
+  ?>
+  <div class="outrasCores">
+    <h2> Outras Cores </h2>
+  </div>
+<?php
+}
+add_action('woocommerce_single_product_summary', 'outras_cores', 5);
+
+
+//funcao calculo do tecido
 function calc_tecido(){
   global $product;
 
@@ -136,6 +149,8 @@ function calc_tecido(){
 
     
   ?>
+
+
 
 	<div class="calculo-metro">
     <input type="number" min="1" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" data-tipo="<?php echo $is_tipo; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
