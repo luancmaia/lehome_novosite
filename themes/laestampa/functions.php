@@ -11,6 +11,42 @@
 $theme              = wp_get_theme( 'storefront' );
 $storefront_version = $theme['Version'];
 
+/**
+         * WooCommerce product data tab definition
+         *
+         * @return array
+         */
+
+        add_action('wc_cpdf_init', 'prefix_custom_product_data_tab_init', 10, 0);
+        if(!function_exists('prefix_custom_product_data_tab_init')) :
+
+           function prefix_custom_product_data_tab_init(){
+
+             $custom_product_data_fields = array();
+
+             /** First product data tab starts **/
+             /** ===================================== */
+
+             $custom_product_data_fields['custom_data_1'] = array(
+
+               array(
+                     'tab_name'    => __('Campos Adicionais', 'wc_cpdf'),
+               ),
+               array(
+                     'id'          => 'tipo_produto',
+                     'type'        => 'text',
+                     'label'       => __('Tipo do Produto: ', 'wc_cpdf'),
+                     'placeholder' => __('', 'wc_cpdf'),
+                     'class'       => 'large',
+                     'description' => __('Field description.', 'wc_cpdf'),
+                     'desc_tip'    => true,
+               ),
+             );
+             return $custom_product_data_fields;
+
+           }
+
+        endif;
 
 add_action( 'after_setup_theme', 'remove_pgz_theme_support', 100 );
 function remove_pgz_theme_support() { 
