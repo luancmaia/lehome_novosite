@@ -1,4 +1,21 @@
 <?php
+
+add_filter( 'wcbcf_billing_fields', 'function_doido' );
+
+function function_doido( $new_fields ) {
+	$tipo = $new_fields['billing_persontype'];
+	
+
+	$current_user = current_user();
+
+	if( $current_user == "pj" ){
+		$aux = $new_fields['billing_persontype']['options'][1];
+		$new_fields['billing_persontype']['options'][1] = $new_fields['billing_persontype']['options'][2];
+		$new_fields['billing_persontype']['options'][2] = $aux;
+	}
+	return $new_fields;
+}
+
 //functions tema
 function banner_page($page_id){
 $imagem = get_field('imagem_banner', $page_id);

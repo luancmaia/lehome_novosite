@@ -43,8 +43,6 @@
 	}
 }
 
-
-
 table.cart{
 	//pagina de carrinho botao de atualizar e inserir cupom
 	td.actions{
@@ -287,6 +285,9 @@ table.woocommerce-checkout-review-order-table .product-name{
 			vertical-align: middle;
 		}
 	}
+}
+#billing_persontype_field{
+	display: none;
 }
 
 
