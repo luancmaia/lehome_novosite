@@ -89,12 +89,12 @@ class Academe_Wc_Api_Custom_Meta
             );
         }
         // Add a hook to update product variations
-        add_action(
-            'woocommerce_api_save_product_variation',
-            array('Academe_Wc_Api_Custom_Meta', 'updateVariationCustomMeta'),
-            10,
-            3
-        );
+        //add_action(
+         //   'woocommerce_api_save_product_variation',
+           // array('Academe_Wc_Api_Custom_Meta', 'updateVariationCustomMeta'),
+           // 10,
+            //3
+       // );
     }
 
     /**
