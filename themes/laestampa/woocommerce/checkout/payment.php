@@ -28,6 +28,13 @@ if ( ! is_ajax() ) {
 		<ul class="wc_payment_methods payment_methods methods">
 			<?php
 				if ( ! empty( $available_gateways ) ) {
+
+						$current_user = current_user();
+
+						if( $current_user == "pj" ){
+							unset($available_gateways['pagarme-credit-card']);
+						}
+			
 					foreach ( $available_gateways as $gateway ) {
 						wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 					}

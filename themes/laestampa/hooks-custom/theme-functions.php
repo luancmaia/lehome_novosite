@@ -1,5 +1,4 @@
 <?php
-
 //functions tema
 function banner_page($page_id){
 $imagem = get_field('imagem_banner', $page_id);
@@ -43,4 +42,20 @@ function iconic_remove_password_strength() {
     wp_dequeue_script( 'wc-password-strength-meter' );
 }
 add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
+
+
+add_filter( 'woocommerce_shipping_local_pickup_is_available', 'is_local_pickup_available', 10, 2 );
+function is_local_pickup_available($available, $package){
+	//logica
+	$userCurrency = get_current_user_id();
+
+		
+  	$available = get_field('habilitar_retiradaLocal', 'user_'.$userCurrency);
+
+  	//var_dump($available);exit();
+
+  	$available = json_decode($available);
+
+	return $available;
+}
 

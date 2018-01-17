@@ -311,6 +311,25 @@ $(document).on( 'click', '.quantity-down', function(e){
 			});
 		})
 
+		//PAGAMENTO
+
+		jQuery('#forma_pagamento').on('change', function(e){
+		var pagamento = jQuery(this).val();
+
+		jQuery.ajax({
+			'type' : 'POST',
+			'dataType': 'json',
+			'url' : window.ajaxurl,
+			'data' : {
+				'action' : 'le_forma_pagamento',
+				'pagamento': pagamento
+			},
+			'success': function(e){
+				jQuery( 'body' ).trigger( 'update_checkout' );
+			}
+		});
+	})
+
 });
 
 
