@@ -31,6 +31,10 @@ if ( ! is_ajax() ) {
 
 						$current_user = current_user();
 
+						if( $current_user == "pf" ){
+							unset($available_gateways['other_payment']);
+						}
+
 						if( $current_user == "pj" ){
 							unset($available_gateways['pagarme-credit-card']);
 						}
