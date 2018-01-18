@@ -1,6 +1,25 @@
 <?php
 
+$current_user = current_user();
+
+if( $current_user != "pj" ){
+
+	return;
+
+}
+
 include_once('class.FormaPagamento.php');
+
+
+
+
+	add_action( 'wp_ajax_le_forma_pagamento', 'le_forma_pagamento' );
+	add_action( 'wp_ajax_nopriv_le_forma_pagamento', 'le_forma_pagamento' );
+	add_action( 'woocommerce_cart_calculate_fees','woocommerce_custom_discount' );
+
+
+
+
 $forma_pagamento = new FormaPagamento();
 wp_deregister_script('wc-add-to-cart');
 wp_register_script('wc-add-to-cart', get_bloginfo( 'stylesheet_directory' ). '/js/add-to-cart.js' , array( 'jquery' ), WC_VERSION, TRUE);
@@ -64,9 +83,7 @@ wp_enqueue_script('wc-add-to-cart');
 		wc_add_order_item_meta($item_id, 'sku_', get_post_meta($cart_items[$cart_item_key]['product_id'], 'sku', true));
 	}, 1, 4);
 
-	add_action( 'wp_ajax_le_forma_pagamento', 'le_forma_pagamento' );
-	add_action( 'wp_ajax_nopriv_le_forma_pagamento', 'le_forma_pagamento' );
-	add_action( 'woocommerce_cart_calculate_fees','woocommerce_custom_discount' );
+
 	function woocommerce_custom_discount(){
       		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
       			global $forma_pagamento;
