@@ -4,7 +4,7 @@ get_header();
 </div></div></div>
 <div class="container-fluid">
 	<div class="row">
-		<div class="banner-page" style="background: url('<?php echo get_template_directory_uri(). "/assets/images/banner_parceiros.jpg" ?>') no-repeat;background-size: 100% auto;">
+		<div class="banner-page" style="background: url('<?php echo get_template_directory_uri(). "/assets/images/BannerParceiros.png" ?>') no-repeat;background-size: 100% auto;">
 		<div class="title_page sr-only">
 			<h1><?php echo get_the_title(); ?></h1>			
 		</div>	
