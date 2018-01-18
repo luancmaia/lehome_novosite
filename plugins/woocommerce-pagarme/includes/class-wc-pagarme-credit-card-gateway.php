@@ -48,10 +48,14 @@ class WC_Pagarme_Credit_Card_Gateway extends WC_Payment_Gateway {
 
 		global $woocommerce;
 		$total = $woocommerce->cart->total;
-		if ( $total > 450 && $total < 650 ) {
+		if ( $total > 650 && $total < 950 ) {
 			$this->max_installment = "2";
-		} else if ( $total > 650 ) {
+		} else if ( $total > 950 && $total < 1500 ) {
 			$this->max_installment = "3";
+		}else if ( $total > 1500 && $total < 2000 ) {
+			$this->max_installment = "4";
+		}else if ( $total > 2000){
+			$this->max_installment = "5";
 		}else{
 			$this->max_installment = "1";
 		}
