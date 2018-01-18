@@ -142,6 +142,18 @@
 								</div>
 							</div>
 							<div class="top-menu menuCart">
+								<?php
+									global $woocommerce;
+									$itens = $woocommerce->cart->get_cart();
+									$total = count($itens);
+
+									if( $total ){
+										echo '<div class="countProductItem">
+														<span> '.$total.' </span>
+													</div>';
+									}
+								?>
+								
 								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
 								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</div>

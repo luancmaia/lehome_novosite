@@ -248,21 +248,21 @@ function cwp_visao_geral_box($post){
 				$base = $base[0];
 			
 				if( $base == 'HAVANA' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'ITALYPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'KIMBOPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'MILAOPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'NINETYPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'PETITPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'TWEEDPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'VITAPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}else{
 					$lavagem = 'NÃO DEVE SER LAVADO';
 				}

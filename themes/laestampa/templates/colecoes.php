@@ -21,8 +21,8 @@ get_header();
 						do eiusmod tempor incididunt ut labore et dolore magna al adipiscing iqua.
 					</div>
 					<div class="btn_colecoes">
-						<a class="btnLeft" href="/colecao/resort">Coleção Resort</a>
-						<a class="btnRight" href="/colecao/mood">Coleção Mood</a>
+						<a class="btnLeft" href="/colecao/mood">Coleção Mood</a>
+						<a class="btnRight" href="/colecao/resort">Coleção Resort</a>
 					</div>
 			</div>			
 		</div>
