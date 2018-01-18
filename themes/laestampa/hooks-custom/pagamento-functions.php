@@ -2,11 +2,6 @@
 
 $current_user = current_user();
 
-if( $current_user != "pj" ){
-
-	return;
-
-}
 
 include_once('class.FormaPagamento.php');
 

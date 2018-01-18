@@ -79,8 +79,14 @@ require 'hooks-custom/hooks.php';
 require 'hooks-custom/function.php';
 require 'hooks-custom/campos-acf.php';
 require 'hooks-custom/cpts.php';
-require 'hooks-custom/theme-functions.php'; 
-require 'hooks-custom/pagamento-functions.php';
+require 'hooks-custom/theme-functions.php';
+
+if( $current_user == "pj" ){
+
+	require 'hooks-custom/pagamento-functions.php';
+
+} 
+
 
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';
