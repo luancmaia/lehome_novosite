@@ -153,7 +153,7 @@
 													</div>';
 									}
 								?>
-								
+
 								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
 								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</div>
@@ -229,10 +229,10 @@
 						</div>
 					</div>
 					<div class="row menu-principal">
-						<div class="col-11">
+						<div class="col-12 col-md-11">
 							<?php storefront_primary_navigation(); ?>
 						</div>
-						<div class="col-1">
+						<div class="col-md-1 d-none d-sm-block">
 							<div class="lupa-busca" data-toggle="modal" data-target=".modal-busca">
 								<span><i class="fa fa-search" aria-hidden="true"></i></span>
 							</div>

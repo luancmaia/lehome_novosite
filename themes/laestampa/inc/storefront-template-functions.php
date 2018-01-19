@@ -100,7 +100,7 @@ if ( ! function_exists( 'storefront_footer_widgets' ) ) {
 
 						if ( is_active_sidebar( 'footer-' . strval( $footer_n ) ) ) : ?>
 
-							<div class="block footer-colum footer-widget-<?php echo strval( $column ); ?> col-3 noPadding-right">
+							<div class="block footer-colum footer-widget-<?php echo strval( $column ); ?> col-12 col-md-3 noPadding-right">
 								<?php dynamic_sidebar( 'footer-' . strval( $footer_n ) ); ?>
 							</div><?php
 

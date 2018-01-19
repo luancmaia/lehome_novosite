@@ -134,3 +134,63 @@
     color: #4f4f50;
 	}
 }
+
+/* RESPONSIVO
+___________________________*/
+@media (max-width: 1440px ){
+
+}
+@media (max-width: 1280px ){
+
+}
+
+@media (max-width: 1200px ){
+
+}
+
+@media (max-width: 1024px ){
+
+}
+
+@media (max-width: 991px ){
+
+}
+
+@media (max-width: 768px ){
+
+
+}
+
+@media (max-width: 600px ){
+	
+
+}
+
+
+@media (max-width: 550px ){
+	.footer-widgets{
+		flex-direction: column;
+		padding-top: 50px;
+		.footer-colum{
+			.widget{
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px ){
+
+}
+
+@media (max-width: 475px ){
+
+}
+
+@media (max-width: 430px ){
+
+}
+
+@media (max-width: 375px ){
+
+}
