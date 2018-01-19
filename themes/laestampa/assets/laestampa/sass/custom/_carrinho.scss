@@ -289,7 +289,10 @@ table.woocommerce-checkout-review-order-table .product-name{
 #billing_persontype_field{
 	display: none;
 }
-
+#payment .payment_methods li .payment_box .wc-credit-card-form-card-number{
+	background-position: right .6180469716em top 0.15em !important;
+	background-size: 18px 11px !important;
+}
 
 
 

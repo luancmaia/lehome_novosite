@@ -377,8 +377,8 @@ function verificar_imagens( $attach_id ) {
 	$explode = explode('_', $post->post_title);
 	$title = implode( ' ', $explode );
 	
-	if( in_array("GALLERY", $explode) ){
-		$gallery_search = array_search('GALLERY',$explode,true);
+	if( in_array("RAPPORT", $explode) ){
+		$gallery_search = array_search('RAPPORT',$explode,true);
 		unset($explode[$gallery_search]);
 		$title = implode( ' ', $explode );
 			global $wpdb;	
