@@ -153,6 +153,15 @@
 /* RESPONSIVO
 ___________________________*/
 @media (max-width: 1440px ){
+	.banner_colecoes{
+		.contentCenter{
+			.btn_colecoes{
+				a{
+					padding: 20px 30px;
+				}
+			}
+		}
+	}
 
 }
 @media (max-width: 1280px ){
