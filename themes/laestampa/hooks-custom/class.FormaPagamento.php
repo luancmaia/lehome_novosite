@@ -1,4 +1,7 @@
 <?php
+   
+
+
 class FormaPagamento {
    private $parcelamentos = array();
    const parcela_minima = 500;
@@ -65,6 +68,7 @@ class FormaPagamento {
       return $_SESSION['payment'];
    }
 }
+
 class Parcelamento {
    function __construct( $nome, $parcelas ){
       $this->nome = $nome;

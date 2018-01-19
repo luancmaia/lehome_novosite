@@ -1,23 +1,10 @@
 <?php
-
-$current_user = current_user();
-
-
 include_once('class.FormaPagamento.php');
 
-
-
-
-	add_action( 'wp_ajax_le_forma_pagamento', 'le_forma_pagamento' );
-	add_action( 'wp_ajax_nopriv_le_forma_pagamento', 'le_forma_pagamento' );
-	add_action( 'woocommerce_cart_calculate_fees','woocommerce_custom_discount' );
-
-
-
-
+	
 $forma_pagamento = new FormaPagamento();
 wp_deregister_script('wc-add-to-cart');
-wp_register_script('wc-add-to-cart', get_bloginfo( 'stylesheet_directory' ). '/js/add-to-cart.js' , array( 'jquery' ), WC_VERSION, TRUE);
+wp_register_script('wc-add-to-cart', get_bloginfo( 'stylesheet_directory' ). '/assets/js/add-to-cart.js' , array( 'jquery' ), WC_VERSION, TRUE);
 wp_enqueue_script('wc-add-to-cart');
 
 	add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
@@ -121,8 +108,12 @@ wp_enqueue_script('wc-add-to-cart');
       $_SESSION['desconto-estoque'][$_REQUEST['product_id']] = 5; // desconto que sera dado a esse produto
       wp_die();
    });
-	function le_forma_pagamento() {
 
+
+  add_action( 'wp_ajax_le_forma_pagamento', 'le_forma_pagamento' );
+	add_action( 'wp_ajax_nopriv_le_forma_pagamento', 'le_forma_pagamento' );
+	add_action( 'woocommerce_cart_calculate_fees','woocommerce_custom_discount' );
+	function le_forma_pagamento() {
 		$request = (object) $_POST;
 		$response = (object) array(
 			'message' => 'Houve um erro',

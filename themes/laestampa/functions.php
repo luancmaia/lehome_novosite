@@ -58,8 +58,9 @@ function remove_pgz_theme_support() {
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 980; /* pixels */
+	$content_width = 1140; /* pixels */
 }
+
 
 $storefront = (object) array(
 	'version' => $storefront_version,
@@ -71,9 +72,12 @@ $storefront = (object) array(
 	'customizer' => require 'inc/customizer/class-storefront-customizer.php',
 );
 
+
+
 require 'inc/storefront-functions.php';
 require 'inc/storefront-template-hooks.php';
 require 'inc/storefront-template-functions.php';
+
 
 require 'hooks-custom/hooks.php';
 require 'hooks-custom/function.php';
@@ -81,11 +85,14 @@ require 'hooks-custom/campos-acf.php';
 require 'hooks-custom/cpts.php';
 require 'hooks-custom/theme-functions.php';
 
-if( $current_user == "pj" ){
+$user = current_user();
 
+if( $user == "pj" ){
 	require 'hooks-custom/pagamento-functions.php';
+}
 
-} 
+
+
 
 
 if ( class_exists( 'Jetpack' ) ) {
@@ -105,40 +112,53 @@ if ( is_admin() ) {
 	require 'inc/admin/class-storefront-plugin-install.php';
 }
 
-function style_custom(){
+//add style bootstrap
+add_action( 'wp_enqueue_scripts', 'style_bootstrap' );
+function style_bootstrap(){
 	wp_enqueue_style( 'bootstrap.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-grid.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-grid.min.css' );
 	wp_enqueue_style( 'bootstrap-reboot.min', get_template_directory_uri().'/assets/laestampa/boostrap/bootstrap-reboot.min.css' );
-
-
-	wp_enqueue_style( 'jqueryui-custom', get_template_directory_uri().'/assets/css/custom/jquery-ui.css' );
-	wp_enqueue_style( 'style-custom', get_template_directory_uri().'/assets/css/style.css' );
-
-	wp_enqueue_script( 'bxslider-js', get_template_directory_uri().'/assets/js/jquery.bxslider.js' );
+	//JS
 	wp_enqueue_script( 'popover-js', get_template_directory_uri().'/assets/js/popper.min.js' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js' );
+}
+
+//add style jquery
+add_action( 'wp_enqueue_scripts', 'style_jqueryui' );
+function style_jqueryui(){
+	wp_enqueue_style( 'jqueryui-custom', get_template_directory_uri().'/assets/css/custom/jquery-ui.css' );
+	//JS
 	wp_enqueue_script( 'jqueryui-js', get_template_directory_uri().'/assets/js/jquery_ui.js' );
-	wp_enqueue_script( 'filtro-js', get_template_directory_uri().'/assets/js/filtro.js' );
-	wp_enqueue_script( 'modal-js', get_template_directory_uri().'/assets/js/modal.min.js' );
+}
+
+//add style slider e afins
+add_action( 'wp_enqueue_scripts', 'style_jsliderOutros' );
+function style_jsliderOutros(){
+	wp_enqueue_style( 'style-custom', get_template_directory_uri().'/assets/css/style.css' );
+	//JS
+	wp_enqueue_script( 'bxslider-js', get_template_directory_uri().'/assets/js/jquery.bxslider.js' );
 	wp_enqueue_script( 'isotopen-js', get_template_directory_uri().'/assets/js/isotopen.js' );
-	wp_enqueue_script( 'add-to-cart-js', get_template_directory_uri().'/assets/js/add-to-cart.js' );
+}
 
-
-	$tmp = get_page_template_slug($post->ID);
-
+//add style e js com if
+add_action( 'wp_enqueue_scripts', 'style_condicionais' );
+function style_condicionais(){
 	if( is_post_type_archive('parceiros') ){
 		//wp_enqueue_script( 'masonry-js', get_template_directory_uri().'/assets/js/masonry.js' );
 		//wp_enqueue_script( 'mosaicflow-js', get_template_directory_uri().'/assets/js/mosaicflow.min.js' );
-		wp_enqueue_script( 'bsxlider-js', get_template_directory_uri().'/assets/js/bxslider.js' );
-		
+		wp_enqueue_script( 'bsxlider-js', get_template_directory_uri().'/assets/js/bxslider.js' );		
 	}
-
 	if( is_page_template('templates/faq.php') ){
 		wp_enqueue_script( 'accordion-js', get_template_directory_uri().'/assets/js/jquery.accordion.js' );
 		wp_enqueue_style( 'style-jquery.accordion', get_template_directory_uri().'/assets/css/jquery.accordion.css' );
 		wp_enqueue_style( 'style-demo', get_template_directory_uri().'/assets/css/demo.css' );
 	}
+}
 
+
+function style_custom(){	
+	wp_enqueue_script( 'filtro-js', get_template_directory_uri().'/assets/js/filtro.js' );
+	wp_enqueue_script( 'modal-js', get_template_directory_uri().'/assets/js/modal.min.js' );	
 	wp_enqueue_script( 'main-js', get_template_directory_uri().'/assets/js/main.js' ); 
 	
 }

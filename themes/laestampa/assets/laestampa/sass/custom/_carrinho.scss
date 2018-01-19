@@ -294,6 +294,27 @@ table.woocommerce-checkout-review-order-table .product-name{
 	background-size: 18px 11px !important;
 }
 
+//select forma de pagamento revenda
+#forma_pagamento_field{
+   overflow: hidden;
+   background: url(../images/arrow_select.png) no-repeat right; 
+  padding-left: 7px;
+  background-size: 10px;
+	select{
+		background: transparent;
+   width: 100%;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	}
+}
+
 
 
 
