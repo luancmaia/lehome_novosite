@@ -261,7 +261,13 @@ ___________________________*/
 }
 
 @media (max-width: 768px ){
-
+  .primary-navigation{
+    ul#menu-principal{
+      li{
+        font-size: 14px!important;
+      }
+    }
+  }
 
 }
 

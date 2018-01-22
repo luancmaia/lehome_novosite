@@ -25,7 +25,7 @@ wc_print_notices();
 do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="row">
-	<div class="col-12 col-md-8">
+	<div class="col-12 col-md-12 col-lg-8">
 		<?php
 			global $woocommerce;
 			$itens = $woocommerce->cart->get_cart();
@@ -272,7 +272,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 </div>
-	<div class="col-12 col-md-4">
+	<div class="col-12 col-md-12 col-lg-4">
 	<div class="cart-collaterals">
 		<?php
 			/**

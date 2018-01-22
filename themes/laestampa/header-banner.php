@@ -52,7 +52,7 @@
 	<?php do_action( 'storefront_before_header' ); ?>
 
 	<header id="masthead" class="header-top" role="banner" style="<?php storefront_header_styles(); ?>">
-		<div class="container-fluid console_slide">
+		<div class="container-fluid box-topo">
 			<div class="row ">
 				<div class="bxsliderHome">
 					<?php

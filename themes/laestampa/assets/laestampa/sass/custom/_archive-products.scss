@@ -66,3 +66,73 @@ h3.filtros{
 	}
 }
 
+/* RESPONSIVO
+___________________________*/
+@media (max-width: 1440px ){
+
+}
+@media (max-width: 1280px ){
+
+}
+
+@media (max-width: 1200px ){
+
+}
+
+@media (max-width: 1024px ){
+
+}
+
+@media (max-width: 991px ){
+
+}
+
+@media (max-width: 768px ){
+
+
+}
+
+@media (max-width: 600px ){
+
+	.banner-page {
+    max-height: 70px;
+	}
+
+	.headerProduct{
+		margin: 44px 0;
+		.storefront-sorting{
+			float: inherit;
+		}
+	}
+	.widget{
+		.product-categories{
+			li{
+				display: inline-block;
+				width: 49%;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 550px ){
+
+}
+
+@media (max-width: 500px ){
+
+}
+
+@media (max-width: 475px ){
+
+}
+
+@media (max-width: 430px ){
+
+}
+
+@media (max-width: 375px ){
+
+}
+
+

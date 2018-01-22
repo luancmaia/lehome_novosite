@@ -12,6 +12,10 @@ ___________________________*/
 .header-top{
 	z-index: 99;
 	position: relative;
+  .box-topo{
+    display: flex;
+    flex-direction: column;
+  }
 }
 .itemMenu-topHeader{
   margin-right: 25px;
@@ -597,10 +601,24 @@ ___________________________*/
 
   @media (max-width: 768px ){
    
+
     
   }
 
   @media (max-width: 600px ){
+    .header-top{
+      .box-topo{
+        display: flex;
+        flex-direction: column-reverse;
+        .boxMenuGeral{
+          position: relative;
+        }
+      }
+    }
+    .bx-wrapper{
+      box-shadow: none;
+      border: 0;
+    }
 
      .no-click {
       height: auto;
@@ -643,6 +661,22 @@ ___________________________*/
         padding: 0;
       }
       .col-estampados{
+        margin-bottom: 15px;
+      }
+    }
+    .site-footer{
+      .newsletter-footer{
+        .title_newsletterFooter{
+          h3{
+            font-size: 22px;
+          }
+        }
+      }
+    }
+    .newsletterFooterForm{
+      flex-direction: column;
+      .colum_input{
+        width: 100%;
         margin-bottom: 15px;
       }
     }
