@@ -56,45 +56,48 @@ jQuery( function( $ ) {
 
 	var quantidade_digitada = $('.quantidade_necessario');
 
+	
+
 	var is_tipo = calculo_metro.data('tipo');
 
 		calculo_metro.on('keyup', function(){
 
-
 		var valorDigitado = $(this).val();
+		var resultOfMod = valorDigitado % 3;
 
-			var resultOfMod = valorDigitado % 3;
-
-		if( !is_tipo == 'papel' ){
-
-			return;
+		if( is_tipo == 'papel' ){
 
 			if( resultOfMod != 0 ){
 				calculo_metro.val('');
+				result_calculo_metros.html('<bold> - </bold>');	
+				calculo_metro.tooltip({disabled: true});
+				$('.single_customButtom').attr('disabled', 'disabled');	
+				result_calculo_metros.data('price', total_valor);
+					
+			}else{
+				$('.single_customButtom').removeAttr('disabled', '');
+				result_calculo_metros.data('price', '00,00');
+				
 			}
 		}
 
 		$('input.qty').val(valorDigitado);
 
 		var total_valor = valorDigitado * price_product;
-
 		//validacao compra de quantidade
-		if( valorDigitado > stock ){
-
+		if( valorDigitado > stock  ){
 			calculo_metro.tooltip({disabled: false});
-			$('.single_customButtom').attr('disabled', '');
-			
+			$('.single_customButtom').attr('disabled', '');			
 		}else{
 			calculo_metro.tooltip({disabled: true});
 			$('.single_customButtom').removeAttr('disabled', 'disabled');
-
-			if( resultOfMod == 0  ){
+			//if( resultOfMod == 0  ){
 				result_calculo_metros.data('price', total_valor);
 				result_calculo_metros.html(total_valor + ',00');
-			}else{
-				result_calculo_metros.data('price', '00,00');
-				result_calculo_metros.html('000,00');
-			}
+			//}else{
+				//result_calculo_metros.data('price', '00,00');
+				//result_calculo_metros.html('000,00');
+			//}
 			
 		}
 
