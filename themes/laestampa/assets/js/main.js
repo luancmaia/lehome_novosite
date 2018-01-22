@@ -56,6 +56,8 @@ jQuery( function( $ ) {
 
 	var quantidade_digitada = $('.quantidade_necessario');
 
+	var backorders = quantidade_digitada.data('backorders');
+
 	
 
 	var is_tipo = calculo_metro.data('tipo');
@@ -71,7 +73,7 @@ jQuery( function( $ ) {
 				calculo_metro.val('');
 				result_calculo_metros.html('<bold> - </bold>');	
 				calculo_metro.tooltip({disabled: true});
-				$('.single_customButtom').attr('disabled', 'disabled');	
+				$('.single_customButtom').attr('disabled', '');	
 				result_calculo_metros.data('price', total_valor);
 					
 			}else{
@@ -85,7 +87,7 @@ jQuery( function( $ ) {
 
 		var total_valor = valorDigitado * price_product;
 		//validacao compra de quantidade
-		if( valorDigitado > stock  ){
+		if( valorDigitado > stock && backorders == 'no' ){
 			calculo_metro.tooltip({disabled: false});
 			$('.single_customButtom').attr('disabled', '');			
 		}else{

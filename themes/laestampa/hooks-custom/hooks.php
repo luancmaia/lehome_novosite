@@ -144,6 +144,8 @@ function calc_tecido(){
  
     $user = current_user();
 
+    $backorders = $product->backorders;
+    //echo '<pre>' . print_r(,true) . '</pre>';
 
     $stock = get_variable_stock($product, $user);
     $stock = is_papel() ? 100000 : $stock;
@@ -156,7 +158,7 @@ function calc_tecido(){
 
 
 	<div class="calculo-metro">
-    <input type="number" min="3" step="<?php echo $step; ?>" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" data-tipo="<?php echo $is_tipo; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
+    <input type="number" min="3" step="<?php echo $step; ?>" data-backorders="<?php echo $backorders; ?>" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" data-tipo="<?php echo $is_tipo; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
 
     <input class="price_product" type="hidden" name="priceProd" value="<?php echo $preco_variable; ?>">
     <span>  =  R$</span>
