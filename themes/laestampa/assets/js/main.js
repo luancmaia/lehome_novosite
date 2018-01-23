@@ -3,7 +3,7 @@ jQuery( function( $ ) {
 	  auto: true,
 	  autoControls: false,
 	  stopAutoOnClick: true,
-	  speed: 5000,
+	  speed: 2000,
 	  pager: false,
 	  responsive: true,
 	  adaptiveHeight: true,
