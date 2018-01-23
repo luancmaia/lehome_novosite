@@ -96,11 +96,35 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<td class="product-name" colspan="2" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 							<?php
+								
 								$sku = get_post_meta($cart_item['product_id'], 'sku', true);
-								if ( ! $product_permalink ) {
-									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
-								} else {
+								$user = current_user();
 
+								$product_id = $cart_item['product_id'];
+								$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
+								if( $is_papel == 1 ){
+									return true;
+								}
+								if( $is_papel != 1 ){
+									$base = "tecido";
+								}else{
+									$base = "papel";
+								}
+
+								$variationID = $cart_item['variation_id'];
+								$stock = get_post_meta( $variationID, '_stock', true );
+
+								if( $base == 'papel'){
+											$prazo = '5';
+									}else if ($base == 'tecido' && $stock > 0){
+											$prazo = '3';
+									}else if ($base == 'tecido' && $stock <= 0) {
+											$prazo = '20';
+									}
+
+									if ( ! $product_permalink ) {
+										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
+									} else {
 									
 									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
 									echo '<p class="sku_cart">'.$sku.'</p>';
@@ -111,6 +135,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 									esc_attr( $product_id ),
 									esc_attr( $_product->get_sku() )
 								), $cart_item_key );
+
+									echo '<p class="prazo_entrega">Prazo de entrega deste produto é de: <strong>'.$prazo.' dias + Correios </strong></p>';
 								}
 
 								// Meta data
