@@ -12,7 +12,7 @@ get_header();
 	<div class="row">
 		<div class="col-12">
 			<div class="faq">
-				<h1> PERGUNTAS FREQUÊNTES </h1>
+				<h1> PERGUNTAS FREQUENTES </h1>
 			</div>
 		</div>
 	</div>

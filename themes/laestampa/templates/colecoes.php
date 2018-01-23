@@ -58,7 +58,7 @@ get_header();
 					</div>
 					<div class="content_btns">
 						<p>
-							Um universo contemporâneo que traz simplicidade e personalidade em perfeita har- monia para a criação de ambientes leves e sofisticados. Também podendo ser diver- tido e cheio de alegria através de variações de desenhos e suas cores.
+							Um universo contemporâneo que traz simplicidade e personalidade em perfeita harmonia para a criação de ambientes leves e sofisticados. Também podendo ser divertido e cheio de alegria através de variações de desenhos e suas cores.
 						</p>
 						<div class="btn_colecoes">
 							<a class="btnLeft" href="/categoria/tecido">Ver tudo</a>
@@ -84,7 +84,7 @@ get_header();
 					</div>
 					<div class="content_btns">
 						<p>
-							Mix de cores em combinações encantadoras com estampas gráficas, florais e ge- ométricas que ilustram ambientes com originalidade. Presença da brasilidade de estampas inspiradas nas folhagens da Amazônia e de diversas outras regiões do Brasil.
+							Mix de cores em combinações encantadoras com estampas gráficas, florais e geométricas que ilustram ambientes com originalidade. Presença da brasilidade de estampas inspiradas nas folhagens da Amazônia e de diversas outras regiões do Brasil.
 						</p>
 						<div class="btn_colecoes">
 							<a class="btnLeft" href="/categoria/tecido">Ver tudo</a>
@@ -118,8 +118,7 @@ get_header();
 					</div>
 					<div class="content_btns">
 						<p>
-							Historinhas tem floresta tropical, fundo do mar, circo, fazendinha e muito mais. Es- tampas que contam historinhas e estimulam a imaginação.
-Petit é inspirada nos primeiros anos de vida dos pequeninos, traz criações que colo- rem o ambiente e são um convite ao início de uma nova jornada cheia de novas des- cobertas.
+							Historinhas tem floresta tropical, fundo do mar, circo, fazendinha e muito mais. Estampas que contam historinhas e estimulam a imaginação. Petit é inspirada nos primeiros anos de vida dos pequeninos, traz criações que colorem o ambiente e são um convite ao início de uma nova jornada cheia de novas descobertas.
 						</p>
 						<div class="btn_colecoes">
 							<a class="btnLeft" href="#">Ver tudo</a>

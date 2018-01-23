@@ -61,6 +61,11 @@
 	clear: both;
 }
 
+//cadastro de reservas
+.cf7mls_next.action-button, .cf7mls_back.action-button{
+	background: #d3d3d3 none repeat scroll 0 0!important;
+}
+
 /**---------------- Media query ----------------**/
 @media only screen and (min-width: 48em) { 
 	.column-half{
