@@ -320,6 +320,8 @@ $(document).on( 'click', '.quantity-down', function(e){
 		//botao next cadastro de reservas
 		$(document).on('ready', function(){
 			$('.cf7mls_next').html('Próximo');
+			$('.cf7mls_back').html('Voltar');
+			
 		});
 
 		//PAGAMENTO
