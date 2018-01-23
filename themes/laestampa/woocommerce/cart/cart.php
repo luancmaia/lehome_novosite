@@ -119,7 +119,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									}else if ($base == 'tecido' && $stock > 0){
 											$prazo = '3';
 									}else if ($base == 'tecido' && $stock <= 0) {
-											$prazo = '20';
+											$prazo = '30';
 									}
 
 									if ( ! $product_permalink ) {
@@ -136,7 +136,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									esc_attr( $_product->get_sku() )
 								), $cart_item_key );
 
-									echo '<p class="prazo_entrega">Prazo de entrega deste produto é de: <strong>'.$prazo.' dias + Correios </strong></p>';
+									echo '<p class="prazo_entrega">Prazo de entrega deste produto é de: <strong>'.$prazo.' dias + Prazo Correios </strong></p>';
 								}
 
 								// Meta data

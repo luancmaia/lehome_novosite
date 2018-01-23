@@ -49,8 +49,8 @@ function nome_da_sua_funcao( $wcrbp_price, $product ) {
 		}else if ($tipo == 'tecido' && $stock > 0){
 				$prazo = '3';
 		}else if ($tipo == 'tecido' && $stock <= 0) {
-				$prazo = '20';
+				$prazo = '30';
 		}
-		echo '<p class="composicao_title"><strong>Prazo de entrega deste produto é de: </strong>'.$prazo.' dias + Correios</p>';
+		echo '<p class="composicao_title"><strong>Prazo de entrega deste produto é de: </strong>'.$prazo.' dias + Prazo Correios</p>';
 	?>
 </div>

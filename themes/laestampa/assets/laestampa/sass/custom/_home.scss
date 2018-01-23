@@ -425,7 +425,7 @@ ___________________________*/
       height: 29.2%;
     }
     .tarja{      
-      height: 29.1%;
+      height: 45.1%;
     }
     a.box_bannerBtn{
       .title-banner{
@@ -512,8 +512,17 @@ ___________________________*/
         font-size: 28.4px;
       }
     }
+    .logo-principal{
+      .logo{
+        a{
+          img{
+            width: 200px!important;
+          }
+        }
+      }
+    }
      .tarja{      
-      height: 41.1%;
+      height: 52%;
     }
     .textBanner{
       position: absolute;

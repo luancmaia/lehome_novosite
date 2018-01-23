@@ -16,7 +16,7 @@ get_header();
 		<div class="row  gridBox-parceiros">
 			<div class="col-12">
 				<h2 class="text-center subTitleArchive"> 
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, se. 
+					Acreditamos que as parcerias são uma forma de trocar experiências e inspirações por isso      buscamos nos unir com parceiros de peso para projetos exclusivos e criativos.
 				</h2>
 			</div>
 		<?php
