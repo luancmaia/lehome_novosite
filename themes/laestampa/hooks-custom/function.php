@@ -431,6 +431,17 @@ function query_filter_category( $query ) {
 	return $query;
 }
 
+/* Remover Tab Avaliações */
+add_filter( 'woocommerce_product_tabs', 'cwp_woocommerce_remove_default_tabs' );
+function cwp_woocommerce_remove_default_tabs( $tabs ) {
+             
+      if ( isset( $tabs['additional_information'] ) ) {
+            unset( $tabs['additional_information'] );          
+      }
+       
+      return $tabs;
+}
+
 
 
 

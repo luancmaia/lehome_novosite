@@ -89,7 +89,7 @@ get_header();
 	<div class="row row-faixaRevenda text-center">
 		<div class="container">
 			<h3> Quer se tornar uma revenda? </h3>
-			<p> <a href="#">Clique aqui e saiba como</a></p>
+			<p> <a href="/cadastro-de-revendas">Clique aqui e saiba como</a></p>
 		</div>
 	</div>
 </div>
