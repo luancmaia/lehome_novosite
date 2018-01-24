@@ -17,7 +17,7 @@
 			font-family: $dinMedium;
 			font-size: 40px;
 			font-family: "dinPro-Medium",sans-serif;
-			margin: 40px 20px;
+			margin: 5px 20px 75px;
 			text-transform: uppercase;
 		}
 		.textContent{
@@ -55,13 +55,21 @@
 	}		
 }
 .rowSubtitle{
-	margin: 150px 0 100px 0;
+	margin: 64px 0 100px 0;
 	.text-colecoes{
 		h2{
 			text-transform: uppercase;
 			font-size: 40px;
 			font-family: $dinMedium;
 			margin-bottom: 80px;
+		}
+	}
+	p{
+		a{
+			color: $cor-primaria;
+			&:hover{
+				text-decoration: none;
+			}
 		}
 	}
 }

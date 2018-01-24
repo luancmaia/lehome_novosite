@@ -17,8 +17,7 @@ get_header();
 			<div class="contentCenter text-center"> 
 					<h1> Lançamento </h1>
 					<div class="textContent">
-						Lorem ipsum dolor sit amet, conh nsectetur adipiscing elit, sedInh 
-						do eiusmod tempor incididunt ut labore et dolore magna al adipiscing iqua.
+						
 					</div>
 					<div class="btn_colecoes">
 						<a class="btnLeft" href="/colecoes/mood">Coleção Mood</a>
@@ -33,6 +32,15 @@ get_header();
 </div>
 <div class="container">
 	<div class="row rowSubtitle">
+		<div class="col-12">
+			<p style="font-size: 18px;margin-bottom: 90px;">
+				Aquarelas, texturas e degrades dão vida a novas formas de expressão para decorar ambientes. O abstrato marca presença em geométricos e a sobriedade da nova paleta de cores traz uma coleção ainda mais sofisticada e com inúmeras possibilidades de criação. 
+				<br/><br/>
+				Dividida em dois conceitos, nossas novas apostas em tecidos e papéis de parede passeiam pela <strong><a href="/colecoes/mood">Coleção Mood</a></strong> que explora seu mix de elementos e cores de forma inovadora e pela <strong><a href="/colecoes/resort">Coleção Resort</a></strong> que respira tropicalidade e inspira ambientes modernos e cheios de personalidade.
+				<br/><br/>
+				É tempo de ser leve, fluido e de abrir espaço para a harmonia. Que sua experiência seja norteada de boas sensações. Conheça nossas novas estampas.
+			</p>
+		</div>
 		<div class="col-12">
 			<div class="text-colecoes text-center">
 				<h2> coleções la estampa home </h2>
