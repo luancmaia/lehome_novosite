@@ -23,8 +23,8 @@ get_header();
 					Entendemos que ambientes marcantes tem seu valor.
 					Por isso, a linha Home apresenta papéis de parede e 
 					tecidos em coleções criados com o DNA La Estampa.
-					O resultado - inspirado em nossa experiência de 15 anos 
-					dentro do universo da moda - não poderia ser melhor: 
+					O resultado inspirado em nossa experiência de 15 anos 
+					dentro do universo da moda não poderia ser melhor: 
 					ambientes sofisticados, vivos e cheios de personalidade 
 					que não passam despercebidos e são grandes fontes 
 					de inspiração para projetos arquitetônicos, de
