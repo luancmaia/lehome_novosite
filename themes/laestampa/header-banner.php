@@ -110,8 +110,8 @@
 				<div class="row">				
 						<div class="col-12 col-md-6 top-redessociais">
 							<ul class="nav justify-content-center">
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/laestampahome/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.facebook.com/laestampaoficial/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="col-12 col-md-6 box_topMenu">
