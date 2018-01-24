@@ -51,7 +51,7 @@ get_header();
 					<h3> Tecido </h3>
 				<p>Os tecidos La Estampa Home se diferenciam através da diversidade de desenhos e por 
 					serem 100% naturais. Oferecidos em  diversas gramaturas, tramas  e acabamentos, 
-					resistentes  a sujidade e absorção de líquidos. </p>
+					resistentes  a sujeira e absorção de líquidos. </p>
 					<br/>
 				<p>Próprios para estofados, almofadas, jogos americanos, toalhas de mesa, colchas e  acessórios para casa:</p>
 				<br/>
@@ -188,7 +188,7 @@ get_header();
 		
 		<div class="col-12 col-md-7">
 			<div class="somos-originais coorporativo">
-					<h3> COORPORATIVO </h3>
+					<h3> CORPORATIVO </h3>
 					<h4> SOLUÇÕES CRIATIVAS PARA ARQUITETURA </h4>
 				<p>				
 					Soluções em tecidos e papéis de parede com estampas digitais 

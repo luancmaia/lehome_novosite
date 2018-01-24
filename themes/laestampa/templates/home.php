@@ -86,9 +86,9 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/textura" class="line_linkBox" title="Papel de Parede Estampados">
+					<a href="/tema/textura" class="line_linkBox" title="Papel de Parede Abstratos">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Papel de Parede <br/> Estampados </h3>
+							<h3 class="text-center"> Papel de Parede <br/> Abstrato </h3>
 						</div>
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line2_colun2.jpg' ?>" alt="" />
