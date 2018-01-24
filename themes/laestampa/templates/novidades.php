@@ -32,7 +32,7 @@ get_header();
 									<div class="novdade_image">';
 
 				if( $novidade['link_da_imagem'] ){
-					$html .= '<a href="'.$novidade['link_da_imagem'].'" title="Comprar essa estampa"><img src="'.$novidade['imagem_novidade'].'" alt="Comprar esta estampa"></a>';
+					$html .= '<a href="'.$novidade['link_da_imagem'].'" title="Comprar essa estampa" target="_blank"><img src="'.$novidade['imagem_novidade'].'" alt="Comprar esta estampa"></a>';
 				}else{
 					$html .= '<img src="'.$novidade['imagem_novidade'].'" alt="Comprar esta estampa">';
 				}									
