@@ -154,7 +154,7 @@ function calc_tecido(){
         $encomenda = get_post_meta( $v['variation_id'], '_backorders', true );   
       }
     }
-   
+
     
 
     $stock = get_variable_stock($product, $user);
@@ -164,8 +164,6 @@ function calc_tecido(){
 
     
   ?>
-
-
 
 	<div class="calculo-metro">
     <input type="number" min="3" step="<?php echo $step; ?>" data-backorders="<?php echo $encomenda; ?>" name="quantity" value="" max="<?php echo $stock; ?>" data-stockProduct="<?php echo $stock; ?>" data-tipo="<?php echo $is_tipo; ?>" class="input-text quantidade_necessario text calculo-metros" placeholder="Metros (ex: 100)" title="A quantidade que você digitou é maior do que temos em estoque! No momento só temos <?php echo $stock; ?> metros disponíveis.">
