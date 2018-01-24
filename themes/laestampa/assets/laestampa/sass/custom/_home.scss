@@ -10,8 +10,16 @@ ___________________________*/
     top: 0;
 }
 .header-top{
-	z-index: 99999;
+	z-index: 99;
 	position: relative;
+  .box-topo{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header-topInt{
+  z-index: 9999;
+  position: relative;
   .box-topo{
     display: flex;
     flex-direction: column;
@@ -57,6 +65,9 @@ ___________________________*/
 }
 
 //MENU LOGIN MODAL
+.modalLogin{
+  z-index: 999999999;
+}
 #modalLogin{
   cursor: pointer;
 }

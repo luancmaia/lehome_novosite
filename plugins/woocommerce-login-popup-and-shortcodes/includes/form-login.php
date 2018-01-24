@@ -42,9 +42,10 @@ if( !function_exists( 'woo_login_popup_sc_login' ) ):
 					<?php if( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) :?>
 						<a href="#woo-login-popup-sc-register" class="woo-login-popup-sc-toggle"><?php _e( 'Registrar', 'woo-login-popup-shortcodes' ); ?></a> |
 					<?php endif;?>
-					<a href="#woo-login-popup-sc-password" class="woo-login-popup-sc-toggle"><?php _e( 'Perdeu sua senha?', 'woo-login-popup-shortcodes' ); ?></a> |
+					<a href="#woo-login-popup-sc-password" class="woo-login-popup-sc-toggle"><?php _e( 'Perdeu sua senha?', 'woo-login-popup-shortcodes' ); ?></a>
 
-					<a href="/cadastro-de-revendas" class="woo-login-popup-sc-toggle"><?php _e( 'Revendas', 'woo-login-popup-shortcodes' ); ?></a>
+					<br/>
+					<a href="/cadastro-de-revendas" class="woo-login-popup-sc-toggle"><?php _e( 'Cadastro de Revendas', 'woo-login-popup-shortcodes' ); ?></a>
 				</p>
 
 				<?php do_action( 'woocommerce_login_form_end' ); ?>

@@ -34,7 +34,7 @@
 	</div>
 
 	<!-- MODAL LOGIN -->
-<div id="modal_login" class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="modal_login" class="modal modalLogin fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-superlg">
     <div class="modal-content">
       <div class="form-login_menu">
