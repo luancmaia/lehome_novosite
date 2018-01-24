@@ -65,7 +65,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 				</div>
 				<div class="item_categoriaHome no-click d-flex">
 					<h4>
-						Estimulamos novas formas de <strong>expressão e comportamento</strong> na decoração. <strong>Estimulamos</strong> novas formas <strong>de decoração</strong>.
+						Ambientes marcantes tem seu valor. Por isso, <strong>a linha Home apresenta papéis de parede e tecidos em coleções com personalidade</strong> sendo grande fonte de inspiração para diversos projetos.
 					</h4>
 				</div>
 			</div>
