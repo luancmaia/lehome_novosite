@@ -236,7 +236,7 @@ box-shadow: -1px 2px 10px -1px rgba(0,0,0,1);
 }
 
 .woocommerce-pagination{
-  margin-bottom: 40px;
+  margin-bottom: 40px!important;
 }
 
 /* RESPONSIVO
@@ -245,7 +245,9 @@ ___________________________*/
   .originais .somos-originais{
     padding-left: 17%;
   }
-
+  .woocommerce-pagination{
+    margin-bottom: 40px!important;
+  }
 }
 @media (max-width: 1280px ){
 
