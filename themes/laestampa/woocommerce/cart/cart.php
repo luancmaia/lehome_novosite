@@ -99,12 +99,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 								
 								$sku = get_post_meta($cart_item['product_id'], 'sku', true);
 								$user = current_user();
-
+							
 								$product_id = $cart_item['product_id'];
+								
 								$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
-								if( $is_papel == 1 ){
-									return true;
-								}
+									
 								if( $is_papel != 1 ){
 									$base = "tecido";
 								}else{
