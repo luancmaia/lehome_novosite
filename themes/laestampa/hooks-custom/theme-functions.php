@@ -47,7 +47,7 @@ function new_loop_shop_per_page( $cols ) {
 	  ob_start();
 	  $_SESSION['per_page'] = $cols;
   } else {
-  	$cols = 20;
+  	$cols = 21;
 	  ob_start();
 	$_SESSION['per_page'] = $cols;
   }
