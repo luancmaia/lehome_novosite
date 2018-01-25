@@ -138,10 +138,15 @@
 											if( $total ){	
 										?>
 										<ul class="nav flex-column">
-											<?php 												
+											<?php 
+												global $product;
+												$usuario = current_user();												
 												foreach ($itens as $key => $value) {
 													$_product = wc_get_product( $value['data']->get_id() );
-													$price = get_post_meta($value['product_id'] , '_price', true);
+
+													$price = get_variable_price(wc_get_product($value['product_id']), $usuario);
+													//$price = get_post_meta($value['product_id'] , '_price', true);
+
 													$image = $_product->get_image();
 
 													$removeUrl = $woocommerce->cart->get_remove_url($key);													
@@ -151,7 +156,7 @@
 																		<div class="descriptionItemCar">
 																			<h4> '.$_product->get_title().'  </h4>
 																			<p class="unitario"> Preço unitário </p>
-																			<p class="valorItem"> R$ '.$price.' </p>
+																			<p class="valorItem"> '.$price.' </p>
 																			<p class="quantidade"> Quantidade: '.$value['quantity'].' mtr(s). </p>
 																		</div>	
 																	</a>
