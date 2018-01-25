@@ -409,25 +409,55 @@ function verificar_imagens( $attach_id ) {
 
 add_action( 'pre_get_posts', 'query_filter_category' );
 function query_filter_category( $query ) {
-	if ( $_GET && isset( $_GET['tid'] ) && $query->is_main_query() ) {
-		$tid = $_GET['tid'];
-		$tids = [];
-		$tax_query = ['relation' => 'OR'];
-		global $wpdb;
-		foreach($tid as $t):
-			$result = $wpdb->get_results( 'SELECT object_id FROM ' . $wpdb->prefix . 'term_relationships WHERE term_taxonomy_id = ' . $t );
-			if ( $result ) {
-				
-				foreach($result as $r):
-					$tids[] = $r->object_id;
-				endforeach;
-			}else{
-				$tids = $tid;
-			}
-			//$tax_query[] = [ 'taxonomy' => 'product_cat', 'field' => 'term_id', 'terms' => $t ];
-		endforeach;
-		$query->set('post__in', $tids);
+	$tax_query =  array();;
+
+	if ( $_GET && isset( $_GET['tema'] ) && $query->is_main_query() ) {
+		$tema = $_GET['tema'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'tema', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
 	}
+
+	if ( $_GET && isset( $_GET['colecao'] ) && $query->is_main_query() ) {
+		$tema = $_GET['colecao'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'colecao', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['composicao'] ) && $query->is_main_query() ) {
+		$tema = $_GET['composicao'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'composicao', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['product_cat'] ) && $query->is_main_query() ) {
+		$tema = $_GET['product_cat'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['cor'] ) && $query->is_main_query() ) {
+		$tema = $_GET['cor'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'cor', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( !empty( $tax_query ) ) $query->set('tax_query', $tax_query);
+
 	return $query;
 }
 

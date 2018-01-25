@@ -284,7 +284,7 @@ if ( ! function_exists( 'storefront_promoted_products' ) ) {
 				) );
 			} elseif ( $recent_fallback ) {
 
-				echo '<h2>' . esc_html__( 'New In Store', 'storefront' ) . '</h2>';
+				echo '<h2>' . esc_html__( 'Novo na Loja', 'storefront' ) . '</h2>';
 
 				echo storefront_do_shortcode( 'recent_products', array(
 											'per_page' => $per_page,

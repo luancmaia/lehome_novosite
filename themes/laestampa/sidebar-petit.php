@@ -31,7 +31,7 @@ if ( empty( $children ) ) {
 <?php if ( $children ): 
 
 	if ( $_GET && isset( $_GET['tid'] ) ):
-		echo '<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories"><h4>FILTROS</h4><ul class="product-categories">';
+		echo '<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories filtromobile"><h4>FILTROS</h4><ul class="product-categories">';
 		$tid = $_GET['tid'];
 		foreach($tid as $t):  $c = get_term( intval( $t ) ); ?>
 		<li>
@@ -44,8 +44,9 @@ if ( empty( $children ) ) {
 
 <?php endforeach; echo '</ul></div>'; endif; ?>
 
+<div class="boxFiltros">
 
-<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+<div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories filtromobile">
 	<h4>TEMA</h4>
 	<ul class="product-categories">
 
@@ -53,13 +54,13 @@ if ( empty( $children ) ) {
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
-				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" data-slug="tema" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
 				</a>
 			<?php } else { ?>
-				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" data-slug="tema" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
@@ -83,13 +84,13 @@ if ( empty( $children ) ) {
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
-				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" data-slug="composicao" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
 				</a>
 			<?php } else { ?>
-				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" data-slug="composicao" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
@@ -115,13 +116,13 @@ if ( empty( $children ) ) {
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
-				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" data-slug="product_cat" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
 				</a>
 			<?php } else { ?>
-				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" data-slug="product_cat" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
@@ -150,13 +151,13 @@ if ( empty( $children ) ) {
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
-				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" data-slug="colecao" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
 				</a>
 			<?php } else { ?>
-				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" data-slug="colecao" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
@@ -181,13 +182,13 @@ if ( empty( $children ) ) {
 
 		<li>
 			<?php if ( is_int( stripos( $actual_link, '='.$c->term_id ) ) ) { ?>
-				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category active" data-id="<?php echo $c->term_id; ?>" data-slug="cor" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-check-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
 				</a>
 			<?php } else { ?>
-				<a class="link-category" data-id="<?php echo $c->term_id; ?>" href="#">
+				<a class="link-category" data-id="<?php echo $c->term_id; ?>" data-slug="cor" href="#">
 					<?php $icon = 'http://petitpapier.com.br/wp-content/uploads/2017/12/square-x.png'; ?>
 					<img src="<?php echo $icon; ?>" style="margin-top: -4px; margin-right: 5px;">
 					<?php echo $c->name; ?>
@@ -201,6 +202,8 @@ if ( empty( $children ) ) {
 			wp_reset_postdata(); ?>
 
 	</ul>
+</div>
+
 </div>
 
 <?php endif; ?>

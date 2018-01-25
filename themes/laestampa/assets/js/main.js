@@ -324,6 +324,32 @@ $(document).on( 'click', '.quantity-down', function(e){
 			
 		});
 
+
+		$(document).on('ready', function(){
+			//pega a largura da resolução da tela
+			var width = screen.width;
+			//pega a altura da resolução da tela
+			var height = screen.height;
+
+			console.log(width);
+
+			//verifica se a resolução dará uma boa visão do site
+			if (width <= 415){
+				$('.boxFiltros').addClass('boxFiltros-responsivo');
+				$('.widget-areaSidebar h3').removeClass('filtros');
+				$('.widget-areaSidebar h3').addClass('filtrosMobile');
+
+			}else{
+				$('.boxFiltros').removeClass('boxFiltros-responsivo');
+
+			}
+				
+		});
+
+		$(document).on('click', '.filtrosMobile', function(){
+			$('.boxFiltros-responsivo').slideToggle();
+		});
+
 		//PAGAMENTO
 
 		jQuery('#forma_pagamento').on('change', function(e){
