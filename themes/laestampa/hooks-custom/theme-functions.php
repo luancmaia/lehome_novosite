@@ -38,7 +38,7 @@ $cor_title = get_field('cor_titulo_banner', $page_id);
 }
 
 //quantidade de produtos no loop de produtos
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 30 );
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
   // Return the number of products you wanna show per page.
@@ -47,7 +47,7 @@ function new_loop_shop_per_page( $cols ) {
 	  ob_start();
 	  $_SESSION['per_page'] = $cols;
   } else {
-  	$cols = 12;
+  	$cols = 20;
 	  ob_start();
 	$_SESSION['per_page'] = $cols;
   }
