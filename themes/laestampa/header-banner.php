@@ -20,6 +20,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113098650-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+
+  gtag('config', 'UA-113098650-1');
+
+</script>
+	
 		<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="container">
 			<div class="box_buscaModal">

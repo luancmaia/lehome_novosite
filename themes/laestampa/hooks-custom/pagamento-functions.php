@@ -143,7 +143,7 @@ wp_enqueue_script('wc-add-to-cart');
 
  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
- ga('create', 'UA-97623485-1', 'auto');
+ ga('create', 'UA-113098650-1', 'auto');
 
  ga('send', 'pageview');
 
