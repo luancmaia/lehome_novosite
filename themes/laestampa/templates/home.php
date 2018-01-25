@@ -86,7 +86,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/textura" class="line_linkBox" title="Papel de Parede Abstratos">
+					<a href="/tema/abstrato" class="line_linkBox" title="Papel de Parede Abstratos">
 						<div class="mascara_banner">
 							<h3 class="text-center"> Papel de Parede <br/> Abstrato </h3>
 						</div>
