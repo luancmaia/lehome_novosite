@@ -38,6 +38,28 @@ $cor_title = get_field('cor_titulo_banner', $page_id);
 }
 
 
+
+
+
+function include_category( $query ) {
+	$tipo = isset( $_GET['tipo'] ) ? $_GET['tipo'] : false;
+	if ( !$tipo ) return;
+    if ( $query->is_main_query() ) {
+    	$tax_query = array(
+    		array(
+    			'taxonomy' => 'product_cat',
+    			'field' => 'slug',
+    			'terms' => $tipo
+    		)
+    	);
+        $query->set( 'tax_query', $tax_query );
+    }
+}
+add_action( 'pre_get_posts', 'include_category' );
+
+
+
+
 function my_custom_add_to_cart_redirect( $url ) {
 	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$url .= '?add_to_cart=true';

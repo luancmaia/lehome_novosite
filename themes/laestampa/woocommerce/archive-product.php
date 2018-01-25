@@ -22,11 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-
-
 <?php
-	$category = get_queried_object();
 
+	$category = get_queried_object();
 	if( $category->slug == "mood" || $category->slug == "resort" ):
 ?>
 </div></div></div>

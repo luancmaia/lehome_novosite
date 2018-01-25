@@ -2,7 +2,7 @@
 
 
 /*
-	Template Name: Página Colecões
+	Template Name: Página Colecões Papel
 */
 
 get_header();
@@ -20,8 +20,8 @@ get_header();
 						
 					</div>
 					<div class="btn_colecoes">
-						<a class="btnLeft" href="/colecoes/mood?tipo=tecido">Coleção Mood</a>
-						<a class="btnRight" href="/colecoes/resort?tipo=tecido">Coleção Resort</a>
+						<a class="btnLeft" href="/colecoes/mood?tipo=papel-de-parede">Coleção Mood</a>
+						<a class="btnRight" href="/colecoes/resort?tipo=papel-de-parede">Coleção Resort</a>
 					</div>
 			</div>			
 		</div>
@@ -59,9 +59,9 @@ get_header();
 				<div class="contentBtnsColecoes">
 					<div class="btnsColecoes">
 						<div class="btnCinza">
-							<a href="/colecoes/we-love-blue?tipo=tecido"> WE LOVE BLUE </a>
-							<a href="/colecoes/loft?tipo=tecido"> LOFT </a>
-							<a href="/colecoes/joy?tipo=tecido"> JOY </a>
+							<a href="/colecoes/we-love-blue?tipo=papel-de-parede"> WE LOVE BLUE </a>
+							<a href="/colecoes/loft?tipo=papel-de-parede"> LOFT </a>
+							<a href="/colecoes/joy?tipo=papel-de-parede"> JOY </a>
 						</div>
 					</div>
 					<div class="content_btns">
@@ -69,7 +69,7 @@ get_header();
 							Um universo contemporâneo que traz simplicidade e personalidade em perfeita harmonia para a criação de ambientes leves e sofisticados. Também podendo ser divertido e cheio de alegria através de variações de desenhos e suas cores.
 						</p>
 						<div class="btn_colecoes">
-							<a class="btnLeft" href="/categoria/tecido">Ver tudo</a>
+							<a class="btnLeft" href="/categoria/papel-de-parede">Ver tudo</a>
 						</div>
 					</div>
 				</div>
@@ -85,9 +85,9 @@ get_header();
 				<div class="contentBtnsColecoes">
 					<div class="btnsColecoes">
 						<div class="btnCinza">
-							<a href="/colecoes/tropicalia?tipo=tecido"> TROPICALIA </a>
-							<a href="/colecoes/flora?tipo=tecido"> FLORAL </a>
-							<a href="/colecoes/colorful?tipo=tecido"> COLORFUL </a>
+							<a href="/colecoes/tropicalia?tipo=papel-de-parede"> TROPICALIA </a>
+							<a href="/colecoes/flora?tipo=papel-de-parede"> FLORAL </a>
+							<a href="/colecoes/colorful?tipo=papel-de-parede"> COLORFUL </a>
 						</div>
 					</div>
 					<div class="content_btns">
@@ -95,7 +95,7 @@ get_header();
 							Mix de cores em combinações encantadoras com estampas gráficas, florais e geométricas que ilustram ambientes com originalidade. Presença da brasilidade de estampas inspiradas nas folhagens da Amazônia e de diversas outras regiões do Brasil.
 						</p>
 						<div class="btn_colecoes">
-							<a class="btnLeft" href="/categoria/tecido">Ver tudo</a>
+							<a class="btnLeft" href="/categoria/papel-de-parede">Ver tudo</a>
 						</div>
 					</div>
 				</div>
@@ -120,8 +120,8 @@ get_header();
 				<div class="contentBtnsColecoes">
 					<div class="btnsColecoes">
 						<div class="btnRose">
-							<a href="/colecoes/petit?tipo=tecido"> PETIT </a>
-							<a href="/colecoes/historinhas?tipo=tecido"> HISTORINHAS </a>
+							<a href="/colecoes/petit?tipo=papel-de-parede"> PETIT </a>
+							<a href="/colecoes/historinhas?tipo=papel-de-parede"> HISTORINHAS </a>
 						</div>
 					</div>
 					<div class="content_btns">
@@ -129,7 +129,7 @@ get_header();
 							Historinhas tem floresta tropical, fundo do mar, circo, fazendinha e muito mais. Estampas que contam historinhas e estimulam a imaginação. Petit é inspirada nos primeiros anos de vida dos pequeninos, traz criações que colorem o ambiente e são um convite ao início de uma nova jornada cheia de novas descobertas.
 						</p>
 						<div class="btn_colecoes">
-							<a class="btnLeft" href="categoria/tecido">Ver tudo</a>
+							<a class="btnLeft" href="/categoria/papel-de-parede">Ver tudo</a>
 						</div>
 					</div>
 				</div>
