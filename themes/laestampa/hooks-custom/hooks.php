@@ -24,7 +24,11 @@ function remove_order_product(){
 }
 add_action('init', 'remove_order_product');
 
-remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
+function removePaginationTop(){
+  remove_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 10 );
+}
+
+
 
 
 function add_result_product(){
