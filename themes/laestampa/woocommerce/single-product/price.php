@@ -45,7 +45,7 @@ function nome_da_sua_funcao( $wcrbp_price, $product ) {
 		}
 
 		if( $tipo == 'papel'){
-				$prazo = '5';
+				$prazo = '7';
 		}else if ($tipo == 'tecido' && $stock > 0){
 				$prazo = '3';
 		}else if ($tipo == 'tecido' && $stock <= 0) {

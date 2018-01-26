@@ -114,7 +114,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								$stock = get_post_meta( $variationID, '_stock', true );
 
 								if( $base == 'papel'){
-											$prazo = '5';
+											$prazo = '7';
 									}else if ($base == 'tecido' && $stock > 0){
 											$prazo = '3';
 									}else if ($base == 'tecido' && $stock <= 0) {
