@@ -248,14 +248,18 @@
 
 	<div id="content" class="site-content" tabindex="-1">
 	<?php 
+
+	$category = get_queried_object();
+
 		if( is_product_category() ) :
 
 			if( is_product_category('tecido') ){
 				$banner_cat = get_template_directory_uri().'/assets/images/tecido_banner.png';
-			}else{
+			}else if(is_product_category('tecido')){
 				$banner_cat = get_template_directory_uri().'/assets/images/papelparede.png';
+			}else if($category->slug == "novidades"){
+				$banner_cat = get_template_directory_uri().'/assets/images/colecoes/banner_category.jpg';
 			}
-
 			
 			
 
@@ -267,6 +271,7 @@
 		</div>
 
 	<?php	 endif; ?>
+
 	<div class="container">
 	<div class="row">
 		<div class="col-12">
