@@ -96,7 +96,7 @@
 										if( $textoBanner ){
 											$textBanner = '<div class="textBanner">
 																		<h2 class="text-center" style="color:'.$corText.'"> '.$textoBanner.' </h2>
-																		<div class="btnText_banner"> <a href="#" title="" style="color:'.$corText.'"> Compre Agora! </a></div>
+																		<div class="btnText_banner"> <a href="'.$linkBanner.'" title="" style="color:'.$corText.'"> Compre Agora! </a></div>
 																	</div>';
 										}else{
 											$textBanner = '';
@@ -107,12 +107,12 @@
 											echo '<div>
 														<div class="tarja" style="background-color:'.$cor_tarja.';opacity:0.'.$opacidade.'"> </div>
 														'.$textBanner.'
-														<img src="'.$imagem.'">
+														<a href="'.$linkBanner.'"><img src="'.$imagem.'"></a>
 													</div>';
 										}else{
 											echo '<div>
 														'.$textBanner.'
-														<img src="'.$imagem.'">
+														<a href="'.$linkBanner.'"><img src="'.$imagem.'"></a>
 													</div>';
 										}
 										
