@@ -123,7 +123,16 @@ function cupom_arquiteto($array){
 	$_SESSION["nome_arquiteto"] = $nomeArquiteto;
 }
 
-add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
+add_action( 'woocommerce_add_order_item_meta', 'add_order_item_meta', 10, 2 );
+
+function add_order_item_meta($item_id, $values) {
+    $key = 'order_vendedor'; // Define your key here
+    if( !isset($_SESSION["nome_arquiteto"]) ){
+    	wc_update_order_item_meta($item_id, $key, $_SESSION["nome_arquiteto"]);
+  	}
+}
+
+//add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
 function before_checkout_create_order( $order, $data ) {
 	session_start();
 	if( !isset($_SESSION["nome_arquiteto"]) ){
