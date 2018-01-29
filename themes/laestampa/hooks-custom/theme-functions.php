@@ -126,9 +126,12 @@ function cupom_arquiteto($array){
 add_action( 'woocommerce_add_order_item_meta', 'add_order_item_meta', 10, 2 );
 
 function add_order_item_meta($item_id, $values) {
+		session_start();
     $key = 'order_vendedor'; // Define your key here
-    if( !isset($_SESSION["nome_arquiteto"]) ){
-    	wc_update_order_item_meta($item_id, $key, $_SESSION["nome_arquiteto"]);
+    if( !isset($_SESSION["nome_arquiteto"])) {
+    	wc_add_order_item_meta($item_id, $key, $_SESSION["nome_arquiteto"]);
+  	} else {
+    	wc_add_order_item_meta($item_id, $key, 'Nenhum');
   	}
 }
 
