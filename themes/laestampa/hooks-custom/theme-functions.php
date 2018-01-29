@@ -116,6 +116,7 @@ function cupom_arquiteto($array){
 	$nomeArquiteto = get_field('nome_arquiteto', $idCupom);
 
 	if( !($idCupom && $nomeArquiteto == '' ) ){
+		$nomeArquiteto = 'Nenhum';
 		return;
 	}
 	session_start();
@@ -131,8 +132,6 @@ function before_checkout_create_order( $order, $data ) {
 	}
     $order->update_meta_data( 'order_vendedor', $_SESSION["nome_arquiteto"] );
 }
-
-
 
 
 

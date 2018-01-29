@@ -85,12 +85,10 @@ require 'hooks-custom/campos-acf.php';
 require 'hooks-custom/cpts.php';
 require 'hooks-custom/theme-functions.php';
 
-$user = current_user();
-
-if( $user == "pj" ){
+$usuario = current_user();
+if( $usuario == "pj" ){
 	require 'hooks-custom/pagamento-functions.php';
 }
-
 
 
 
