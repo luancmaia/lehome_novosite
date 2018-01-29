@@ -116,7 +116,6 @@ function cupom_arquiteto($array){
 	$nomeArquiteto = get_field('nome_arquiteto', $idCupom);
 
 	if( !($idCupom && $nomeArquiteto == '' ) ){
-		$nomeArquiteto = 'Nenhum';
 		return;
 	}
 	session_start();
