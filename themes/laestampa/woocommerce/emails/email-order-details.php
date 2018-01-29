@@ -48,6 +48,23 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 				'sent_to_admin' => $sent_to_admin,
 			) ); ?>
 		</tbody>
+		<tbody>
+		<?php
+			$orderNum = $order->get_order_number();
+			$prazo = get_post_meta($orderNum, 'forma_pagamento', true);
+
+			if( $prazo == 'avista' ){
+				$prazo = 'À Vista';
+			}else{
+				$prazo = $prazo.' Dias';
+			}
+
+		?>
+		<tr>
+			<th class="td" scope="row" colspan="2" style="text-align:left; <?php echo 'border-top-width: 4px;'; ?>"><?php echo 'Prazo de pagamento:' ?></th>
+						<td class="td" style="text-align:left; <?php echo 'border-top-width: 4px;'; ?>"><?php echo $prazo; ?></td>
+		</tr>
+	</tbody>
 		<tfoot>
 			<?php
 				if ( $totals = $order->get_order_item_totals() ) {

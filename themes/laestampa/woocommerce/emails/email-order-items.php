@@ -25,6 +25,32 @@ $text_align = is_rtl() ? 'right' : 'left';
 foreach ( $items as $item_id => $item ) :
 	$product = $item->get_product();
 	if ( apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
+
+
+		$sku = get_post_meta($product->get_id(), 'sku', true);
+								
+				$user = current_user();
+			
+				$product_id = $product->get_id();
+				
+				$is_papel = is_int(stripos( $sku, 'PAPEL DE PAREDE' ) );
+					
+				if( $is_papel != 1 ){
+					$base = "tecido";
+				}else{
+					$base = "papel";
+				}
+
+				$variationID = $product['variation_id'];
+				$stock = get_post_meta( $variationID, '_stock', true );
+
+				if( $base == 'papel'){
+							$prazo = '7';
+					}else if ($base == 'tecido' && $stock > 0){
+							$prazo = '3';
+					}else if ($base == 'tecido' && $stock <= 0) {
+							$prazo = '30';
+					}
 		?>
 		<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
 			<td class="td" style="text-align:<?php echo $text_align; ?>; vertical-align:middle; border: 1px solid #eee; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;"><?php
@@ -41,6 +67,9 @@ foreach ( $items as $item_id => $item ) :
 				if ( $show_sku && is_object( $product ) && $product->get_sku() ) {
 					echo ' (#' . $product->get_sku() . ')';
 				}
+
+				//prazo
+				echo 'Prazo deste produto é de: '.$prazo. 'dias + prazo Correios';
 
 				// allow other plugins to add additional product information here
 				do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, $plain_text );

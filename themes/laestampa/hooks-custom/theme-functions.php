@@ -102,15 +102,9 @@ add_action( 'wp_print_scripts', 'iconic_remove_password_strength', 10 );
 add_filter( 'woocommerce_shipping_local_pickup_is_available', 'is_local_pickup_available', 10, 2 );
 function is_local_pickup_available($available, $package){
 	//logica
-	$userCurrency = get_current_user_id();
-
-		
+	$userCurrency = get_current_user_id();		
   	$available = get_field('habilitar_retiradaLocal', 'user_'.$userCurrency);
-
-  	//var_dump($available);exit();
-
   	$available = json_decode($available);
-
 	return $available;
 }
 
@@ -121,32 +115,23 @@ function cupom_arquiteto($array){
 	$idCupom = $cupom->get_id();
 	$nomeArquiteto = get_field('nome_arquiteto', $idCupom);
 
-	if( !($idCupom && $nomeArquiteto) ){
+	if( !($idCupom && $nomeArquiteto == '' ) ){
+		$nomeArquiteto = 'Nenhum';
 		return;
 	}
-
 	session_start();
 	$_SESSION["nome_arquiteto"] = $nomeArquiteto;
-
-
-
 }
 
 add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
 function before_checkout_create_order( $order, $data ) {
-
 	session_start();
-
 	if( !isset($_SESSION["nome_arquiteto"]) ){
-
 		$order->update_meta_data( 'order_vendedor', 'Nenhum' );
 		return;
 	}
-
     $order->update_meta_data( 'order_vendedor', $_SESSION["nome_arquiteto"] );
 }
-
-
 
 
 
