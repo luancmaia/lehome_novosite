@@ -9,7 +9,7 @@ get_header();
 ?>
 </div></div></div>
 <div class="container-fluid">
-	<div class="row">
+	<div class="row quem-somosPage">
 		<?php echo banner_page(get_the_ID()); ?>
 	</div>
 </div>
@@ -36,10 +36,7 @@ get_header();
 			</div>
 		</div>
 		<div class="col-12 col-md-6">
-			<div class="box-imagesRightColunm1">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/imageRight1.jpg'; ?>" title="">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/imageRight2.jpg'; ?>" title="">
-			</div>
+			<div class="box-imagesRightColunm1 imagem1Right">
 		</div>
 	</div>
 </div>
@@ -96,9 +93,8 @@ get_header();
 
 			</div>
 		</div>
-		<div class="col-12 col-md-4">
-			<div class="box-imagesRightColunm2">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/imageRightcolum2.jpg'; ?>" title="">
+		<div class="col-12 col-md-4 d-none d-sm-block">
+			<div class="box-imagesRightColunm2 imagem2Right">
 			</div>
 		</div>
 	</div>
@@ -132,9 +128,9 @@ get_header();
 					 </p>  
 			</div>
 		</div>
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-6 d-none d-sm-block">
 			<div class="box-imagesRightPapel">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/papeldeparede.jpg'; ?>" title="Papel de Parede">
+				
 			</div>
 		</div>
 	</div>
@@ -156,17 +152,15 @@ get_header();
 				</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-5">
-			<div class="box-imagesRightColunm1">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/fotorevenda.jpg'; ?>" title="Revenda Serviço">
+		<div class="col-12 col-md-5 d-none d-sm-block">
+			<div class="box-imagesRightColunm1 nossosServicosRevenda">
 			</div>
 		</div>
 	</div>
 
 	<div class="row originais atacado">
-		<div class="col-12 col-md-5">
-			<div class="box-imagesRightColunm1">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/fotoatacado.jpg'; ?>" title="Atacado Serviço">
+		<div class="col-12 col-md-5 d-none d-sm-block"> 
+			<div class="box-imagesRightColunm1 nossosServicosAtacado">
 			</div>
 		</div>
 		<div class="col-12 col-md-7">
@@ -199,9 +193,9 @@ get_header();
 				</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-5">
-			<div class="box-imagesRightColunm1">
-				<img src="<?php echo get_template_directory_uri().'/assets/images/quemsomos/Foto_Corporativo.jpg'; ?>" title="Corporativo Serviço">
+		<div class="col-12 col-md-5 d-none d-sm-block">
+			<div class="box-imagesRightColunm1 nossosServicoscorporativo">
+				
 			</div>
 		</div>
 	</div>

@@ -56,7 +56,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/animal-print?=tipo=tecido" class="line_linkBox" title="Papel de Parede Animal Print">
+					<a href="/tema/animal-print?tipo=tecido" class="line_linkBox" title="Papel de Parede Animal Print">
 						<div class="mascara_banner">
 							<h3 class="text-center"> Tecidos <br/> Animal Print</h3>
 						</div>
@@ -76,7 +76,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">
-				<a href="/tema/tropical?=tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Tropical">
+				<a href="/tema/tropical?tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Tropical">
 					<div class="mascara_banner">
 						<h3 class="text-center"> Papel de Parede <br/> Tropical </h3>
 					</div>
@@ -86,7 +86,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/abstrato?=tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Abstratos">
+					<a href="/tema/abstrato?tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Abstratos">
 						<div class="mascara_banner">
 							<h3 class="text-center"> Papel de Parede <br/> Abstrato </h3>
 						</div>

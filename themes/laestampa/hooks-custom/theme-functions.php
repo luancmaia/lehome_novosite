@@ -114,3 +114,43 @@ function is_local_pickup_available($available, $package){
 	return $available;
 }
 
+//function cupom arquiteto
+add_action( 'woocommerce_applied_coupon', 'cupom_arquiteto', 10, 3 );
+function cupom_arquiteto($array){
+	$cupom = new WC_Coupon($array);
+	$idCupom = $cupom->get_id();
+	$nomeArquiteto = get_field('nome_arquiteto', $idCupom);
+
+	if( !($idCupom && $nomeArquiteto) ){
+		return;
+	}
+
+	session_start();
+	$_SESSION["nome_arquiteto"] = $nomeArquiteto;
+
+
+
+}
+
+add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
+function before_checkout_create_order( $order, $data ) {
+
+	session_start();
+
+	if( !isset($_SESSION["nome_arquiteto"]) ){
+
+		$order->update_meta_data( 'order_vendedor', 'Nenhum' );
+		return;
+	}
+
+    $order->update_meta_data( 'order_vendedor', $_SESSION["nome_arquiteto"] );
+}
+
+
+
+
+
+
+
+
+
