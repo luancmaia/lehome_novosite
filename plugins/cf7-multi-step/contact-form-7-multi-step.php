@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
 Plugin Name: Contact Form 7 Multi Step
@@ -166,7 +165,6 @@ function cf7mls_validation_callback()
         }
     }
 }
-=======
 <?php
 /**
 Plugin Name: Contact Form 7 Multi Step
@@ -334,4 +332,3 @@ function cf7mls_validation_callback()
         }
     }
 }
->>>>>>> fe555124804ade912c07fd72b0a29f7a416170c1
