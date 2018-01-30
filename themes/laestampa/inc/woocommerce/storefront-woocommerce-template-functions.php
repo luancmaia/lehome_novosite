@@ -80,9 +80,12 @@ if ( ! function_exists( 'storefront_cart_link' ) ) {
 	 * @since  1.0.0
 	 */
 	function storefront_cart_link() {
+		global $woocommerce;
+		$itens = $woocommerce->cart->get_cart();
+		$total = count($itens);
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
-				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
+			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Veja o seu carrinho de compras', 'storefront' ); ?>">
+				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo $total ;?></span>
 			</a>
 		<?php
 	}
@@ -281,7 +284,7 @@ if ( ! function_exists( 'storefront_promoted_products' ) ) {
 				) );
 			} elseif ( $recent_fallback ) {
 
-				echo '<h2>' . esc_html__( 'New In Store', 'storefront' ) . '</h2>';
+				echo '<h2>' . esc_html__( 'Novo na Loja', 'storefront' ) . '</h2>';
 
 				echo storefront_do_shortcode( 'recent_products', array(
 											'per_page' => $per_page,
@@ -360,9 +363,12 @@ if ( ! function_exists( 'storefront_handheld_footer_bar_cart_link' ) ) {
 	 * @since 2.0.0
 	 */
 	function storefront_handheld_footer_bar_cart_link() {
+		global $woocommerce;
+		$itens = $woocommerce->cart->get_cart();
+		$total = count($itens);
 		?>
-			<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
-				<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+			<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Veja o seu carrinho de compras', 'storefront' ); ?>">
+				<span class="count"><?php echo $total; ?></span>
 			</a>
 		<?php
 	}

@@ -34,3 +34,23 @@ function nome_da_sua_funcao( $wcrbp_price, $product ) {
 <p class="price"><?php echo price_type_user($product).'*'; ?></p>
 <p class="price-metro">*preço por metro</p>
 </div>
+<div class="prazoEstendido">
+	<?php
+		$user = current_user();
+		$stock = get_variable_stock($product, $user);
+		if( is_papel() != 1 ){
+			$tipo = "tecido";
+		}else{
+			$tipo = "papel";
+		}
+
+		if( $tipo == 'papel'){
+				$prazo = '7';
+		}else if ($tipo == 'tecido' && $stock > 0){
+				$prazo = '3';
+		}else if ($tipo == 'tecido' && $stock <= 0) {
+				$prazo = '30';
+		}
+		echo '<p class="composicao_title"><strong>Prazo de entrega deste produto é de: </strong>'.$prazo.' dias + Prazo Correios</p>';
+	?>
+</div>

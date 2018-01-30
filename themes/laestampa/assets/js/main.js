@@ -3,6 +3,7 @@ jQuery( function( $ ) {
 	  auto: true,
 	  autoControls: false,
 	  stopAutoOnClick: true,
+	  speed: 2000,
 	  pager: false,
 	  responsive: true,
 	  adaptiveHeight: true,
@@ -56,39 +57,50 @@ jQuery( function( $ ) {
 
 	var quantidade_digitada = $('.quantidade_necessario');
 
-	var is_tipo = calculo_metro.data('tipo');
-		calculo_metro.on('keyup', function(){
-		var valorDigitado = $(this).val();
+	var backorders = quantidade_digitada.data('backorders');
 
+	
+
+	var is_tipo = calculo_metro.data('tipo');
+
+		calculo_metro.on('keyup', function(){
+
+		var valorDigitado = $(this).val();
 		var resultOfMod = valorDigitado % 3;
 
 		if( is_tipo == 'papel' ){
+
 			if( resultOfMod != 0 ){
 				calculo_metro.val('');
+				result_calculo_metros.html('<bold> - </bold>');	
+				calculo_metro.tooltip({disabled: true});
+				$('.single_customButtom').attr('disabled', '');	
+				result_calculo_metros.data('price', total_valor);
+					
+			}else{
+				$('.single_customButtom').removeAttr('disabled', '');
+				result_calculo_metros.data('price', '00,00');
+				
 			}
 		}
 
 		$('input.qty').val(valorDigitado);
 
 		var total_valor = valorDigitado * price_product;
-
 		//validacao compra de quantidade
-		if( valorDigitado > stock ){
-
+		if( valorDigitado > stock && backorders == 'no' ){
 			calculo_metro.tooltip({disabled: false});
-			$('.single_customButtom').attr('disabled', '');
-			
+			$('.single_customButtom').attr('disabled', '');			
 		}else{
 			calculo_metro.tooltip({disabled: true});
 			$('.single_customButtom').removeAttr('disabled', 'disabled');
-
-			if( resultOfMod == 0 ){
+			//if( resultOfMod == 0  ){
 				result_calculo_metros.data('price', total_valor);
 				result_calculo_metros.html(total_valor + ',00');
-			}else{
-				result_calculo_metros.data('price', '00,00');
-				result_calculo_metros.html('00,00');
-			}
+			//}else{
+				//result_calculo_metros.data('price', '00,00');
+				//result_calculo_metros.html('000,00');
+			//}
 			
 		}
 
@@ -303,7 +315,59 @@ $(document).on( 'click', '.quantity-down', function(e){
 			    "transitionSpeed": 400,
 			    "contentElement": '[data-contents]'
 			});
-		})
+		});
+
+		//botao next cadastro de reservas
+		$(document).on('ready', function(){
+			$('.cf7mls_next').html('Próximo');
+			$('.cf7mls_back').html('Voltar');
+			
+		});
+
+
+		$(document).on('ready', function(){
+			//pega a largura da resolução da tela
+			var width = screen.width;
+			//pega a altura da resolução da tela
+			var height = screen.height;
+
+			console.log(width);
+
+			//verifica se a resolução dará uma boa visão do site
+			if (width <= 415){
+				$('.boxFiltros').addClass('boxFiltros-responsivo');
+				$('.widget-areaSidebar h3').removeClass('filtros');
+				$('.widget-areaSidebar h3').addClass('filtrosMobile');
+
+			}else{
+				$('.boxFiltros').removeClass('boxFiltros-responsivo');
+
+			}
+				
+		});
+
+		$(document).on('click', '.filtrosMobile', function(){
+			$('.boxFiltros-responsivo').slideToggle();
+		});
+
+		//PAGAMENTO
+
+		jQuery('#forma_pagamento').on('change', function(e){
+		var pagamento = jQuery(this).val();
+
+		jQuery.ajax({
+			'type' : 'POST',
+			'dataType': 'json',
+			'url' : window.ajaxurl,
+			'data' : {
+				'action' : 'le_forma_pagamento',
+				'pagamento': pagamento
+			},
+			'success': function(e){
+				jQuery( 'body' ).trigger( 'update_checkout' );
+			}
+		});
+	})
 
 });
 

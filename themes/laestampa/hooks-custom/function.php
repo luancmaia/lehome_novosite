@@ -248,21 +248,21 @@ function cwp_visao_geral_box($post){
 				$base = $base[0];
 			
 				if( $base == 'HAVANA' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Havana.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'ITALYPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Italyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'KIMBOPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Kimboprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'MILAOPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Milaoprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'NINETYPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Ninetyprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'PETITPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Petitprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'TWEEDPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Tweedprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}elseif ( $base == 'VITAPRINT' ){
-					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; display: block;">';
+					$lavagem = '<img src="'.get_template_directory_uri().'/assets/images/icon_lavagem/Vitaprint.png" class="rounded mx-auto d-block" style="margin-right: auto;margin-left: auto; width:90%; display: block;">';
 				}else{
 					$lavagem = 'NÃO DEVE SER LAVADO';
 				}
@@ -377,8 +377,8 @@ function verificar_imagens( $attach_id ) {
 	$explode = explode('_', $post->post_title);
 	$title = implode( ' ', $explode );
 	
-	if( in_array("GALLERY", $explode) ){
-		$gallery_search = array_search('GALLERY',$explode,true);
+	if( in_array("APLICACAO", $explode) ){
+		$gallery_search = array_search('APLICACAO',$explode,true);
 		unset($explode[$gallery_search]);
 		$title = implode( ' ', $explode );
 			global $wpdb;	
@@ -409,26 +409,67 @@ function verificar_imagens( $attach_id ) {
 
 add_action( 'pre_get_posts', 'query_filter_category' );
 function query_filter_category( $query ) {
-	if ( $_GET && isset( $_GET['tid'] ) && $query->is_main_query() ) {
-		$tid = $_GET['tid'];
-		$tids = [];
-		$tax_query = ['relation' => 'OR'];
-		global $wpdb;
-		foreach($tid as $t):
-			$result = $wpdb->get_results( 'SELECT object_id FROM ' . $wpdb->prefix . 'term_relationships WHERE term_taxonomy_id = ' . $t );
-			if ( $result ) {
-				
-				foreach($result as $r):
-					$tids[] = $r->object_id;
-				endforeach;
-			}else{
-				$tids = $tid;
-			}
-			//$tax_query[] = [ 'taxonomy' => 'product_cat', 'field' => 'term_id', 'terms' => $t ];
-		endforeach;
-		$query->set('post__in', $tids);
+	$tax_query =  array();;
+
+	if ( $_GET && isset( $_GET['tema'] ) && $query->is_main_query() ) {
+		$tema = $_GET['tema'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'tema', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
 	}
+
+	if ( $_GET && isset( $_GET['colecao'] ) && $query->is_main_query() ) {
+		$tema = $_GET['colecao'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'colecao', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['composicao'] ) && $query->is_main_query() ) {
+		$tema = $_GET['composicao'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'composicao', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['product_cat'] ) && $query->is_main_query() ) {
+		$tema = $_GET['product_cat'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( $_GET && isset( $_GET['cor'] ) && $query->is_main_query() ) {
+		$tema = $_GET['cor'];
+		$temas = [];
+		foreach( $tema as $t ) {
+			$temas[] = [ 'taxonomy' => 'cor', 'field' => 'slug', 'terms' => $t->slug ];
+		}
+		array_merge( $temas, $tax_query );
+	}
+
+	if ( !empty( $tax_query ) ) $query->set('tax_query', $tax_query);
+
 	return $query;
+}
+
+/* Remover Tab Avaliações */
+add_filter( 'woocommerce_product_tabs', 'cwp_woocommerce_remove_default_tabs' );
+function cwp_woocommerce_remove_default_tabs( $tabs ) {
+             
+      if ( isset( $tabs['additional_information'] ) ) {
+            unset( $tabs['additional_information'] );          
+      }
+       
+      return $tabs;
 }
 
 

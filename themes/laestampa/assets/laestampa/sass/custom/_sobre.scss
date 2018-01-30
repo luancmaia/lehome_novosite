@@ -4,7 +4,7 @@
 	margin-top: 100px;
 	.somos-originais{
 		background-color: #fbf9ee;
-		padding: 41px 0 30px 0;
+		padding: 50px 0 30px 0;
     padding-left: 40%;
     padding-right: 12%;
 		h2{
@@ -33,8 +33,18 @@
 		}
 	}
 	.img-somosOriginais{
-		margin: 25px 0;
+		margin-top: 25px;
 	}
+}
+.imagem1Right{
+	background: url('../images/quemsomos/img_colum1Ritght.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
+}
+.imagem2Right{
+	background: url('../images/imageRightcolum2.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
 }
 .box-imagesRightColunm1{
 	img{
@@ -45,7 +55,7 @@
 	}
 }
 .nossosProdutos{
-
+	margin-top: 25px;
 }
 .nossos-produtos{
 	background-color: #fbf9ee;
@@ -132,14 +142,9 @@
 	}
 }
 .box-imagesRightPapel{
-	img{
-		border-radius: 0;
-    max-height: 525px;
-    min-width: 100%;
-		&:nth-child(1){
-			margin-bottom: 50px;
-		}
-	}
+	background: url('../images/quemsomos/papeldeparede.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
 }
 .servicos{
 	margin-top: 20px;
@@ -157,6 +162,21 @@
 		margin-bottom: 0;
 	}
 }
+.nossosServicosRevenda{
+	background: url('../images/quemsomos/fotorevenda.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
+}
+.nossosServicosAtacado{
+	background: url('../images/quemsomos/fotoatacado.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
+}
+.nossosServicoscorporativo{
+	background: url('../images/quemsomos/Foto_Corporativo.jpg') no-repeat top center;
+	background-size: cover;
+	height: 100%;
+}
 .atacado{
 	margin-top: 20px;
 	.nossos-servicos{
@@ -172,4 +192,104 @@
 	min-height: 358.55px;
 	padding-left: 40%;
 	padding-right: 12%;
+}
+
+/* RESPONSIVO
+___________________________*/
+@media (max-width: 1440px ){
+	.quem-somosPage{
+		.banner-page{
+			min-height: 325px!important;
+		}
+	}
+
+}
+@media (max-width: 1280px ){
+
+}
+
+@media (max-width: 1200px ){
+
+}
+
+@media (max-width: 1024px ){
+
+}
+
+@media (max-width: 991px ){
+
+}
+
+@media (max-width: 768px ){
+
+
+}
+
+@media (max-width: 600px ){
+
+	.quem-somosPage{
+		.banner-page{
+			min-height: 225px!important;
+		}
+	}
+
+}
+@media (max-width: 550px ){
+	.quem-somosPage{
+		.banner-page{
+			min-height: 125px!important;
+		}
+	}
+	.originais{
+		margin-top: 20px;
+		.somos-originais{
+			padding: 10px 0 10px 0;
+			padding-left: 5%;
+			padding-right: 5%;
+			h2{
+				font-size: 40.05px;
+				text-align: center;
+			}
+			h3{
+				text-align: center;
+			}
+		}
+	}
+	.nossos-produtos{
+		padding: 20px 0 20px 0;
+		padding-left: 5%;
+		padding-right: 5%;
+		h2{
+			font-size: 40.05px;
+			text-align: center;
+		}
+	}
+	.rowpapeis{
+		.somos-originais{
+			padding: 20px 0 20px 0;
+			padding-left: 5%;
+			padding-right: 5%;
+			h2{
+				font-size: 40.05px;
+				text-align: center;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 500px ){
+
+}
+
+@media (max-width: 475px ){
+
+}
+
+@media (max-width: 430px ){
+
+}
+
+@media (max-width: 375px ){
+
 }

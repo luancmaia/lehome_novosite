@@ -38,6 +38,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php
 					$fields = $checkout->get_checkout_fields( 'shipping' );
 
+					//var_dump($fields);
+
 					foreach ( $fields as $key => $field ) {
 						if ( isset( $field['country_field'], $fields[ $field['country_field'] ] ) ) {
 							$field['country'] = $checkout->get_value( $field['country_field'] );

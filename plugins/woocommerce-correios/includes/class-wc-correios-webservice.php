@@ -564,12 +564,16 @@ class WC_Correios_Webservice {
 				}
 			}
 
+
+
 			if ( isset( $result->cServico ) ) {
 				if ( 'yes' === $this->debug ) {
 					$this->log->add( $this->id, 'Correios WebServices response: ' . print_r( $result, true ) );
 				}
 
 				$shipping = $result->cServico;
+
+
 			}
 		} else {
 			if ( 'yes' === $this->debug ) {
@@ -578,5 +582,6 @@ class WC_Correios_Webservice {
 		}
 
 		return $shipping;
+		var_dump($shipping);
 	}
 }

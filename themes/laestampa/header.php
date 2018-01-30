@@ -17,12 +17,35 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+ <script type="text/javascript">
+        var template_dir = "<?php echo get_template_directory_uri(); ?>";
+        window.ajaxurl = '<?php echo admin_url("admin-ajax.php"); ?>';
+    </script>
 
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113098650-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+
+  gtag('config', 'UA-113098650-1');
+
+</script>
+	
 	<div id="modal-busca" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="container">
 			<div class="box_buscaModal">
@@ -54,15 +77,15 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'storefront_before_header' ); ?>
 
-	<header id="masthead" class="header-top" role="banner" style="<?php storefront_header_styles(); ?>">
+	<header id="masthead" class="header-topInt" role="banner" style="<?php storefront_header_styles(); ?>">
 		<div class="header-1">
 			<div class="header-fixed">
 				<div class="container-fluid">
 				<div class="row">				
 						<div class="col-12 col-md-6 top-redessociais">
 							<ul class="nav justify-content-center">
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/laestampahome/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.facebook.com/laestampaoficial/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="col-12 col-md-6 box_topMenu">
@@ -115,10 +138,15 @@
 											if( $total ){	
 										?>
 										<ul class="nav flex-column">
-											<?php 												
+											<?php 
+												global $product;
+												$usuario = current_user();												
 												foreach ($itens as $key => $value) {
 													$_product = wc_get_product( $value['data']->get_id() );
-													$price = get_post_meta($value['product_id'] , '_price', true);
+
+													$price = get_variable_price(wc_get_product($value['product_id']), $usuario);
+													//$price = get_post_meta($value['product_id'] , '_price', true);
+
 													$image = $_product->get_image();
 
 													$removeUrl = $woocommerce->cart->get_remove_url($key);													
@@ -128,8 +156,8 @@
 																		<div class="descriptionItemCar">
 																			<h4> '.$_product->get_title().'  </h4>
 																			<p class="unitario"> Preço unitário </p>
-																			<p class="valorItem"> R$ '.$price.' </p>
-																			<p class="quantidade"> Quantidade: '.$value['quantity'].' </p>
+																			<p class="valorItem"> '.$price.' </p>
+																			<p class="quantidade"> Quantidade: '.$value['quantity'].' mtr(s). </p>
 																		</div>	
 																	</a>
 																	<p class="removeItemCart"><a href="'.$removeUrl.'"><i class="fa fa-times" aria-hidden="true"></i> Remover</a></p>
@@ -180,10 +208,10 @@
 						</div>
 					</div>
 					<div class="row menu-principal">
-						<div class="col-11">
+						<div class="col-12 col-md-11">
 							<?php storefront_primary_navigation(); ?>
 						</div>
-						<div class="col-1">
+						<div class="col-md-1 d-none d-sm-block">
 							<div class="lupa-busca" data-toggle="modal" data-target="#modal-busca">
 								<span><i class="fa fa-search" aria-hidden="true"></i></span>
 							</div>
@@ -220,14 +248,18 @@
 
 	<div id="content" class="site-content" tabindex="-1">
 	<?php 
+
+	$category = get_queried_object();
+
 		if( is_product_category() ) :
 
 			if( is_product_category('tecido') ){
 				$banner_cat = get_template_directory_uri().'/assets/images/tecido_banner.png';
-			}else{
+			}else if(is_product_category('tecido')){
 				$banner_cat = get_template_directory_uri().'/assets/images/papelparede.png';
+			}else if($category->slug == "novidades"){
+				$banner_cat = get_template_directory_uri().'/assets/images/colecoes/banner_category.jpg';
 			}
-
 			
 			
 
@@ -239,6 +271,7 @@
 		</div>
 
 	<?php	 endif; ?>
+
 	<div class="container">
 	<div class="row">
 		<div class="col-12">

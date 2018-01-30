@@ -56,7 +56,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/animal-print/" class="line_linkBox" title="Papel de Parede Animal Print">
+					<a href="/tema/animal-print?tipo=tecido" class="line_linkBox" title="Papel de Parede Animal Print">
 						<div class="mascara_banner">
 							<h3 class="text-center"> Tecidos <br/> Animal Print</h3>
 						</div>
@@ -65,7 +65,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 				</div>
 				<div class="item_categoriaHome no-click d-flex">
 					<h4>
-						Estimulamos novas formas de <strong>expressão e comportamento</strong> na decoração. <strong>Estimulamos</strong> novas formas <strong>de decoração</strong>.
+						Ambientes marcantes tem seu valor. Por isso, <strong>a linha Home apresenta papéis de parede e tecidos em coleções com personalidade</strong> sendo grande fonte de inspiração para diversos projetos.
 					</h4>
 				</div>
 			</div>
@@ -76,7 +76,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 	<div class="row rowLine1-desenhos">
 			<div class="col-12 col-md-6 noPadding-left">
 				<div class="item_categoriaHome">
-				<a href="/tema/tropical/" class="line_linkBox" title="Papel de Parede Tropical">
+				<a href="/tema/tropical?tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Tropical">
 					<div class="mascara_banner">
 						<h3 class="text-center"> Papel de Parede <br/> Tropical </h3>
 					</div>
@@ -86,9 +86,9 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 			</div>
 			<div class="col-12 col-md-6 noPadding-right">
 				<div class="item_categoriaHome">
-					<a href="/tema/textura" class="line_linkBox" title="Papel de Parede Estampados">
+					<a href="/tema/abstrato?tipo=papel-de-parede" class="line_linkBox" title="Papel de Parede Abstratos">
 						<div class="mascara_banner">
-							<h3 class="text-center"> Papel de Parede <br/> Estampados </h3>
+							<h3 class="text-center"> Papel de Parede <br/> Abstrato </h3>
 						</div>
 					</a>
 						<img src="<?php echo get_template_directory_uri().'/assets/images/home/line2_colun2.jpg' ?>" alt="" />
@@ -105,9 +105,7 @@ $imagem_banner2 = get_template_directory_uri().'/assets/images/banner-home.jpg';
 		</div>
 	</div>
 	<div class="row row-instagramHome">
-			<!-- LightWidget WIDGET -->
-			<script src="//lightwidget.com/widgets/lightwidget.js"></script>
-			<iframe src="//lightwidget.com/widgets/7072ce46ac5551d9b401c38dfb5ef874.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+			<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/2c59c6533e0c510d952283ab284a2c98.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 
 	</div>
 </div>

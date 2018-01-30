@@ -22,6 +22,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+<?php
+
+	$category = get_queried_object();
+	if( $category->slug == "mood" || $category->slug == "resort" ):
+?>
+</div></div></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="banner-page" style="background: url('<?php echo get_template_directory_uri(). "/assets/images/colecoes/banner_category.jpg" ?>') no-repeat;background-size: 100% auto;">
+		<div class="title_page sr-only">
+			<h1><?php echo $category->name; ?></h1>			
+		</div>	
+	</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+<?php endif; ?>
+
 <?php echo add_result_product(); ?>
 	<?php
 		/**

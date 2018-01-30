@@ -1,0 +1,220 @@
+
+//COLECOES
+
+.banner_colecoes{
+	background-color: #f9f7ef;
+	.imageLeftcolecoes{
+		height: 100%;
+	}
+	.imageRighttcolecoes{
+		height: 100%;
+	}
+	.contentCenter{
+		height: 100%;
+		padding: 30% 1%;
+		h1{
+			font-size: 39px;
+			font-family: $dinMedium;
+			font-size: 40px;
+			font-family: "dinPro-Medium",sans-serif;
+			margin: 5px 20px 75px;
+			text-transform: uppercase;
+		}
+		.textContent{
+			font-family: $dinLigh;
+			font-size: 16px;
+			padding: 0 30px;
+			margin-bottom: 50px;
+		}
+		.btn_colecoes{
+			a.btnLeft{
+				margin-left: -100px;
+				float: left;
+			}
+			a.btnRight{
+				margin-right: -100px;
+				float: right;
+			}
+			a{
+				padding: 20px 50px;
+				text-transform: uppercase;
+				font-size: 20px;
+				font-family: $din; 
+				background-color: #e7cfbf;
+				color: #9a9ea0;
+				border-radius: 3px;
+				margin-right: 5px;
+				margin-left: 5px;
+				&:hover{
+					text-decoration: none;
+					background-color: $branco;
+					color: #e7cfbf;
+				}
+			}
+		}
+	}		
+}
+.rowSubtitle{
+	margin: 64px 0 100px 0;
+	.text-colecoes{
+		h2{
+			text-transform: uppercase;
+			font-size: 40px;
+			font-family: $dinMedium;
+			margin-bottom: 80px;
+		}
+	}
+	p{
+		a{
+			color: $cor-primaria;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+.outrasColecoes{
+	background-color: #f9f7ef;
+	padding-bottom: 95px;
+	margin-bottom: 200px;
+	.image1Colecao{
+		margin-top: -92px;
+		img{
+			width: 100%;
+		}
+	}
+	.contentBtnsColecoes{
+		margin-top: -92px;
+		.btnsColecoes{
+			.btnCinza{				
+				text-align: center;				
+				a{
+					background-color: #cccccc;
+					padding: 40px 52px;				
+					font-size: 24px;
+					color: $branco;
+					font-family: $dinMedium;
+					text-transform: uppercase;
+					margin-bottom: 15px;
+					display: block;
+					&:hover{
+						text-decoration: none;
+						background-color: $branco;
+						color: #cccccc;
+
+					-webkit-box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+					-moz-box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+					box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+
+					}				
+				}
+			}
+			.btnRose{				
+				text-align: center;				
+				a{
+					background-color: #e7cfbf;
+					padding: 40px 52px;				
+					font-size: 24px;
+					color: #9a9ea0;
+					font-family: $dinMedium;
+					text-transform: uppercase;
+					margin-bottom: 15px;
+					display: block;
+					&:hover{
+						text-decoration: none;
+						background-color: #9a9ea0;
+						color: #e7cfbf;
+
+					-webkit-box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+					-moz-box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+					box-shadow: inset 0px 0px 26px -13px rgba(0,0,0,0.03);
+
+					}				
+				}
+			}
+		}
+		.content_btns{
+			padding: 5%;
+			text-align: center;
+			font-size: 16px;
+			font-family: $dinLigh;
+			.btn_colecoes{
+				margin-top: 10px;
+				a{
+					background-color: #d7edd9;
+					text-transform: uppercase;
+					padding: 5px 30px;
+					border-radius: 3px;
+					color: $cor-primaria;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+.colecoesInfantil{
+	margin-bottom: 0;
+}
+
+/* RESPONSIVO
+___________________________*/
+@media (max-width: 1440px ){
+	.banner_colecoes{
+		.contentCenter{
+			.btn_colecoes{
+				a{
+					padding: 20px 30px;
+				}
+			}
+		}
+	}
+
+}
+@media (max-width: 1280px ){
+
+}
+
+@media (max-width: 1200px ){
+
+}
+
+@media (max-width: 1024px ){
+
+}
+
+@media (max-width: 991px ){
+
+}
+
+@media (max-width: 768px ){
+
+
+}
+
+@media (max-width: 600px ){
+
+
+}
+
+
+@media (max-width: 550px ){
+
+}
+
+@media (max-width: 500px ){
+
+}
+
+@media (max-width: 475px ){
+
+}
+
+@media (max-width: 430px ){
+
+}
+
+@media (max-width: 375px ){
+
+}

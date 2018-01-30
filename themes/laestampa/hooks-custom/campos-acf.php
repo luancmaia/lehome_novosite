@@ -155,4 +155,49 @@ if(function_exists("register_field_group"))
 }
 
 
+//retirada no local
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_opcao-retirar-no-local',
+		'title' => 'Opção retirar no local',
+		'fields' => array (
+			array (
+				'key' => 'field_5a09dc7aeffb8',
+				'label' => 'Deseja habilitar a Retirada no local para esse usuário?',
+				'name' => 'habilitar_retiradaLocal',
+				'type' => 'select',
+				'instructions' => 'Selecione se esse usuário vai poder ter a opção de Retirar no Local.
+	',
+				'choices' => array (
+					'true' => 'Sim',
+					'false' => 'Não',
+				),
+				'default_value' => 'false',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'ef_user',
+					'operator' => '==',
+					'value' => 'revenda',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
+
 

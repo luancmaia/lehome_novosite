@@ -83,6 +83,26 @@
 	}
 }
 
+#customer_login{
+	.u-column1{
+		border-right: 1px solid;
+	}
+}
+
+.cadastro_revendaForm{
+	margin-top: 50px;
+	a{
+		font-size: 20px;
+		text-transform: uppercase;
+		padding: 10px 20px;
+		background-color: #efdcd1;
+		color: $cor-primaria;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
 /* RESPONSIVO
 ___________________________*/
 @media (max-width: 1440px ){

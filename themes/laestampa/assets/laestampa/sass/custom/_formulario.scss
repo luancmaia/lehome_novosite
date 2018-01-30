@@ -31,7 +31,21 @@
 .form-row{
 	width: 100%;
 }
-.column-half, .column-full{
+.cadastro_formularios{
+	h1{
+		font-size: 40px;
+		margin: 50px 0;
+	}
+}
+.row-form{
+	#responsive-form{
+		max-width:100%;
+		.fieldset-cf7mls{
+			background-color: transparent!important;
+		}
+	}
+}
+.column-half, .column-full, .column-tree, .column-four, .column-five{
 	float: left;
 	position: relative;
 	padding: 0.65rem;
@@ -47,10 +61,27 @@
 	clear: both;
 }
 
+//cadastro de reservas
+.cf7mls_next.action-button, .cf7mls_back.action-button{
+	background: #d3d3d3 none repeat scroll 0 0!important;
+}
+
 /**---------------- Media query ----------------**/
 @media only screen and (min-width: 48em) { 
 	.column-half{
 		width: 50%;
+	}
+	.column-tree{
+		width: 33.33333%;
+	}
+	.column-four{
+		width: 25%;
+	}
+	.column-five{
+		width: 20%;
+	}
+	.column-six{
+		width: 16.6666%;
 	}
 }
 
@@ -106,4 +137,9 @@ div.wpcf7-mail-sent-ok{
 	border-color: #59a80f;
 	color: #fff;
 	margin: 0;
+}
+
+//FORMULARIOS DE CADASTRO COM MULTSTEPS
+.multistep-nav{
+	display: inline-block!important;
 }

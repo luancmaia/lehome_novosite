@@ -12,15 +12,19 @@ Author URI:  http://luancuba.github.io
 function wvc_select_related_products() {
 	global $post, $woocommerce;
 	$product_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, '_variacao_cor', true ) ) );
+	var_dump($product_ids);
+
 	?>
 	<div class="options_group">
 		<?php if ( $woocommerce->version >= '2.3' ) : ?> 
 			<p class="form-field"><label for="variacao_cor"><?php _e( 'Variação de Cor', 'woocommerce' ); ?></label>
 				<input type="hidden" class="wc-product-search" style="width: 50%;" id="variacao_cor" name="variacao_cor" data-placeholder="<?php _e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products" data-multiple="true" data-selected="<?php
 					$json_ids = array();
-					foreach ( $product_ids as $product_id ) {
+					foreach ( $product_ids as $product_id ) {						
 						$product = wc_get_product( $product_id );
 						$json_ids[ $product_id ] = wp_kses_post( $product->get_formatted_name() );
+
+
 					}
 
 					echo esc_attr( json_encode( $json_ids ) );

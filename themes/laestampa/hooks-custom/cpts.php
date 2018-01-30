@@ -51,6 +51,11 @@
 			'search_items'               => 'Procurar Coleções',
 			'add_or_remove_items'        => 'Adicionar ou remover Coleção',
 		);
+		$rewrite = array(
+			'slug'                       => 'colecoes',
+			'with_front'                 => true,
+			'hierarchical'               => false,
+		);
 		$args = array(
 			'labels'                     => $labels,
 			'hierarchical'               => true,
@@ -59,6 +64,7 @@
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
+			'rewrite'                    => $rewrite,
 		);
 		register_taxonomy( 'colecao', 'product', $args );
 		register_taxonomy_for_object_type( 'colecao', 'product' );

@@ -4,7 +4,7 @@ get_header();
 </div></div></div>
 <div class="container-fluid">
 	<div class="row">
-		<div class="banner-page" style="background: url('<?php echo get_template_directory_uri(). "/assets/images/banner_parceiros.jpg" ?>') no-repeat;background-size: 100% auto;">
+		<div class="banner-page" style="background: url('<?php echo get_template_directory_uri(). "/assets/images/BannerParceiros.png" ?>') no-repeat;background-size: 100% auto;">
 		<div class="title_page sr-only">
 			<h1><?php echo get_the_title(); ?></h1>			
 		</div>	
@@ -16,7 +16,7 @@ get_header();
 		<div class="row  gridBox-parceiros">
 			<div class="col-12">
 				<h2 class="text-center subTitleArchive"> 
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, se. 
+					Acreditamos que as parcerias são uma forma de trocar experiências e inspirações por isso      buscamos nos unir com parceiros de peso para projetos exclusivos e criativos.
 				</h2>
 			</div>
 		<?php

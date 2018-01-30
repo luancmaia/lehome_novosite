@@ -342,7 +342,7 @@ class WC_AJAX {
 		unset( WC()->session->refresh_totals, WC()->session->reload_checkout );
 
 		wp_send_json( array(
-			'result'    => empty( $messages ) ? 'success' : 'failure',
+			'result'    => empty( $messages ) ? 'success' : 'failured',
 			'messages'  => $messages,
 			'reload'    => isset( WC()->session->reload_checkout ) ? 'true' : 'false',
 			'fragments' => apply_filters( 'woocommerce_update_order_review_fragments', array(

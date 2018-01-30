@@ -12,6 +12,18 @@ ___________________________*/
 .header-top{
 	z-index: 99;
 	position: relative;
+  .box-topo{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header-topInt{
+  z-index: 9999;
+  position: relative;
+  .box-topo{
+    display: flex;
+    flex-direction: column;
+  }
 }
 .itemMenu-topHeader{
   margin-right: 25px;
@@ -53,6 +65,9 @@ ___________________________*/
 }
 
 //MENU LOGIN MODAL
+.modalLogin{
+  z-index: 999999999;
+}
 #modalLogin{
   cursor: pointer;
 }
@@ -149,7 +164,7 @@ ___________________________*/
 
 .tarja{
   width: 100%;
-  height: 16.3%;
+  height: 32%;
   position: absolute;
   top: 0;
 }
@@ -182,9 +197,6 @@ ___________________________*/
   }
 }
 
-.console_slide{
-	position: relative;
-	top: 0;
   .bx-wrapper{
     box-shadow: none;
     border: 0;
@@ -204,7 +216,6 @@ ___________________________*/
 			width: 100%;
 		}
 	}
-}
 .banner-home{
 	height: 600px;
 	width: 100%;
@@ -417,14 +428,14 @@ ___________________________*/
 /* RESPONSIVO
 ___________________________*/
 @media (max-width: 1440px ){
-  .banner-page{
-    max-height: 254px;
-  }
+    .banner-page{
+      max-height: 225px;
+    }
     .no-click {
       height: 29.2%;
     }
     .tarja{      
-      height: 29.1%;
+      height: 45.1%;
     }
     a.box_bannerBtn{
       .title-banner{
@@ -511,8 +522,17 @@ ___________________________*/
         font-size: 28.4px;
       }
     }
+    .logo-principal{
+      .logo{
+        a{
+          img{
+            width: 200px!important;
+          }
+        }
+      }
+    }
      .tarja{      
-      height: 41.1%;
+      height: 52%;
     }
     .textBanner{
       position: absolute;
@@ -600,10 +620,24 @@ ___________________________*/
 
   @media (max-width: 768px ){
    
+
     
   }
 
   @media (max-width: 600px ){
+    .header-top{
+      .box-topo{
+        display: flex;
+        flex-direction: column-reverse;
+        .boxMenuGeral{
+          position: relative;
+        }
+      }
+    }
+    .bx-wrapper{
+      box-shadow: none;
+      border: 0;
+    }
 
      .no-click {
       height: auto;
@@ -646,6 +680,22 @@ ___________________________*/
         padding: 0;
       }
       .col-estampados{
+        margin-bottom: 15px;
+      }
+    }
+    .site-footer{
+      .newsletter-footer{
+        .title_newsletterFooter{
+          h3{
+            font-size: 22px;
+          }
+        }
+      }
+    }
+    .newsletterFooterForm{
+      flex-direction: column;
+      .colum_input{
+        width: 100%;
         margin-bottom: 15px;
       }
     }
@@ -746,6 +796,9 @@ ___________________________*/
       .col-estampados{
         margin-bottom: 15px;
       }
+    }
+    .listCart{
+      right: 1em;
     }
   }
 

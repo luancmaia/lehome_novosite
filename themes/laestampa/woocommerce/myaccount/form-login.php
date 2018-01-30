@@ -112,6 +112,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</form>
 
+		<div class="cadastro_revendaForm text-right">
+			<a href="/cadastro-de-revendas" title="Cadastro Revendeda"> Quero me tornar uma revenda! </a>
+		</div>
+
 	</div>
 
 </div>

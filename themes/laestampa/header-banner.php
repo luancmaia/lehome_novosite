@@ -20,6 +20,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113098650-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+
+  gtag('config', 'UA-113098650-1');
+
+</script>
+	
 		<div class="modal modal-busca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="container">
 			<div class="box_buscaModal">
@@ -34,7 +53,7 @@
 	</div>
 
 	<!-- MODAL LOGIN -->
-<div id="modal_login" class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="modal_login" class="modal modalLogin fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-superlg">
     <div class="modal-content">
       <div class="form-login_menu">
@@ -52,7 +71,7 @@
 	<?php do_action( 'storefront_before_header' ); ?>
 
 	<header id="masthead" class="header-top" role="banner" style="<?php storefront_header_styles(); ?>">
-		<div class="container-fluid console_slide">
+		<div class="container-fluid box-topo">
 			<div class="row ">
 				<div class="bxsliderHome">
 					<?php
@@ -77,7 +96,7 @@
 										if( $textoBanner ){
 											$textBanner = '<div class="textBanner">
 																		<h2 class="text-center" style="color:'.$corText.'"> '.$textoBanner.' </h2>
-																		<div class="btnText_banner"> <a href="#" title="" style="color:'.$corText.'"> Compre Agora! </a></div>
+																		<div class="btnText_banner"> <a href="'.$linkBanner.'" title="" style="color:'.$corText.'"> Compre Agora! </a></div>
 																	</div>';
 										}else{
 											$textBanner = '';
@@ -88,12 +107,12 @@
 											echo '<div>
 														<div class="tarja" style="background-color:'.$cor_tarja.';opacity:0.'.$opacidade.'"> </div>
 														'.$textBanner.'
-														<img src="'.$imagem.'">
+														<a href="'.$linkBanner.'"><img src="'.$imagem.'"></a>
 													</div>';
 										}else{
 											echo '<div>
 														'.$textBanner.'
-														<img src="'.$imagem.'">
+														<a href="'.$linkBanner.'"><img src="'.$imagem.'"></a>
 													</div>';
 										}
 										
@@ -110,8 +129,8 @@
 				<div class="row">				
 						<div class="col-12 col-md-6 top-redessociais">
 							<ul class="nav justify-content-center">
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/laestampahome/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="nav-item"><a class="nav-link" href="https://www.facebook.com/laestampaoficial/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="col-12 col-md-6 box_topMenu">
@@ -142,6 +161,18 @@
 								</div>
 							</div>
 							<div class="top-menu menuCart">
+								<?php
+									global $woocommerce;
+									$itens = $woocommerce->cart->get_cart();
+									$total = count($itens);
+
+									if( $total ){
+										echo '<div class="countProductItem">
+														<span> '.$total.' </span>
+													</div>';
+									}
+								?>
+
 								<div class="media itemMenu-topHeader itemMenu-topHeaderCart">
 								  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</div>
@@ -166,7 +197,7 @@
 																			<h4> '.$_product->get_title().'  </h4>
 																			<p class="unitario"> Preço unitário </p>
 																			<p class="valorItem"> R$ '.$price.' </p>
-																			<p class="quantidade"> Quantidade: '.$value['quantity'].' </p>
+																			<p class="quantidade"> Quantidade: '.$value['quantity'].' mtr(s). </p>
 																		</div>	
 																	</a>
 																	<p class="removeItemCart"><a href="'.$removeUrl.'"><i class="fa fa-times" aria-hidden="true"></i> Remover</a></p>
@@ -217,10 +248,10 @@
 						</div>
 					</div>
 					<div class="row menu-principal">
-						<div class="col-11">
+						<div class="col-12 col-md-11">
 							<?php storefront_primary_navigation(); ?>
 						</div>
-						<div class="col-1">
+						<div class="col-md-1 d-none d-sm-block">
 							<div class="lupa-busca" data-toggle="modal" data-target=".modal-busca">
 								<span><i class="fa fa-search" aria-hidden="true"></i></span>
 							</div>

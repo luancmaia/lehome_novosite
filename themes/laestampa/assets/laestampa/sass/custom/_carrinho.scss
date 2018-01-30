@@ -43,8 +43,6 @@
 	}
 }
 
-
-
 table.cart{
 	//pagina de carrinho botao de atualizar e inserir cupom
 	td.actions{
@@ -189,7 +187,7 @@ table.cart{
 				  -ms-transform: rotate(-90deg); /* IE 9 */
 				  -webkit-transform: rotate(-90deg); /* Safari 3-8 */
 				  transform: rotate(-90deg);
-				  margin-left: -1px;
+				  margin-left: -6px;
 			  }
 			}
 			
@@ -198,7 +196,7 @@ table.cart{
 			box-shadow: none;
 			border: 1px solid $cor-primaria;
 			color: $cor-primaria;
-			height: 65px;
+			height: 67px;
 			width: 119px!important;
 			max-width: 119px!important;
 			line-height: 1.65;
@@ -274,8 +272,48 @@ table.cart{
 		}
 	}
 }
+//checkout
+table.woocommerce-checkout-review-order-table .product-name{
+	width: 250px!important;
+}
+#shipping_method{
+	li{
+		label{
+			font-size: 13px;
+			width: 85%;
+			vertical-align: -moz-middle-with-baseline;
+			vertical-align: middle;
+		}
+	}
+}
+#billing_persontype_field{
+	display: none;
+}
+#payment .payment_methods li .payment_box .wc-credit-card-form-card-number{
+	background-position: right .6180469716em top 0.15em !important;
+	background-size: 18px 11px !important;
+}
 
-
+//select forma de pagamento revenda
+#forma_pagamento_field{
+   overflow: hidden;
+   background: url(../images/arrow_select.png) no-repeat right; 
+  padding-left: 7px;
+  background-size: 10px;
+	select{
+		background: transparent;
+   width: 100%;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	}
+}
 
 
 

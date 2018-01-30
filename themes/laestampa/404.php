@@ -16,10 +16,10 @@ get_header(); ?>
 				<div class="page-content">
 
 					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'storefront' ); ?></h1>
+						<h1 class="page-title"><?php esc_html_e( 'Opa! Essa página não pode ser encontrada.', 'storefront' ); ?></h1>
 					</header><!-- .page-header -->
 
-					<p><?php esc_html_e( 'Nothing was found at this location. Try searching, or check out the links below.', 'storefront' ); ?></p>
+					<p><?php esc_html_e( 'Nada foi encontrado neste local. Tente pesquisar ou confira os links abaixo.' ); ?></p>
 
 					<?php
 					echo '<section aria-label="' . esc_html__( 'Search', 'storefront' ) . '">';
@@ -34,27 +34,27 @@ get_header(); ?>
 
 					if ( storefront_is_woocommerce_activated() ) {
 
-						echo '<div class="fourohfour-columns-2">';
+						echo '<div class="">';
 
-							echo '<section class="col-1" aria-label="' . esc_html__( 'Promoted Products', 'storefront' ) . '">';
+							echo '<section class="col-12 col-404Prod" aria-label="' . esc_html__( 'Promoted Products', 'storefront' ) . '">';
 
 								storefront_promoted_products();
 
 							echo '</section>';
 
-							echo '<nav class="col-2" aria-label="' . esc_html__( 'Product Categories', 'storefront' ) . '">';
+							// echo '<nav class="col-12 col-md-4" aria-label="' . esc_html__( 'Product Categories', 'storefront' ) . '">';
 
-								echo '<h2>' . esc_html__( 'Product Categories', 'storefront' ) . '</h2>';
+							// 	echo '<h2>' . esc_html__( 'Product Categories', 'storefront' ) . '</h2>';
 
-								the_widget( 'WC_Widget_Product_Categories', array(
-									'count' => 1,
-								) );
+							// 	the_widget( 'WC_Widget_Product_Categories', array(
+							// 		'count' => 1,
+							// 	) );
 
-							echo '</nav>';
+							// echo '</nav>';
 
 						echo '</div>';
 
-						echo '<section aria-label="' . esc_html__( 'Popular Products', 'storefront' ) . '">';
+						echo '<section class="prodRelacinados" aria-label="' . esc_html__( 'Produtos Relacionados', 'storefront' ) . '">';
 
 							echo '<h2>' . esc_html__( 'Popular Products', 'storefront' ) . '</h2>';
 
