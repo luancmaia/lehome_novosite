@@ -10,10 +10,10 @@ get_header();
 </div></div></div>
 <div class="container-fluid noPadding">
 	<div class="row banner_colecoes">
-		<div class=".d-sm-none col-5">
+		<div class="col-12 col-md-5">
 			<div class="imageLeftcolecoes" style="background: url(<?php echo get_template_directory_uri().'/assets/images/colecoes/bannerLeftcolecoes.jpg'; ?>) no-repeat top; background-size: cover"></div>			
 		</div>
-		<div class=" col-12 col-md-3" style="z-index: 999;">
+		<div class="col-12 col-md-3" style="z-index: 999;">
 			<div class="contentCenter text-center"> 
 					<h1> Lançamento </h1>
 					<div class="textContent">
@@ -25,7 +25,7 @@ get_header();
 					</div>
 			</div>			
 		</div>
-		<div class=".d-sm-none col-4" style="z-index: 9;">
+		<div class="col-12 col-md-4" style="z-index: 9;">
 			<div class="imageRighttcolecoes" style="background: url(<?php echo get_template_directory_uri().'/assets/images/colecoes/bannerRightcolecoes.jpg'; ?>) no-repeat center; background-size: cover"></div>
 		</div>
 	</div>

@@ -208,6 +208,41 @@ ___________________________*/
 }
 
 @media (max-width: 475px ){
+	.banner_colecoes{
+		.contentCenter{
+	    padding: 15% 1%;
+	    h1{
+	    	margin: 5px 20px 45px
+	    }
+	    .btn_colecoes{
+	    	a.btnLeft{
+  		    margin-left: 0;
+	    		float: inherit;
+	    		display: block;
+	    		margin-right: 0;
+  		    margin-bottom: 15px;
+	    	}
+	    	a.btnRight{
+	    		margin-right: 0;
+	    		margin-left: 0;
+	    		float: inherit;
+	    		display: block;
+	    	}
+	    }
+		}
+		.imageLeftcolecoes, .imageRighttcolecoes{
+			min-height: 272px;
+		}
+	}
+	.outrasColecoes{
+    margin-bottom: 0;
+		.contentBtnsColecoes{
+			margin-top: 0px;
+		}
+		.image1Colecao{
+	    margin-top: 0;
+		}
+	}
 
 }
 

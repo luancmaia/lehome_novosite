@@ -36,8 +36,7 @@ get_header();
 			</div>
 		</div>
 		<div class="col-12 col-md-6">
-			<div class="box-imagesRightColunm1 imagem1Right">
-		</div>
+			<div class="box-imagesRightColunm1 imagem1Right">	</div>
 	</div>
 </div>
 <div class="container-fluid noPadding">
@@ -93,7 +92,7 @@ get_header();
 
 			</div>
 		</div>
-		<div class="col-12 col-md-4 d-none d-sm-block">
+		<div class="col-12 col-md-4">
 			<div class="box-imagesRightColunm2 imagem2Right">
 			</div>
 		</div>
@@ -128,7 +127,7 @@ get_header();
 					 </p>  
 			</div>
 		</div>
-		<div class="col-12 col-md-6 d-none d-sm-block">
+		<div class="col-12 col-md-6">
 			<div class="box-imagesRightPapel">
 				
 			</div>
@@ -152,14 +151,14 @@ get_header();
 				</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-5 d-none d-sm-block">
+		<div class="col-12 col-md-5"><!-- d-none d-sm-block -->
 			<div class="box-imagesRightColunm1 nossosServicosRevenda">
 			</div>
 		</div>
 	</div>
 
 	<div class="row originais atacado">
-		<div class="col-12 col-md-5 d-none d-sm-block"> 
+		<div class="col-12 col-md-5"> 
 			<div class="box-imagesRightColunm1 nossosServicosAtacado">
 			</div>
 		</div>
@@ -193,7 +192,7 @@ get_header();
 				</p>
 			</div>
 		</div>
-		<div class="col-12 col-md-5 d-none d-sm-block">
+		<div class="col-12 col-md-5">
 			<div class="box-imagesRightColunm1 nossosServicoscorporativo">
 				
 			</div>
