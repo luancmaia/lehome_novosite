@@ -15,7 +15,7 @@ msgstr ""
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started: activate the Akismet plugin and then go to your Akismet Settings page to set up your API key."
 msgstr "Usado por milhões, Akismet é possivelmente a melhor maneira do mundo para <strong>proteger seu blog contra spam</strong>. Ele mantém seu site protegido mesmo enquanto você dorme. Para começar: ative o plugin Akismet e vá para a página Configurações do Akismet para configurar sua chave API."
 
-#. #-#-#-#-#  akismet-code.pot (Akismet Anti-Spam 4.0.1)  #-#-#-#-#
+#. #-#-#-#-#  akismet-code.pot (Akismet Anti-Spam 4.0.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:95 class.akismet-admin.php:98
 msgid "Akismet Anti-Spam"
@@ -85,31 +85,31 @@ msgstr "Estatísticas detalhadas"
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: class.akismet-admin.php:1111
+#: class.akismet-admin.php:1125
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started, just go to <a href=\"admin.php?page=akismet-key-config\">your Akismet Settings page</a> to set up your API key."
 msgstr "Usado por milhões, Akismet é possivelmente a melhor maneira do mundo para <strong>proteger seu blog contra spam</strong>. Ele mantém seu site protegido mesmo enquanto você dorme. Para começar, vá até <a href=\"admin.php?page=akismet-key-config\">sua página de configurações do Akismet</a> para configurar sua chave API."
 
-#: class.akismet-admin.php:1108
+#: class.akismet-admin.php:1122
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. Your site is fully configured and being protected, even while you sleep."
 msgstr "Usado por milhões, Akismet é possivelmente a melhor maneira do mundo para <strong>proteger seu blog contra spam</strong>. Seu site está totalmente configurado e protegido, mesmo enquanto você dorme."
 
-#: class.akismet-admin.php:1007
+#: class.akismet-admin.php:1021
 msgid "%s comment was caught as spam."
 msgid_plural "%s comments were caught as spam."
 msgstr[0] "%s comentário foi detectado como spam."
 msgstr[1] "%s comentários foram detectados como spam."
 
-#: class.akismet-admin.php:1004
+#: class.akismet-admin.php:1018
 msgid "No comments were caught as spam."
 msgstr "Nenhum comentário foi detectado como spam."
 
-#: class.akismet-admin.php:1000
+#: class.akismet-admin.php:1014
 msgid "Akismet checked %s comment."
 msgid_plural "Akismet checked %s comments."
 msgstr[0] "Akismet verificou %s comentário."
 msgstr[1] "Akismet verificou %s comentários."
 
-#: class.akismet-admin.php:997
+#: class.akismet-admin.php:1011
 msgid "There were no comments to check. Akismet will only check comments in the Pending queue."
 msgstr "Não há comentários para verificar. Akismet verificará apenas comentários na lista de pendentes."
 
@@ -207,19 +207,19 @@ msgstr "Atualize suas informações de pagamento."
 msgid "<strong>Almost done</strong> - configure Akismet and say goodbye to spam"
 msgstr "<strong>Quase pronto</strong> - configure o Akismet e diga adeus ao spam"
 
-#: class.akismet-admin.php:932
+#: class.akismet-admin.php:946
 msgid "Akismet has saved you %d minute!"
 msgid_plural "Akismet has saved you %d minutes!"
 msgstr[0] "Akismet te salvou %d minuto!"
 msgstr[1] "Akismet te salvou %d minutos!"
 
-#: class.akismet-admin.php:930
+#: class.akismet-admin.php:944
 msgid "Akismet has saved you %d hour!"
 msgid_plural "Akismet has saved you %d hours!"
 msgstr[0] "Akismet te salvou %d hora!"
 msgstr[1] "Akismet te salvou %d horas!"
 
-#: class.akismet-admin.php:928
+#: class.akismet-admin.php:942
 msgid "Akismet has saved you %s day!"
 msgid_plural "Akismet has saved you %s days!"
 msgstr[0] "Akismet te salvou %s dia!"
@@ -511,7 +511,7 @@ msgstr "Histórico"
 msgid "View comment history"
 msgstr "Ver histórico de comentários"
 
-#: class.akismet-admin.php:818
+#: class.akismet-admin.php:832
 msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
 msgstr "Verifique sua <a href=\"%s\">configuração do Akismet</a> e entre em contato com seu provedor se o problema persistir."
 
@@ -519,7 +519,7 @@ msgstr "Verifique sua <a href=\"%s\">configuração do Akismet</a> e entre em co
 msgid "%s ago"
 msgstr "%s atrás"
 
-#: class.akismet-admin.php:925
+#: class.akismet-admin.php:939
 msgid "Cleaning up spam takes time."
 msgstr "Leva um tempo para limpar os spams."
 
@@ -585,11 +585,11 @@ msgstr "O Akismet pegou este comentário como spam durante uma tentativa de veri
 msgid "Akismet cleared this comment during an automatic retry."
 msgstr "O Akismet liberou este comentário durante uma tentativa automática."
 
-#: class.akismet.php:1202
+#: class.akismet.php:1208
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "<a href=\"%1$s\">Atualize o WordPress</a> para a versão atual ou <a href=\"%2$s\">faça downgrade para a versão 2.4 do plugin Akismet</a>."
 
-#: class.akismet.php:1202
+#: class.akismet.php:1208
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "O Akismet %s requer WordPress %s ou superior."
 
