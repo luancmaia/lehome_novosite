@@ -141,29 +141,7 @@ function before_checkout_create_order( $order, $data ) {
     $order->update_meta_data( 'order_vendedor', $_SESSION["nome_arquiteto"] );
 }
 
-function custom_wcbcf_billing_fields( $fields ) {
-    if ( isset( $fields['billing_persontype'] ) ) {
-        $fields['billing_persontype'] = array(
-            'type'     => 'text',
-            'label'    => '',
-            'class'    => array( 'hidden' ),
-            'required' => false,
-            'default'  => '2'
-        );
-        unset( $fields['billing_company'] );
-        unset( $fields['billing_cnpj'] );
-    }
-    return $fields;
-}
-add_filter( 'wcbcf_billing_fields', 'custom_wcbcf_billing_fields' );
-function custom_wcbcf_css() {
-    echo '<style>.hidden { display: none !important; visibility: hidden !important; } </style>';
-}
-add_action( 'wp_head', 'custom_wcbcf_css' );
-function custom_wcbcf_scripts() {
-    wp_dequeue_script( 'fix-person-fields' );
-}
-add_action( 'wp_enqueue_scripts', 'custom_wcbcf_scripts', 999 );
+
 
 
 
